@@ -1,7 +1,7 @@
 # VSD Hardware Design Program
 
 <details>
-  <Summary> Week 0 - Day 0 - Tools Installation</summary>
+  <Summary><strong> Week 0 - Day 0 - Tools Installation</strong></summary>
   
 #### All the instructions for installation of required tools can be found here:
 
@@ -86,6 +86,15 @@
   ```
 ![Alt Text](images/week0/magic_installation.jpeg)
 
-
+## Tool Versions
+```bash
+  $ git --version
+  $ docker --version
+  $ python3 --version
+  $ python3 -m pip --version
+  $ make --version
+```
+![Alt Text](images/week0/tool_version.png)
+</details>  
 
   
