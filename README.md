@@ -5,7 +5,7 @@
   
 #### All the instructions for installation of required tools can be found here:
 
-## System Check
+## <ins> System Check</ins>
        - 6 GB RAM  
        - 50 GB HDD  
        - Ubuntu 20.04+  
@@ -19,7 +19,7 @@
     $ ./autorun.sh
   ```
 
-## Tool Check
+## <ins> Tool Check</ins>
   #### 1. Yosys
   ```bash
       $ sudo apt-get update
@@ -86,7 +86,7 @@
   ```
 ![Alt Text](images/week0/magic_installation.jpeg)
 
-## Tool Versions
+## <ins> Tool Versions</ins>
 ```bash
   $ git --version
   $ docker --version
@@ -94,7 +94,7 @@
   $ python3 -m pip --version
   $ make --version
 ```
-![Alt Text](images/week0/tool_version.png)
+![Alt Text](images/week0/tool_versions.png)
 </details>  
 
   
