@@ -15,7 +15,7 @@
   ```bash
     $ sudo apt update
     $ sudo apt install build-essential dkms linux-headers-$(uname -r)
-    $ cd /media/spatha/VBox_GAs_7.1.8/
+    $ cd /media/sdudigani/VBox_GAs_7.1.8/
     $ ./autorun.sh
   ```
 
