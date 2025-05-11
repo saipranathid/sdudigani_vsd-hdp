@@ -22,7 +22,7 @@
     make config-gcc
     make
     sudo make install
-    ![Alt Text](images/"yosys_installation.jpeg")
+    ![Alt Text](images/yosys_installation.jpeg)
 
 
   #### iverilog
