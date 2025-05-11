@@ -22,6 +22,8 @@
     make config-gcc
     make
     sudo make install
+    ![Yosys Installation](images/yosys.jpg)
+
 
   #### iverilog
     sudo apt-get update
