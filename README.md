@@ -11,7 +11,6 @@
       
 ## Tool Check
   #### Yosys
-    ```bash
     sudo apt-get update
     git clone https://github.com/YosysHQ/yosys.git
     cd yosys
@@ -23,5 +22,9 @@
     make config-gcc
     make
     sudo make install
+
+  #### iverilog
+    sudo apt-get update
+    sudo apt-get install iverilog
 
   
