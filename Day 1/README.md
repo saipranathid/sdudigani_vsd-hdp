@@ -103,7 +103,29 @@ The VCD file can be opened with GTKWave for waveform inspection and verification
  
 ## 3. Introduction to Yosys and Logic Synthesis
 ### [Introduction to Yosys]
-Synthesizer
+- <strong> Synthesizer</strong> : Tool used for converting the RTL to netlist
+- <strong> Yosys</strong> is the synthesizer used here.
+
+#### Yosys Flow
+   - ```read_veriog``` : Reads the RTL design.
+   - ```read_liberty``` : Loads the timing and cell information from the .lib file.
+   - ```write_verilog``` : Writes the synthesized metlist to technology-specific cells.
+
+![Alt Text](images/yosys_setup.png)
+
+#### How to verify the synthesis?
+- After synthesizing the RTL using Yosys, it is important to validate the netlist to ensure its behavior matches the original RTL design. This can be done using the same testbench and simulation flow as used for RTL.
+
+![Alt Text](images/verify_the_synthesis.png)
+
+   ##### Flow Summary:
+      1. Use the netlist generated from Yosys instead of the RTL.
+      2. Reuse the same testbench file used for RTL verification.
+      3. Compile both using iverilog to generate the simulation executable.
+      4. Run the simulation and produce a .vcd file.
+      5. Open the .vcd waveform using GTKWave.
+
+<strong> Note:</strong> The primary inputs and outputs remain the same between RTL and the synthesized netlist. ✔️ Therefore, the same testbench can be reused to verify both! The waveform generated from the synthesized netlist should match the one observed during RTL simulation.
 
 ### [Logic Synthesis part1 & part2]
 
