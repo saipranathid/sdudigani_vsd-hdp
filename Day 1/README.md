@@ -95,7 +95,19 @@ The VCD file can be opened with GTKWave for waveform inspection and verification
 ![Alt Text](images/tb_good_mux.png)
 
  
+## 3. Introduction to Yosys and Logic Synthesis
+### L1 [Introduction]
 
+### L2 [Logic Synthesis part1]
+
+### L3 [Logic Synthesis part2]
+
+## 4. Labs Using yosys and sky130 PDKs
+### L1 [good_mux Part1]
+
+### L2 [good_mux Part2]
+
+### L3 [good_mux Part3]
 
 
 
