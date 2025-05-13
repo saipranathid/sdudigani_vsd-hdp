@@ -162,12 +162,65 @@ Synthesis is the process of converting RTL (Register Transfer Level) Verilog cod
 
 
 ## 4. Labs Using yosys and sky130 PDKs
-### L1 [good_mux Part1]
+### Lab 3 - Synthesis steps for ```good_mux.v``` design using Yosys 
+This lab demonstrates how to synthesize a Verilog design using the Yosys open-source synthesis tool and the Sky130 standard cell library(```sky130_fd_sc_hd```).
 
-### L2 [good_mux Part2]
+✅ Step 1: Navigate to the design directory and invoke Yosys
+```bash
+cd ~/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+yosys
+```
+✅ Step 2: Read the Liberty File
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Loads the standard cell timing and area definitions used for mapping logic to physical gates.
 
-### L3 [good_mux Part3]
+✅ Step 3: Read the Verilog RTL Design
+```bash
+read_verilog good_mux.v
+```
+Loads your RTL file into Yosys for processing.
 
+✅ Step 4: Synthesize the Design
+```bash
+synth -top good_mux
+```
+Performs generic synthesis and optimizations for the specified top-level module (good_mux).
+
+✅ Step 5: Technology Mapping
+```bash
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+Maps your synthesized logic to actual standard cells defined in the .lib file.
+
+✅ Step 6: View the Logic Schematic
+```bash
+show
+```
+Opens a graphical schematic viewer to inspect the synthesized logic structure.
+
+✅ Step 7: Write the Synthesized Netlist
+```bash
+write_verilog good_mux_netlist.v
+```
+
+✅ Step 8 (Optional): Write a Clean Netlist without Attributes
+```bash
+write_verilog -noattr good_mux_netlist.v
+```
+Removes extra synthesis attributes and comments to generate a simpler netlist for further analysis.
+
+![Alt Text](images/read_liberty_read_verilog_with_synth.png)
+![Alt Text](images/synth_done.png)
+![Alt Text](images/abc_rtl2netlist.png)
+![Alt Text](images/abc_report.png)
+![Alt Text](images/yosys_show.png)
+![Alt Text](images/show_graph.png)
+![Alt Text](images/write_verilog.png)
+![Alt Text](images/good_mux_netlist_file.png)
+![Alt Text](images/write_verilog_with_noattr_switch.png)
+![Alt Text](images/good_mux_netlist_file_with_noattr_switch.png)
 
 
 
