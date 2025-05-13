@@ -39,7 +39,7 @@
       $ make
       $ sudo make install
   ```
-![Alt Text](images/week0/yosys_installation.jpeg)
+![Alt Text](images/yosys_installation.jpeg)
 
 
   #### 2. iverilog
@@ -47,14 +47,14 @@
       $ sudo apt-get update
       $ sudo apt-get install iverilog
   ```
-![Alt Text](images/week0/iverilog_installation.jpeg)
+![Alt Text](images/iverilog_installation.jpeg)
 
   #### 3. gtkwave
   ```bash
     $ sudo apt-get update
     $ sudo apt install gtkwave
   ```
-![Alt Text](images/week0/gtkwave_installation.jpeg)
+![Alt Text](images/gtkwave_installation.jpeg)
 
   #### 4. ngspice
   ##### After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:
@@ -67,7 +67,7 @@
     $ make
     $ sudo make install
   ```
-![Alt Text](images/week0/ngspice_installation.jpeg)
+![Alt Text](images/ngspice_installation.jpeg)
 
   #### 5. magic
   ##### Install the required dependencies:
@@ -89,7 +89,7 @@
     $ make
     $ sudo make install
   ```
-![Alt Text](images/week0/magic_installation.jpeg)
+![Alt Text](images/magic_installation.jpeg)
 
 ## <ins> Tool Versions</ins>
 ```bash
@@ -99,7 +99,7 @@
   $ python3 -m pip --version
   $ make --version
 ```
-![Alt Text](images/week0/tool_versions.png)
+![Alt Text](images/tool_versions.png)
 </details>  
 
   
