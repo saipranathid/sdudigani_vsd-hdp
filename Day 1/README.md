@@ -1,6 +1,6 @@
 # Day 1: Introduction to Verilog RTL design and Synthesis
 
-## CONTENTS
+## Contents
 1. [Introduction to open-source simulator iverilog](#1-introduction-to-open-source-simulator-iverilog)
 2. [Labs Using iverilog and gtkwave](#2-labs-using-iverilog-and-gtkwave)
 3. [Introduction to Yosys and Logic Synthesis](#3-introduction-to-yosys-and-logic-synthesis)
@@ -102,11 +102,11 @@ The VCD file can be opened with GTKWave for waveform inspection and verification
 
  
 ## 3. Introduction to Yosys and Logic Synthesis
-### L1 [Introduction]
+### [Introduction to Yosys]
+Synthesizer
 
-### L2 [Logic Synthesis part1]
+### [Logic Synthesis part1 & part2]
 
-### L3 [Logic Synthesis part2]
 
 ## 4. Labs Using yosys and sky130 PDKs
 ### L1 [good_mux Part1]
