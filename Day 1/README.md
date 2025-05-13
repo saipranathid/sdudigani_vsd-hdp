@@ -74,7 +74,7 @@ gtkwave tb_good_mux.vcd
 #### File Structure of 2:1 MUX Design and Testbench
 <strong> <ins> good_mux.v</ins> </strong>
 - Implements a 2:1 multiplexer using behavioral Verilog.
-- Accepts three inputs: i0, i1, and sel, and produces a single output y.
+- Accepts three inputs: ```i0```, ```i1```, and ```sel```, and produces a single output ```y```.
 - Uses an always @(*) block to assign the output:
    - If sel = 0, output follows i0.
    - If sel = 1, output follows i1.
@@ -83,12 +83,12 @@ gtkwave tb_good_mux.vcd
 ![Alt Text](images/good_mux.png)
 
 <strong> <ins> tb_good_mux.v</ins> </strong>
-- Instantiates the ```bash good_mux ``` module and drives it with test signals.
+- Instantiates the ``` good_mux ``` module and drives it with test signals.
 - Declares inputs (i0, i1, sel) as reg and the output (y) as wire.
 - Applies periodic toggling to inputs using always blocks with different delays.
 - Uses:
-   - $dumpfile("tb_good_mux.vcd") to create a VCD file.
-   - $dumpvars to record value changes during simulation.
+   - ```$dumpfile("tb_good_mux.vcd")``` to create a VCD file.
+   - ```$dumpvars``` to record value changes during simulation.
 
 The VCD file can be opened with GTKWave for waveform inspection and verification.
 
