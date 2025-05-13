@@ -36,11 +36,41 @@ The simulation process involves the following steps:
 
 ## 2. Labs Using iverilog and gtkwave
 
-### L1 [Lab 1 - Introduction to Lab]
+### L1 [Lab 1 - Introduction]
+#### Setup
+- cd ~
+- mkdir VLSI
+- cd VLSI
+- mkdir vsdflow
+- git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
-### L2 [Lab 2 - Introduction to iverilog gtkwave part1]
+### L2 [Lab 2 - iverilog gtkwave part1]
+#### Steps:
+1. Navigate to the verilog_files directory
+```bash
+cd /home/sdudigani/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
+```
 
-### L3 [Lab 2 - Introduction to iverilog gtkwave part2]
+2. Compile the Design and Testbench using Icarus Verilog --> This will generate an executable output file named a.out.
+```bash
+iverilog good_mux.v tb_good_mux.v
+```
+![Alt Text](images/iverilog_based_simulation_flow.png)
+
+3. Run the Simulation
+```bash
+./a.out
+```
+![Alt Text](images/vcd_file_generation.png)
+
+4. View the waveform using gtkwave
+```bash
+gtkwave tb_good_mux.vcd
+```
+![Alt Text](images/gtkwave_simulator.png)
+
+
+### L3 [Lab 2 - iverilog gtkwave part2]
 
  
 
