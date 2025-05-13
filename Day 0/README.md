@@ -6,9 +6,9 @@
 #### All the instructions for installation of required tools can be found here:
 
 ## CONTENTS
-1. [System Check] (#-system-check)
-2. [Tool Check] (#-tool-check)
-3. [Tool Versions] (#-tool-version)
+1. [System Check](#-system-check)
+2. [Tool Check](#-tool-check)
+3. [Tool Versions](#-tool-versions)
    
 ## <ins> System Check</ins>
        - 6 GB RAM  
