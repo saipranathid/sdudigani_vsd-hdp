@@ -149,7 +149,16 @@ Synthesis is the process of converting RTL (Register Transfer Level) Verilog cod
 - Example: A 2-input AND gate can have: ```and2_slow```, ```and2_med``` & ```and2_fast```.
 
 ![Alt Text](images/lib.png)
+
 ![Alt Text](images/y_diff_flavors_of_gate.png)
+
+![Alt Text](images/slow_cells.png)
+
+![Alt Text](images/fast_cells_vs_slow_cells.png)
+
+![Alt Text](images/selection_of_cells.png)
+
+![Alt Text](images/synthesis_illustration.png)
 
 
 ## 4. Labs Using yosys and sky130 PDKs
