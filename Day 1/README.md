@@ -55,7 +55,7 @@ cd /home/sdudigani/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```bash
 iverilog good_mux.v tb_good_mux.v
 ```
-![Alt Text](images/iverilog_based_simulation_flow.png)
+![Alt Text](images/passing_rtl_tb_iverilog_simulator.png)
 
 3. Run the Simulation
 ```bash
