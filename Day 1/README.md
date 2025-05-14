@@ -1,4 +1,5 @@
-# Day 1: Introduction to Verilog RTL design and Synthesis
+<details>
+  <Summary><strong> Day 1: Introduction to Verilog RTL design and Synthesis</strong></summary>
 
 ## Contents
 1. [Introduction to open-source simulator iverilog](#1-introduction-to-open-source-simulator-iverilog)
@@ -221,6 +222,7 @@ Removes extra synthesis attributes and comments to generate a simpler netlist fo
 ![Alt Text](images/good_mux_netlist_file.png)
 ![Alt Text](images/write_verilog_with_noattr_switch.png)
 ![Alt Text](images/good_mux_netlist_file_with_noattr_switch.png)
+</details>
 
 
 
