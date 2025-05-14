@@ -28,10 +28,10 @@
     - Leakage power w.r.t the input pins of logic state
     - Pin details
     - Pin name, pin direction, internal power, capacitance (rise and fall), Fanout load
-
-![Alt Text](images/pin_info.png)
-![Alt Text](images/area_pgpin.png)
+<strong> Example: Standard Cell ```a2111o_1``` </strong>
 ![Alt Text](images/leakage_wrt_input_pin_states.png)
+![Alt Text](images/area_pgpin.png)
+
 
 #### Cell Comaprison between 3 different variants of 2-input AND from ```sky130_fd_sc_hd``` .lib
 ![Alt Text](images/cell_comparisons.png)
