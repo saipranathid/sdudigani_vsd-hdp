@@ -40,7 +40,6 @@
 ## 2. Hierarchical vs Flat Synthesis
 ### Design: multiple_modules.v
 ![Alt Text](images/multiple_modules_v.png)
-![Alt Text](images/mm_show_design.png)
 
 #### Generate hierarchical netlist-
 ```bash
@@ -51,6 +50,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog -noattr multiple_modules_hier.v
 ```
 ![Alt Text](images/hier_netlist.png)
+![Alt Text](images/mm_hier_design_show.png)
 
 #### Generate flat netlist-
 ```bash
@@ -58,6 +58,7 @@ flatten
 write_verilog -noattr multiple_modules_flat.v
 ```
 ![Alt Text](images/flatten_netlist.png)
+![Alt Text](images/mm_flat_design_show.png)
 
 
 ## 3. Various Flop Coding Styles and optimization
