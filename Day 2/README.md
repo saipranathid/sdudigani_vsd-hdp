@@ -35,7 +35,29 @@
 #### Cell Comaprison between 3 different variants of 2-input AND from ```sky130_fd_sc_hd``` .lib
 ![Alt Text](images/cell_comparisons.png)
 
+## Lab 5
 ## 2. Hierarchical vs Flat Synthesis
+### Design: multiple_modules.v
+![Alt Text](images/multiple_modules_verilog.png)
+![Alt Text](images/mm_show_design.png)
+
+#### Generate hierarchical netlist-
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+synth -top multiple_modules
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+write_verilog -noattr multiple_modules_hier.v
+```
+![Alt Text](images/hier_netlist.png)
+
+#### Generate flat netlist-
+```bash
+flatten
+write_verilog -noattr multiple_modules_flat.v
+```
+![Alt Text](images/flatten_netlist.png)
+
 
 ## 3. Various Flop Coding Styles and optimization
 ### Why Flops and Flop Coding Styles?
