@@ -19,7 +19,7 @@
     - Units (of time, power, voltage, current, resistance and capacitance)
     - Value of operating condition (process, voltage and temperature)
 
-![Alt Text](images/liberty_file_1.png)
+![Alt Text](images/liberty_file1.png)
 
 - The ```Cell-specific information``` of .lib file includes:
     - cell name
