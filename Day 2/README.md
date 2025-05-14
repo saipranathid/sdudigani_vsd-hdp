@@ -1,4 +1,5 @@
-# Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+<details>
+  <Summary><strong> Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles</strong></summary>
 
 ## Contents
 1. [Introduction to timing .libs](#1-introduction-to-timing-libs)
@@ -63,3 +64,6 @@ write_verilog -noattr multiple_modules_flat.v
 ### Why Flops and Flop Coding Styles?
 ### Lab - Flop Synthesis Simulations
 ### Interesting Optimizations
+
+</details>  
+
