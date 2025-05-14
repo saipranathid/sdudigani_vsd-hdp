@@ -5,6 +5,7 @@
 2. [Hierarchical vs Flat Synthesis](#2-hierarchical-vs-flat-synthesis)
 3. [Various Flop Coding Styles and optimization](#3-various-flop-coding-styles-and-optimization)
 
+## Lab 4
 ## 1. Introduction to timing .libs
 
 ### Liberty File
@@ -31,8 +32,7 @@
 ![Alt Text](images/area_pgpin.png)
 ![Alt Text](images/leakage_wrt_input_pin_states.png)
 
-#### Cell Comaprison
-Comaprison between 3 different variants of 2-input AND from ```sky130_fd_sc_hd``` .lib:
+#### Cell Comaprison between 3 different variants of 2-input AND from ```sky130_fd_sc_hd``` .lib
 ![Alt Text](images/cell_comparisons.png)
 
 ## 2. Hierarchical vs Flat Synthesis
