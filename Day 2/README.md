@@ -39,7 +39,7 @@
 ## Lab 5
 ## 2. Hierarchical vs Flat Synthesis
 ### Design: multiple_modules.v
-![Alt Text](images/multiple_modules_verilog.png)
+![Alt Text](images/multiple_modules_v.png)
 ![Alt Text](images/mm_show_design.png)
 
 #### Generate hierarchical netlist-
