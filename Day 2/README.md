@@ -49,7 +49,6 @@ synth -top multiple_modules
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 write_verilog -noattr multiple_modules_hier.v
 ```
-![Alt Text](images/hier_netlist.png)
 ![Alt Text](images/mm_hier_design_show.png)
 
 #### Generate flat netlist-
@@ -57,12 +56,102 @@ write_verilog -noattr multiple_modules_hier.v
 flatten
 write_verilog -noattr multiple_modules_flat.v
 ```
-![Alt Text](images/flatten_netlist.png)
 ![Alt Text](images/mm_flat_design_show.png)
 
+#### Hierarchical vs Flat Netlist
+![Alt Text](images/mm_hier_vs_flatten_netlist.png)
 
 ## 3. Various Flop Coding Styles and optimization
 ### Why Flops and Flop Coding Styles?
+In digital design, combinational circuits are prone to producing glitches — brief, unintended transitions in output values. These occur when multiple input signals arrive at slightly different times due to unequal propagation delays, causing the logic to temporarily settle to incorrect states.
+
+![Alt Text](images/why_flops_comb_ckt.png)
+![Alt Text](images/why_flops_comb_glitch.png)
+
+⚠️ The Problem:
+- These glitches are usually harmless in isolation.
+- However, if another part of the circuit captures these unstable outputs (e.g., in a downstream register), it can lead to functional failures or incorrect data being latched.
+
+✅ The Solution: Insert Flip-Flops
+- Flip-flops are edge-triggered sequential elements.
+- They only capture input data on a specific clock edge (rising or falling).
+- This means any transient glitches occurring before the clock edge are ignored.
+- As a result, only stable, clean data is passed between pipeline stages or functional blocks.
+
+### D Flip-Flop with Asynchronous Reset
+
+![Alt Text](images/dff_asyn_reset_verilog.png)
+![Alt Text](images/dff_asyn_reset_gtkwave.png)
+
+### D Flip-Flop with Asynchronous set
+
+![Alt Text](images/dff_asyn_set_verilog.png)
+![Alt Text](images/dff_asyn_set_gtkwave.png)
+
+### D Flip-Flop with Synchronous Reset
+
+![Alt Text](images/dff_syn_reset_verilog.png)
+![Alt Text](images/dff_syn_reset_gtkwave.png)
+
+### D Flip-Flop with Both Asynchronous and Synchronous Reset
+
+![Alt Text](images/dff_asyncres_syncres_verilog.png)
+![Alt Text](images/dff_asyncres_syncres_gtkwave.png)
+
+![Alt Text](images/flop_styles.png)
+
+### Synthesis of D Flip-Flop with Asynchronous set
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_async_set.v
+synth -top dff_async_set
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Alt Text](images/dff_asyn_set_synth.png)
+
+### Synthesis of D Flip-Flop with Asynchronous Reset
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_asyncres.v 
+synth -top dff_asyncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![Alt Text](images/dff_asyn_reset_synth.png)
+
+### Synthesis of D Flip-Flop with Synchronous Reset
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_syncres.v 
+synth -top dff_syncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Alt Text](images/dff_syn_reset_synth.png)
+
+### Synthesis of D Flip-Flop with Both Asynchronous and Synchronous Reset
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_asyncres_syncres.v
+synth -top dff_asyncres_syncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Alt Text](images/dff_asynres_syncres_synth.png)
+![Alt Text](images/dff_asynres_syncres_ckt.png)
+
 ### Lab - Flop Synthesis Simulations
 ### Interesting Optimizations
 
