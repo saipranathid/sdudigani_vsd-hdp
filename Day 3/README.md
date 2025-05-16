@@ -253,3 +253,34 @@ show
 ![Alt Text](images/dff_const5_synth.png)
 
 ## 4. Sequential Optimisations for Unused Outputs
+### Design : ```counter_opt.v```
+![Alt Text](images/counter_opt_v.png)
+
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v.v
+synth -top counter_opt
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+![Alt Text](images/counter_opt_synth1.png)
+![Alt Text](images/counter_opt_synth.png)
+
+### Design : ```counter_opt2.v```
+![Alt Text](images/counter_opt2_v.png)
+![Alt Text](images/counter_opt2.png)
+
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt2.v.v
+synth -top counter_opt
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+![Alt Text](images/counter_opt2_synth1.png)
+![Alt Text](images/counter_opt2_synth.png)
+
