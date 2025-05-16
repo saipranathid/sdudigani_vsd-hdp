@@ -141,6 +141,117 @@ show
 ![Alt Text](images/mm_opt2_synth.png)
 
 ## 3. Sequential Logic Optimisation Lab 07
+### Optimisation 1
+![Alt Text](images/dff_const1_v.png)
+#### Simulation for ```dff_const1.v```
+```bash
+iverilog dff_const1.v
+./a.out
+gtkwave tb_dff_const1.vcd
+```
 
+![Alt Text](images/dff_const1_sim.png)
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const1.v
+synth -top dff_const1
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+
+![Alt Text](images/dff_const1_synth1.png)
+![Alt Text](images/dff_const1_synth.png)
+### Optimisation 2
+#### Simulation for ```dff_const2.v```
+```bash
+iverilog dff_const2.v
+./a.out
+gtkwave tb_dff_const2.vcd
+```
+
+![Alt Text](images/dff_const2_v.png)
+![Alt Text](images/dff_const2_sim.png)
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const2.v
+synth -top dff_const2
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+
+![Alt Text](images/dff_const2_synth1.png)
+![Alt Text](images/dff_const2_synth.png)
+### Optimisation 3
+#### Simulation for ```dff_const3.v```
+```bash
+iverilog dff_const3.v
+./a.out
+gtkwave tb_dff_const3.vcd
+```
+
+![Alt Text](images/dff_const3_v.png)
+![Alt Text](images/dff_const3_opt.png)
+![Alt Text](images/dff_const3_sim.png)
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const3.v
+synth -top dff_const3
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+![Alt Text](images/dff_const3_synth1.png)
+![Alt Text](images/dff_const3_synth.png)
+
+### Optimisation 4
+#### Simulation for ```dff_const1.v```
+```bash
+iverilog dff_const4.v
+./a.out
+gtkwave tb_dff_const4.vcd
+```
+
+![Alt Text](images/dff_const4_v.png)
+![Alt Text](images/dff_const4_opt.png)
+![Alt Text](images/dff_const4_sim.png)
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const4.v
+synth -top dff_const4
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+![Alt Text](images/dff_const3_synth1.png)
+![Alt Text](images/dff_const3_synth.png)
+
+### Optimisation 5
+#### Simulation for ```dff_const1.v```
+```bash
+iverilog dff_const5.v
+./a.out
+gtkwave tb_dff_const5.vcd
+```
+
+![Alt Text](images/dff_const5_v.png)
+![Alt Text](images/dff_const5_opt.png)
+![Alt Text](images/dff_const5_sim.png)
+#### Synthesis
+```bash
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const5.v
+synth -top dff_const5
+dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+```
+![Alt Text](images/dff_const3_synth1.png)
+![Alt Text](images/dff_const3_synth.png)
 
 ## 4. Sequential Optimisations for Unused Outputs
