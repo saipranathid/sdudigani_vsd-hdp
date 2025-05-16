@@ -154,6 +154,51 @@ show
 
 ### Lab - Flop Synthesis Simulations
 ### Interesting Optimizations
+Optimization during synthesis involves refining RTL logic to enhance design efficiency. As shown below, Yosys eliminates redundant logic, simplifies expressions, and minimizes gate count while preserving the original functionality.
+
+#### Synthesis of ```mult_2.v```
+
+![Alt Text](images/mult_2_verilog.png)
+
+![Alt Text](images/mult_2_synthesis.png)
+
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_2.v
+synth -top mul2
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib # no need to do this step becoz no cells are used #
+show
+write_verilog -noattr mult2_net.v
+```
+![Alt Text](images/mul2_netlist.png)
+
+![Alt Text](images/mult_2_opt.png)
+
+
+
+#### Synthesis of ```mult_8.v```
+
+![Alt Text](images/mult_8_verilog.png)
+
+![Alt Text](images/mult8_synth.png)
+
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_8.v
+synth -top mult8
+show
+write_verilog -noattr mul8_net.v
+```
+
+![Alt Text](images/mul8_netlist.png)
+
+![Alt Text](images/mult_8_opt.png)
+
+![Alt Text](images/mult_8_opt_1.png)
 
 </details>  
 
