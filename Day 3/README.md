@@ -217,7 +217,6 @@ gtkwave tb_dff_const4.vcd
 ```
 
 ![Alt Text](images/dff_const4_v.png)
-![Alt Text](images/dff_const4_opt.png)
 ![Alt Text](images/dff_const4_sim.png)
 #### Synthesis
 ```bash
@@ -240,7 +239,6 @@ gtkwave tb_dff_const5.vcd
 ```
 
 ![Alt Text](images/dff_const5_v.png)
-![Alt Text](images/dff_const5_opt.png)
 ![Alt Text](images/dff_const5_sim.png)
 #### Synthesis
 ```bash
