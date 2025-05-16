@@ -227,8 +227,8 @@ dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 show
 ```
-![Alt Text](images/dff_const3_synth1.png)
-![Alt Text](images/dff_const3_synth.png)
+![Alt Text](images/dff_const4_synth1.png)
+![Alt Text](images/dff_const4_synth.png)
 
 ### Optimisation 5
 #### Simulation for ```dff_const1.v```
@@ -249,7 +249,7 @@ dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 show
 ```
-![Alt Text](images/dff_const3_synth1.png)
-![Alt Text](images/dff_const3_synth.png)
+![Alt Text](images/dff_const5_synth1.png)
+![Alt Text](images/dff_const5_synth.png)
 
 ## 4. Sequential Optimisations for Unused Outputs
