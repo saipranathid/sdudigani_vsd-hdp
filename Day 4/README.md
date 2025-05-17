@@ -109,13 +109,36 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 gtkwave tb_bad_mux.vcd
 ```
 
-![Alt Text](images/bad_mux_gls.png)
-
-### Design: ```good_mux.v```
-#### RTL Simulation
-#### Synthesis
-#### GLS
+![Alt Text](images/bad_mux_gls1.png)
 
 ## 3. Labs on Synthesis Mismatch for Blocking Statement
-### part1
-### part2
+### Design: ```blocking_caveat.v```
+#### RTL Simulation
+![Alt Text](images/blocking_caveat_v.png)
+```bash
+iverilog blocking_caveat.v tb_blocking_caveat.v 
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+![Alt Text](images/blocking_caveat_sim.png)
+
+#### Synthesis
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr blocking_caveat_net.v
+```
+![Alt Text](images/blocking_caveat_synth.png)
+
+#### GLS
+```bash
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+/a.out 
+gtkwave tb_blocking_caveat.vcd
+```
+
+![Alt Text](images/blocking_caveat_gls.png)
