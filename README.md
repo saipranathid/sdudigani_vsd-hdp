@@ -5,12 +5,11 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 
 ## 📘 Day-wise Progress
 
-- [Day 0: Tools Installation & Environment Setup](Day0/README.md)
-- [Day 1: Introduction to Verilog RTL design and Synthesis](Day1/README.md)
-- [Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day2/README.md)
-- [Day 3: Combinational and Sequential optmizations](Day3/README.md)
-- [Day 4: GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day4/README.md)
-
+- [Day 0: Tools Installation & Environment Setup](Day%200/README.md)
+- [Day 1: Introduction to Verilog RTL design and Synthesis](Day%201/README.md)
+- [Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day%202/README.md)
+- [Day 3: Combinational and Sequential optmizations](Day%203/README.md)
+- [Day 4: GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day%204/README.md)
 
 
 ## 🛠️ Tools & Technologies
