@@ -142,3 +142,4 @@ gtkwave tb_blocking_caveat.vcd
 ```
 
 ![Alt Text](images/blocking_caveat_gls.png)
+![Alt Text](images/mismatch.png)
