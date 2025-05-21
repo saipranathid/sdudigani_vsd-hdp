@@ -106,7 +106,7 @@ show
 
 ### Optimisation 5
 ![Alt Text](images/mm_opt_verilog.png)
-![Alt Text](images/mm_opt.png)
+![Alt Text](images/opt_check5.png)
 
 
 ```bash
@@ -118,14 +118,12 @@ opt_clean -purge # to remove unused or redundant logic
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
-
-![Alt Text](images/mm_opt_synth.png)
 
 ![Alt Text](images/opt_check5_synth.png)
 
 ### Optimisation 6
 ![Alt Text](images/mm_opt2_verilog.png)
-![Alt Text](images/mm_opt2.png)
+![Alt Text](images/opt_check6.png)
 
 
 ```bash
@@ -138,7 +136,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-![Alt Text](images/mm_opt2_synth.png)
+![Alt Text](images/opt_check6_synth.png)
 
 ## 3. Sequential Logic Optimisation Lab 07
 ### Optimisation 1
