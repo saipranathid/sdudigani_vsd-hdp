@@ -89,7 +89,7 @@ show
 
 ### Optimisation 4
 ![Alt Text](images/opt_check4_verilog.png)
-![Alt Text](images/opt_check4.png)
+![Alt Text](images/opt_check4.jpeg)
 
 
 ```bash
@@ -241,14 +241,30 @@ gtkwave tb_dff_const5.vcd
 ![Alt Text](images/dff_const5_v.png)
 ![Alt Text](images/dff_const5_sim.png)
 #### Synthesis
-```bash
-read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog dff_const5.v
-synth -top dff_const5
-dfflibmap -liberty  ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
-show
-```
+  ```bash
+  # --------Phase 1: Flatten the hierarchical RTL design---------------
+  yosys
+  read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  read_verilog multiple_module_opt.v
+  synth -top multiple_module_opt
+  abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  # Flatten design hierarchy 
+  # 🔸Essential before performing optimization on multi-module RTLs
+  flatten
+  write_verilog -noattr multiple_module_opt_flat.v
+  ```
+
+  ```bash
+  # ----------Phase 2: Optimize the flattened netlist-------------
+  yosys
+  read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  read_verilog multiple_module_opt_flat.v
+  synth -top multiple_module_opt
+  opt_clean -purge   # Cleans up redundant gates and wires after flattening
+  abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  show
+  ```
+
 ![Alt Text](images/dff_const5_synth1.png)
 ![Alt Text](images/dff_const5_synth.png)
 
