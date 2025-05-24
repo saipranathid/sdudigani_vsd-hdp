@@ -1,4 +1,7 @@
-# Introduction to BabySoC
+<details>
+  <Summary><strong> Day 5 : Introduction to BabySoC</strong></summary>
+  
+# Introduction
 - BabySoC is a minimal, RISC-V-based System on Chip that brings together essential open-source components to form a functional mixed-signal platform.
 - The primary motivation behind this project is to combine and verify the behavior of three distinct IP blocks in a single design -> a processor, a clock generator, and an analog interface, while offering an accessible learning environment.
 - This SoC integrates the RVMYTH core (a RISC-V CPU), an 8x Phase-Locked Loop (PLL) for clock management, and a 10-bit Digital-to-Analog Converter (DAC) for analog signal generation and communication.
@@ -29,3 +32,4 @@ A Phase-Locked Loop (PLL) is a feedback-driven circuit that locks the output fre
 ### What is a DAC?
 A Digital-to-Analog Converter (DAC) transforms digital values into analog voltages or currents. The 10-bit DAC in this SoC enables the system to interact with real-world analog devices, converting CPU-driven digital outputs into continuous signals for use in multimedia, sensing, or other analog domains.
 
+</details>
