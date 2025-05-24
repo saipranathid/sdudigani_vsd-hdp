@@ -10,7 +10,7 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 - [Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day%202/README.md)
 - [Day 3: Combinational and Sequential optmizations](Day%203/README.md)
 - [Day 4: GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day%204/README.md)
-
+- [Day 5: BabySoC Modeling and System-Level Integration](Day%205/README.md)
 
 ## 🛠️ Tools & Technologies
 
