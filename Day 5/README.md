@@ -99,11 +99,11 @@ To exit:
 dudigani@sdudigani-VirtualBox:~$ deactivate
 ```
 
-### Simulation
+## Simulation
 
-#### <ins>Pre-Synthesis Simulation</ins>
+### <ins>Pre-Synthesis Simulation</ins>
 
-Command to perform a pre-synthesis simulation:
+Commands to perform a pre-synthesis simulation:
 
 ```bash
 cd ~/VLSI/VSDBabySoC/
@@ -145,6 +145,7 @@ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 ![Alt Text](images/2.png)
 
 
+### <ins>Post-Synthesis Simulation</ins>
 </details>
 
 
