@@ -101,6 +101,58 @@ To exit:
 dudigani@sdudigani-VirtualBox:~$ deactivate
 ```
 
+### Simulation
+
+#### <ins>Pre-Synthesis Simulation</ins>
+
+Command to perform a pre-synthesis simulation:
+
+```bash
+cd ~/VLSI/VSDBabySoC/
+mkdir -p output/pre_synth_sim
+iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
+  -I src/include -I src/module \
+  src/module/testbench.v
+```
+
+Then run:
+```bash
+cd output/pre_synth_sim
+
+./pre_synth_sim.out
+```
+
+Explanation:
+
+- DPRE_SYNTH_SIM: Defines the PRE_SYNTH_SIM macro for conditional compilation in the testbench.
+- The resulting pre_synth_sim.vcd file can be viewed in GTKWave.
+
+ ![Alt Text](images/run_pre_synth_simulation.png)
+
+#### Viewing Waveform in GTKWave
+
+After running the simulation, open the VCD file in GTKWave: 
+
+```bash
+
+cd ~/VLSI/VSDBabySoC/
+
+gtkwave output/pre_synth_sim/pre_synth_sim.vcd
+
+```
+Drag and drop the CLK, reset, OUT (DAC), and RV TO DAC [9:0] signals to their respective locations in the simulation tool
+
+ ![Alt Text](images/1.png)
+
+#### Viewing DAC output in analog mode
+
+Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] signals to their respective locations in the simulation tool 
+
+![Alt Text](images/2_1.png)
+
+![Alt Text](images/2.png)
+
+
 </details>
 
 
