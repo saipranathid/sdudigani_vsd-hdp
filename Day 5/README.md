@@ -8,7 +8,7 @@
 
 ## What is BabySoC?
 - BabySoC is a lightweight, educational SoC that brings together three critical IPs in a unified design:
-  - RVMYTH: A basic yet functional RISC-V CPU, ideal for teaching and experimentation.
+  - RVMYTH: A basic yet functional RISC-V CPU.
   - PLL: A Phase-Locked Loop that multiplies the clock frequency by 8× for internal system use.
   - DAC: A Digital-to-Analog Converter that enables communication with analog systems and external hardware.
 - The system is designed to validate these IPs when integrated and provide a platform for observing digital-to-analog behavior in a controlled environment.
@@ -32,4 +32,38 @@ A Phase-Locked Loop (PLL) is a feedback-driven circuit that locks the output fre
 ### What is a DAC?
 A Digital-to-Analog Converter (DAC) transforms digital values into analog voltages or currents. The 10-bit DAC in this SoC enables the system to interact with real-world analog devices, converting CPU-driven digital outputs into continuous signals for use in multimedia, sensing, or other analog domains.
 
+## Project Directory Structure
+- src/include/ Contains header files (*.vh) with necessary macros or parameter definitions.
+- src/module/ Contains Verilog files for each module in the SoC design.
+- output/ Directory where compiled outputs and simulation files will be generated.
+
+### Setup the project directory
+Clone or set up the directory structure as follows:
+```txt
+VSDBabySoC/
+├── src/
+│   ├── include/
+│   │   ├── sandpiper.vh
+│   │   └── other header files...
+│   ├── module/
+│   │   ├── vsdbabysoc.v      # Top-level module integrating all components
+│   │   ├── rvmyth.v          # RISC-V core module
+│   │   ├── avsdpll.v         # PLL module
+│   │   ├── avsddac.v         # DAC module
+│   │   └── testbench.v       # Testbench for simulation
+└── output/
+└── compiled_tlv/         # Holds compiled intermediate files if needed
+```
+
+clone the VSDBabySoC repository using the following command:
+```bash
+cd ~/VLSI
+git clone https://github.com/manili/VSDBabySoC.git
+```
+![Alt Text](images/clone_vsdbabysoc_repo.png)
+
+### TLV to Verilog Conversion for RVMYTH
+
 </details>
+
+
