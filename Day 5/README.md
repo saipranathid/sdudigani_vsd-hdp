@@ -66,8 +66,6 @@ git clone https://github.com/manili/VSDBabySoC.git
 - Initially, the RVMYTH core is written in TL-Verilog.
 - To convert `rvmyth.tlv` file inside `src/module/` into a `.v` file for simulation, follow the steps below:
 
-<strong>🔧 TLV to Verilog Conversion Steps</strong>
-
 ```bash
 # Step 1: Install python3-venv (if not already installed)
 sudo apt update
@@ -118,7 +116,6 @@ iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
 Then run:
 ```bash
 cd output/pre_synth_sim
-
 ./pre_synth_sim.out
 ```
 
@@ -130,23 +127,18 @@ Explanation:
  ![Alt Text](images/run_pre_synth_simulation.png)
 
 #### Viewing Waveform in GTKWave
-
-After running the simulation, open the VCD file in GTKWave: 
+- After running the simulation, open the VCD file in GTKWave: 
 
 ```bash
-
 cd ~/VLSI/VSDBabySoC/
-
 gtkwave output/pre_synth_sim/pre_synth_sim.vcd
-
 ```
-Drag and drop the CLK, reset, OUT (DAC), and RV TO DAC [9:0] signals to their respective locations in the simulation tool
+
+- Drag and drop the CLK, reset, OUT (DAC), and RV TO DAC [9:0] signals to their respective locations in the simulation tool
 
  ![Alt Text](images/1.png)
 
 #### Viewing DAC output in analog mode
-
-Drag and drop the CLK, reset, OUT (DAC) (as analog step), and RV TO DAC [9:0] signals to their respective locations in the simulation tool 
 
 ![Alt Text](images/2_1.png)
 
