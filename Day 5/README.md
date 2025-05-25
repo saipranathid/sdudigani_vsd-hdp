@@ -16,9 +16,7 @@
   ![Alt Text](images/BabySoC_block.png)
 
 ### Problem Statement
-- This project focuses on building a streamlined System on Chip (SoC) using open-source IP cores. The design includes the RVMYTH RISC-V CPU, a PLL for stable and faster clock generation, and a DAC to output analog-equivalent signals.
-- Together, these components demonstrate how digital logic can interact with analog devices, such as audio systems or display controllers, by translating binary outputs into continuous analog signals.
-- Fabricated using Sky130 technology, this project also serves as a reference model for future SoC learners and developers aiming to explore mixed-signal design techniques using accessible, open hardware.
+This project delves into designing a compact, open-source System on Chip (SoC) based on RVMYTH, a RISC-V-based processor core. The SoC integrates a Phase-Locked Loop (PLL) for precise clock generation and control, alongside a 10-bit Digital-to-Analog Converter (DAC) for interfacing with external analog systems. By converting digital signals into analog, this DAC allows BabySoC to communicate with devices that accept analog inputs, such as televisions and mobile phones, enabling output in the form of audio or video. Ultimately, this Sky130-technology-based SoC aims to provide a highly documented, educational platform for learning and experimentation in digital-analog interfacing.
 
 ### What is an SoC?
 A System on Chip (SoC) is a complete system embedded onto a single silicon chip. It usually contains several integrated IP cores, such as CPUs, memory blocks, peripherals, and communication interfaces and can include both digital and analog subsystems depending on the application.
