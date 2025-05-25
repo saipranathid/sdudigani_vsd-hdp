@@ -63,6 +63,43 @@ git clone https://github.com/manili/VSDBabySoC.git
 ![Alt Text](images/clone_vsdbabysoc_repo.png)
 
 ### TLV to Verilog Conversion for RVMYTH
+- Initially, the RVMYTH core is written in TL-Verilog.
+- To convert `rvmyth.tlv` file inside `src/module/` into a `.v` file for simulation, follow the steps below:
+
+<strong>🔧 TLV to Verilog Conversion Steps</strong>
+
+```bash
+# Step 1: Install python3-venv (if not already installed)
+sudo apt update
+sudo apt install python3-venv python3-pip
+
+# Step 2: Create and activate a virtual environment
+cd VSDBabySoC
+python3 -m venv sd_env
+source sd_env/bin/activate
+
+# Step 3: Install SandPiper-SaaS inside the virtual environment
+pip install pyyaml click sandpiper-saas
+
+# Step 4: Convert rvmyth.tlv to Verilog
+sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
+
+- After running the above command, rvmyth.v will be generated in the src/module/ directory.
+
+You can confirm this by listing the files:
+ ![Alt Text](images/sandpiper_rvmyth_v_generation.png)
+
+#### Note 
+To use this environment in future sessions, always activate it first:
+```bash
+dudigani@sdudigani-VirtualBox:~$ source sd_env/bin/activate
+```
+
+To exit:
+```bash
+dudigani@sdudigani-VirtualBox:~$ deactivate
+```
 
 </details>
 
