@@ -149,8 +149,6 @@ In this picture we can see the following signals:
 
 ![Alt Text](images/2.png)
 
-
-### <ins>Post-Synthesis Simulation</ins>
 </details>
 
 
