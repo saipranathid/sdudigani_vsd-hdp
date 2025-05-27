@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 5 : Introduction to BabySoC</strong></summary>
+  <Summary><strong> Day 5 : Introduction to BabySoC and Pre-Synthesis Simulation</strong></summary>
   
 # Introduction
 - BabySoC is a minimal, RISC-V-based System on Chip that brings together essential open-source components to form a functional mixed-signal platform.
