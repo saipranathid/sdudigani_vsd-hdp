@@ -9,7 +9,10 @@
   - Timing characteristics: Includes realistic gate delays to check for potential timing issues.
   - Synthesis-induced issues: Detects problems like glitches, race conditions, or unintended latches that might not appear in RTL simulation.
 
-- For the VSDBabySoC design, we perform synthesis using Yosys to generate the gate-level netlist, and then simulate this netlist using a suitable testbench. The goal is to compare the post-synthesis simulation output with the pre-synthesis results. If both match, it validates that the design's logic and functionality are preserved through the synthesis process.
+- For the VSDBabySoC design, we perform synthesis using Yosys to generate the gate-level netlist, and then simulate this netlist using a same testbench. The goal is to compare the post-synthesis simulation output with the pre-synthesis results. If both match, it validates that the design's logic and functionality are preserved through the synthesis process.
 
 - This step is critical for catching low-level issues early and ensuring the design is ready for downstream physical implementation.
+
+### Synthesis using Yosys
+
 </details>
