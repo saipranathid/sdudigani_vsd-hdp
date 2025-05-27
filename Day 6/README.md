@@ -41,17 +41,31 @@ drwxrwxr-x  4 sdudigani sdudigani 4.0K May 27 11:45 output
 -rw-rw-r--  1 sdudigani sdudigani 2.6K May 27 12:02 sandpiper.vh
 -rw-rw-r--  1 sdudigani sdudigani  164 May 27 12:03 sandpiper_gen.vh
 ```
-#### Steps:
-#### Step 1: Load the Top-Level Design and Supporting Modules
+
+#### ✅ Step 1: Load the Top-Level Design and Supporting Modules
 - Launch the Yosys synthesis tool from your working directory.
+  ```bash
+  cd ~/VLSI/VSDBabySoC/
+  yosys
+  ```
+![Alt Text](images/1_invoke_yosys.png)
+  
 - Read the main vsdbabysoc.v RTL file into the Yosys environment.
   ```bash
   read_verilog src/module/vsdbabysoc.v
   ```
+
+![Alt Text](images/2_read_verilog.png)
+
 - Read the rvmyth.v file with the include path using -I option.
+
+![Alt Text](images/3_read_verilog_rvmyth.png)
+
 - Read the clk_gate.v file with the include path using -I option.
 
-#### Step 2: Load the Liberty Files for Synthesis
+![Alt Text](images/4_read_verilog_clk_gate.png)
+
+#### ✅ Step 2: Load the Liberty Files for Synthesis
 Inside the same Yosys shell, run:
 ```bash
 yosys> read_liberty -lib ~/VLSI/VSDBabySoC/src/lib/avsdpll.lib 
@@ -59,31 +73,42 @@ yosys> read_liberty -lib ~/VLSI/VSDBabySoC/src/lib/avsddac.lib
 yosys> read_liberty -lib ~/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-#### Step 3: Run Synthesis Targeting vsdbabysoc
+![Alt Text](images/5_read_liberty.png)
+
+#### ✅ Step 3: Run Synthesis Targeting vsdbabysoc
 ```bash
 yosys> synth -top vsdbabysoc
 ```
 
-#### Step 4: Map D Flip-Flops to Standard Cells
+![Alt Text](images/6_synth.png)
+![Alt Text](images/7_synth.png)
+![Alt Text](images/8_synth.png)
+![Alt Text](images/9_synth.png)
+
+#### ✅ Step 4: Map D Flip-Flops to Standard Cells
 ```bash
 yosys> dfflibmap -liberty ~/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+![Alt Text](images/10_dff_map.png)
 
-#### Step 5: Perform Optimization and Technology Mapping
+#### ✅ Step 5: Perform Optimization and Technology Mapping
 ```bash
 yosys> opt
 yosys> abc -liberty ~/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
 ```
+![Alt Text](images/11_opt.png)
+![Alt Text](images/12_abc.png)
 
-#### Step 6: Perform Final Clean-Up and Renaming
+#### ✅ Step 6: Perform Final Clean-Up and Renaming
 ```bash
 yosys> flatten
 yosys> setundef -zero
 yosys> clean -purge
 yosys> rename -enumerate
 ```
+![Alt Text](images/13_cleanup_renaming.png)
 
-#### Step 7: Check Statistics
+#### ✅ Step 7: Check Statistics
 
 ```bash
 yosys> stat
@@ -156,9 +181,10 @@ yosys> stat
 yosys> 
 ```
 
-#### Step 8: Write the Synthesized Netlist
+#### ✅ Step 8: Write the Synthesized Netlist
 ```bash
 yosys> write_verilog -noattr ~/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
 ```
+![Alt Text](images/14_write_verilog.png)
 
 </details>
