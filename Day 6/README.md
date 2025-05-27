@@ -13,7 +13,7 @@
 
 - This step is critical for catching low-level issues early and ensuring the design is ready for downstream physical implementation.
 
-### Synthesis using Yosys
+## Synthesis using Yosys
 
 The following cp commands copy essential header files from the src/include directory into the working directory. These include:
   - sp_verilog.vh – contains Verilog definitions and macros
@@ -186,5 +186,13 @@ yosys>
 yosys> write_verilog -noattr ~/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
 ```
 ![Alt Text](images/14_write_verilog.png)
+
+## Post-Synthesis Simulation
+#### ✅ Step 1: Compile the Testbench
+#### ✅ Step 2: Navigate to the Post-Synthesis Simulation Output Directory
+#### ✅ Step 3: Run the Simulation
+#### ✅ Step 4: View the Waveforms in GTKWave
+
+### Comparing Pre-Synthesis and Post-Synthesis Output
 
 </details>
