@@ -2,9 +2,9 @@
   <Summary><strong> Day 5 : Introduction to BabySoC and Pre-Synthesis Simulation</strong></summary>
   
 # Introduction
-- BabySoC is a minimal, RISC-V-based System on Chip that brings together essential open-source components to form a functional mixed-signal platform.
-- The primary motivation behind this project is to combine and verify the behavior of three distinct IP blocks in a single design -> a processor, a clock generator, and an analog interface, while offering an accessible learning environment.
-- This SoC integrates the RVMYTH core (a RISC-V CPU), an 8x Phase-Locked Loop (PLL) for clock management, and a 10-bit Digital-to-Analog Converter (DAC) for analog signal generation and communication.
+- VSDBabySoC is a small yet powerful RISCV-based SoC.
+- The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it.
+- VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices.
 
 ## What is BabySoC?
 - BabySoC is a lightweight, educational SoC that brings together three critical IPs in a unified design:
@@ -135,6 +135,13 @@ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 - Drag and drop the CLK, reset, OUT (DAC), and RV TO DAC [9:0] signals to their respective locations in the simulation tool
 
  ![Alt Text](images/1.png)
+
+In this picture we can see the following signals:
+  * **CLK:** This is the `input CLK` signal of the `RVMYTH` core. This signal comes from the PLL, originally.
+  * **reset:** This is the `input reset` signal of the `RVMYTH` core. This signal comes from an external source, originally.
+  * **OUT:** This is the `output OUT` signal of the `VSDBabySoC` module. This signal comes from the DAC (due to simulation restrictions it behaves like a digital signal which is incorrect), originally.
+  * **RV_TO_DAC[9:0]:** This is the 10-bit `output [9:0] OUT` port of the `RVMYTH` core. This port comes from the RVMYTH register #17, originally.
+  * **OUT:** This is a `real` datatype wire which can simulate analog values. It is the `output wire real OUT` signal of the `DAC` module. This signal comes from the DAC, originally.
 
 #### Viewing DAC output in analog mode
 
