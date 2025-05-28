@@ -1,6 +1,22 @@
 <details>
   <Summary><strong> Day 5 : Introduction to BabySoC and Pre-Synthesis Simulation</strong></summary>
-  
+
+## 📚 Contents
+- [Introduction](#introduction)
+- [What is BabySoC?](#what-is-babysoc)
+- [Problem Statement](#problem-statement)
+- [What is an SoC?](#what-is-an-soc)
+- [What is RVMYTH?](#what-is-rvmyth)
+- [What is a PLL?](#what-is-a-pll)
+- [What is a DAC?](#what-is-a-dac)
+- [Project Directory Structure](#project-directory-structure)
+- [Setup the project directory](#setup-the-project-directory)
+- [TLV to Verilog Conversion for RVMYTH](#tlv-to-verilog-conversion-for-rvmyth)
+- [Simulation](#simulation)
+  - [Pre-Synthesis Simulation](#pre-synthesis-simulation)
+  - [Viewing Waveform in GTKWave](#viewing-waveform-in-gtkwave)
+  - [Viewing DAC output in analog mode](#viewing-dac-output-in-analog-mode)
+
 # Introduction
 - VSDBabySoC is a small yet powerful RISCV-based SoC.
 - The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it.
