@@ -5,7 +5,7 @@
   
 #### All the instructions for installation of required tools can be found here:
 
-## CONTENTS
+## 📚 Contents
 1. [System Check](#-system-check)
 2. [Tool Check](#-tool-check)
 3. [Tool Versions](#-tool-versions)
