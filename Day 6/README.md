@@ -1,6 +1,13 @@
 <details>
   <Summary><strong> Day 6 : VSDBabySoC Post-Synthesis Simulation</strong></summary>
 
+## 📚 Contents
+- [Introduction](#introduction)
+- [Synthesis using Yosys](#synthesis-using-yosys)
+- [Post-Synthesis Simulation](#post-synthesis-simulation)
+- [Comparing Pre-Synthesis and Post-Synthesis Output](#comparing-pre-synthesis-and-post-synthesis-output)
+
+
 ## Introduction
 - Post-synthesis simulation is an essential step in the digital design flow where we verify the functionality and timing of the design after synthesis. While pre-synthesis simulation checks the RTL code for logical correctness, post-synthesis simulation ensures that the synthesized gate-level netlist still behaves as intended.
 
@@ -262,6 +269,7 @@ cd output/post_synth_sim/
 gtkwave post_synth_sim.vcd
 ```
 ![Alt Text](images/19_post_synth_sim_output.png)
+
 ### Comparing Pre-Synthesis and Post-Synthesis Output
 #### Pre-Synthesis Simulation Waveform
 ![Alt Text](images/2.png)
