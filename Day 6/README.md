@@ -193,10 +193,68 @@ yosys> write_verilog -noattr ~/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.
 
 ## Post-Synthesis Simulation
 #### ✅ Step 1: Compile the Testbench
-#### ✅ Step 2: Navigate to the Post-Synthesis Simulation Output Directory
-#### ✅ Step 3: Run the Simulation
-#### ✅ Step 4: View the Waveforms in GTKWave
+- Before running the iverilog command, copy the necessary standard cell and primitive models: These files must be present in the same directory as the testbench (src/module) to resolve all module references during compilation.
+  ```bash
+  cd ~/VLSI/VSDBabySoC/src/module
+  cp -r ~/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v .
+  cp -r ~/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v .
+  ```
 
+-Run the following `iverilog` command to compile the testbench:
+  ```bash
+  cd ~/VLSI/VSDBabySoC/
+  iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
+  ```
+![Alt Text](images/17_compile_tb.png)
+##### Note:
+You may encounter following errors:
+  ###### Error 1:
+  ```bash
+  sdudigani@sdudigani-VirtualBox:~/VLSI/VSDBabySoC$ iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
+/home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v:10: Include file vsdbabysoc.synth.v not found
+No top level modules, and no -s option.
+  ```
+
+![Alt Text](images/error_1_include_file_vsdbabusoc_synth_not_found.png)
+
+  <strong> To resolve this error copy the vsdbabysoc.synth.v from output/post_synth_sim directory to src/module directory</strong> 
+  
+![Alt Text](images/error_1_sol.png)
+  ###### Error 2:
+    ```bash
+    sdudigani@sdudigani-VirtualBox:~/VLSI/VSDBabySoC$ iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
+    /home/sdudigani/VLSI/VSDBabySoC/src/module/sky130_fd_sc_hd.v:74452: syntax error
+    I give up.
+    ```
+![Alt Text](images/error_2_i_give_up.png)
+
+  <strong> To resolve this: Update the syntax in the file sky130_fd_sc_hd.v at or around line 74452.</strong>
+  <strong> As shown in the images below change:</strong>
+  ```bash
+  `endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
+  ```
+![Alt Text](images/16_sky130_fd_sc_hd_dot_v.png)
+
+  <strong> To:</strong>
+  ```bash
+  `endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
+  ```
+![Alt Text](images/error_2_sol.png)
+
+#### ✅ Step 2: Navigate to the Post-Synthesis Simulation Output Directory
+```bash
+cd output/post_synth_sim/
+```
+#### ✅ Step 3: Run the Simulation
+```bash
+./post_synth_sim.out
+```
+![Alt Text](images/18_run_simulation.png)
+#### ✅ Step 4: View the Waveforms in GTKWave
+```bash
+gtkwave post_synth_sim.vcd
+```
+![Alt Text](images/19_post_synth_sim_output.png)
 ### Comparing Pre-Synthesis and Post-Synthesis Output
 
 </details>
