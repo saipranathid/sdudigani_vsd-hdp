@@ -9,16 +9,25 @@
 
 
 ## Introduction
-- Post-synthesis simulation is an essential step in the digital design flow where we verify the functionality and timing of the design after synthesis. While pre-synthesis simulation checks the RTL code for logical correctness, post-synthesis simulation ensures that the synthesized gate-level netlist still behaves as intended.
+Post-synthesis simulation is a critical step in the digital design flow. While pre-synthesis simulation verifies the design logic at the RTL level, post-synthesis simulation ensures that the synthesized gate-level netlist continues to exhibit the correct behavior — now with realistic delays and mapped cells.
 
-- In this stage, the RTL is already transformed into a netlist composed of logic gates mapped to a specific technology library. Simulating this netlist helps identify:
-  - Functional consistency: Confirms that synthesis has not altered the design's intended behavior.
-  - Timing characteristics: Includes realistic gate delays to check for potential timing issues.
-  - Synthesis-induced issues: Detects problems like glitches, race conditions, or unintended latches that might not appear in RTL simulation.
+### 🔍 Why Pre-Synthesis and Post-Synthesis?
+#### Pre-Synthesis Simulation:
 
-- For the VSDBabySoC design, we perform synthesis using Yosys to generate the gate-level netlist, and then simulate this netlist using a same testbench. The goal is to compare the post-synthesis simulation output with the pre-synthesis results. If both match, it validates that the design's logic and functionality are preserved through the synthesis process.
+- Focuses solely on verifying functionality based on the RTL code.
+- Operates in a zero-delay environment; all events occur precisely on clock edges.
+- Ideal for checking control/data logic correctness without concern for physical constraints.
 
-- This step is critical for catching low-level issues early and ensuring the design is ready for downstream physical implementation.
+#### Post-Synthesis Simulation (GLS - Gate-Level Simulation):
+
+- Uses the synthesized gate-level netlist, incorporating technology-mapped standard cells.
+- Captures functional behavior + timing delays, modeling more realistic hardware operation.
+- Helps detect:
+  - Timing issues like setup/hold violations.
+  - Functional mismatches caused by synthesis artifacts (e.g., unintended latches).
+  - Dynamic behaviors not visible through static analysis.
+
+For the VSDBabySoC project, synthesis was performed using Yosys to generate the gate-level netlist. This netlist was then simulated using the same testbench as in RTL simulation. The key goal was to compare waveform outputs from both stages and validate that functionality remains consistent. This validation step is essential to ensure that no logic is broken during synthesis and that the design is ready for physical implementation stages like place and route.
 
 ## Synthesis using Yosys
 
