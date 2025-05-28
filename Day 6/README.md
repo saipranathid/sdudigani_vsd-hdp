@@ -52,17 +52,21 @@ drwxrwxr-x  4 sdudigani sdudigani 4.0K May 27 11:45 output
   
 - Read the main vsdbabysoc.v RTL file into the Yosys environment.
   ```bash
-  read_verilog src/module/vsdbabysoc.v
+   yosys> read_verilog src/module/vsdbabysoc.v
   ```
 
 ![Alt Text](images/2_read_verilog.png)
 
 - Read the rvmyth.v file with the include path using -I option.
-
+  ```bash
+  yosys> read_verilog -I ~/VLSI/VSDBabySoC/src/include/ ~/VLSI/VSDBabySoC/src/module/rvmyth.v
+  ```
 ![Alt Text](images/3_read_verilog_rvmyth.png)
 
 - Read the clk_gate.v file with the include path using -I option.
-
+  ```bash
+  yosys> read_verilog -I ~/VLSI/VSDBabySoC/src/include/ ~/VLSI/VSDBabySoC/src/module/clk_gate.v
+  ```
 ![Alt Text](images/4_read_verilog_clk_gate.png)
 
 #### ✅ Step 2: Load the Liberty Files for Synthesis
