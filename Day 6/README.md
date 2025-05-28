@@ -263,5 +263,12 @@ gtkwave post_synth_sim.vcd
 ```
 ![Alt Text](images/19_post_synth_sim_output.png)
 ### Comparing Pre-Synthesis and Post-Synthesis Output
+#### Pre-Synthesis Simulation Waveform
+![Alt Text](images/2.png)
+
+#### Post-Synthesis Simulation Waveform
+![Alt Text](images/19_post_synth_sim_output.png)
+
+<strong> Observation:</strong> The outputs of the post-synthesis simulation matched the pre-synthesis simulation waveforms, confirming that the synthesized design maintained the intended functionality of the RTL code.
 
 </details>
