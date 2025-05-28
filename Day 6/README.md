@@ -200,7 +200,7 @@ yosys> write_verilog -noattr ~/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.
   cp -r ~/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v .
   ```
 
--Run the following `iverilog` command to compile the testbench:
+- Run the following `iverilog` command to compile the testbench:
   ```bash
   cd ~/VLSI/VSDBabySoC/
   iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
@@ -208,37 +208,44 @@ yosys> write_verilog -noattr ~/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.
 ![Alt Text](images/17_compile_tb.png)
 ##### Note:
 You may encounter following errors:
-  ###### Error 1:
-  ```bash
-  sdudigani@sdudigani-VirtualBox:~/VLSI/VSDBabySoC$ iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
+
+<strong> 🔴 Error 1:</strong>
+
+```bash
+sdudigani@sdudigani-VirtualBox:~/VLSI/VSDBabySoC$ iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
 /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v:10: Include file vsdbabysoc.synth.v not found
 No top level modules, and no -s option.
-  ```
+```
 
 ![Alt Text](images/error_1_include_file_vsdbabusoc_synth_not_found.png)
 
-  <strong> To resolve this error copy the vsdbabysoc.synth.v from output/post_synth_sim directory to src/module directory</strong> 
+<strong> 🟢 To resolve this error copy the vsdbabysoc.synth.v from output/post_synth_sim directory to src/module directory</strong> 
   
 ![Alt Text](images/error_1_sol.png)
-  ###### Error 2:
-    ```bash
-    sdudigani@sdudigani-VirtualBox:~/VLSI/VSDBabySoC$ iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
-    /home/sdudigani/VLSI/VSDBabySoC/src/module/sky130_fd_sc_hd.v:74452: syntax error
-    I give up.
-    ```
+
+<strong> 🔴 Error 2:</strong>
+
+```bash
+sdudigani@sdudigani-VirtualBox:~/VLSI/VSDBabySoC$ iverilog -o /home/sdudigani/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/sdudigani/VLSI/VSDBabySoC/src/include -I /home/sdudigani/VLSI/VSDBabySoC/src/module /home/sdudigani/VLSI/VSDBabySoC/src/module/testbench.v
+/home/sdudigani/VLSI/VSDBabySoC/src/module/sky130_fd_sc_hd.v:74452: syntax error
+I give up.
+```
+
 ![Alt Text](images/error_2_i_give_up.png)
 
-  <strong> To resolve this: Update the syntax in the file sky130_fd_sc_hd.v at or around line 74452.</strong>
-  <strong> As shown in the images below change:</strong>
-  ```bash
-  `endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
-  ```
+<strong> 🟢 To resolve this: Update the syntax in the file sky130_fd_sc_hd.v at or around line 74452.</strong>
+<strong> As shown in the images below change:</strong>
+```bash
+`endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
+```
+
 ![Alt Text](images/16_sky130_fd_sc_hd_dot_v.png)
 
-  <strong> To:</strong>
-  ```bash
-  `endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
-  ```
+<strong> To:</strong>
+```bash
+`endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V
+```
+
 ![Alt Text](images/error_2_sol.png)
 
 #### ✅ Step 2: Navigate to the Post-Synthesis Simulation Output Directory
