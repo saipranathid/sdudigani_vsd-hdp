@@ -1,7 +1,7 @@
 <details>
   <Summary><strong> Day 1: Introduction to Verilog RTL design and Synthesis</strong></summary>
 
-## Contents
+## 📚 Contents
 1. [Introduction to open-source simulator iverilog](#1-introduction-to-open-source-simulator-iverilog)
 2. [Labs Using iverilog and gtkwave](#2-labs-using-iverilog-and-gtkwave)
 3. [Introduction to Yosys and Logic Synthesis](#3-introduction-to-yosys-and-logic-synthesis)
