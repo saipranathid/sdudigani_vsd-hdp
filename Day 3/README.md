@@ -1,7 +1,7 @@
 <details>
   <Summary><strong> Day 3 : Combinational and Sequential optmizations</strong></summary>
 
-## Contents
+## 📚 Contents
 1. [Introduction to Optimisations](#1-introduction-to-optimisations)
 2. [Combinational Logic Optimisation Lab 06](#2-combinational-logic-optimisation-lab-06)
 3. [Sequential Logic Optimisation Lab 07](#3-sequential-logic-optimisation-lab-07)
