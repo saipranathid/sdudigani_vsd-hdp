@@ -124,3 +124,46 @@ Here,
 
 Once inside, you’ll see the sta> prompt — you're ready to use OpenSTA.
 
+## Timing Analysis using In line Commands
+- Basic timing analysis using in-line commands within OpenSTA shell (%).
+
+```bash
+# Load the Liberty timing library (standard cell delays, arcs, etc.)
+read_liberty /OpenSTA/examples/nangate45_slow.lib.gz
+
+# Read the synthesized gate-level Verilog netlist
+read_verilog /OpenSTA/examples/example1.v
+
+# Set the top-level module of the design (as defined in the Verilog)
+link_design top
+
+# Create a clock named 'clk' with a 10 ns period, connected to clk1, clk2, and clk3
+create_clock -name clk -period 10 {clk1 clk2 clk3}
+
+# Define input delays of 0 ns for inputs in1 and in2, relative to the clk
+set_input_delay -clock clk 0 {in1 in2}
+
+# Report any timing violations (setup/hold) across the design
+report_checks
+```
+
+![Alt Text](images/example1_slow_lib_report.png)
+
+- The report shows analysis for a <strong> maximum delay path (i.e setup check)</strong> from register `r2` to `r3` on the clock `clk`.
+- The default behavior of the `report_checks` in OpenSTA is to report maximum delay paths, unless explicitly asked for minumum (hold) analysis.
+- The path starts at the <strong> Q output of reg r2</strong> (a DFF) and the path ends at the <strong> D input of reg r3</strong> (another DFF).
+
+##### Delay Breakdown
+###### Arrival Time
+Delay    Time     Description
+
+###### Required Time
+
+
+
+![Alt Text](images/example1_design.png)
+
+
+
+
+
