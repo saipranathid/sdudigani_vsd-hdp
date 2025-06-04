@@ -3,9 +3,14 @@
 
 ## 📚 Contents
 
-## Introduction
+## Introduction to STA
+Static Timing Analysis (STA) is a crucial method in digital design used to verify the timing performance of a circuit without requiring simulation or input stimulus. It checks all possible paths in a design for timing violations, ensuring that signals propagate within acceptable time limits and meet the design’s setup and hold requirements.
 
-## OpenSTA Installation
+Unlike dynamic timing analysis, which simulates input vectors and observes the behavior over time, STA is static, it does not depend on input values or functional simulation. This makes it extremely fast and exhaustive, making it the industry standard for sign-off timing verification in ASIC and SoC flows.
+
+## OpenSTA and Installation
+
+OpenSTA is an open-source gate-level Static Timing Analysis tool developed by Parallax Software. 
 
 - You can install OpenSTA using two different methods:
   - Native Installation with Local CUDD: This method involves installing OpenSTA directly on your system using a manually built CUDD.
