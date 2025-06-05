@@ -128,7 +128,7 @@ Here,
 
 ![Alt Text](images/s6.png)
 
-**Once inside, you’ll see the sta> prompt — you're ready to use OpenSTA.**
+**Once inside, you’ll see the % prompt — you're ready to use OpenSTA.**
 
 ## Timing Analysis using In line Commands
 - Basic timing analysis using in-line commands within OpenSTA shell (%).
@@ -344,23 +344,23 @@ sdudigani@sdudigani-VirtualBox:~/OpenSTA$
 **TCL Script to run complete min/max timing checks on the SoC**
 ```bash
 # Load Liberty Libraries (standard cell + IPs)
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min /data/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max /data/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
+read_liberty -min /data/OpenSTA/examples/timing_libs/avsdpll.lib
+read_liberty -max /data/OpenSTA/examples/timing_libs/avsdpll.lib
 
-read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
-read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -min /data/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -max /data/OpenSTA/examples/timing_libs/avsddac.lib
 
 # Read Synthesized Netlist
-read_verilog /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
+read_verilog /data/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
 
 # Link the Top-Level Design
 link_design vsdbabysoc
 
 # Apply SDC Constraints
-read_sdc /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
+read_sdc /data/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
 
 # Generate Timing Report
 report_checks
@@ -462,7 +462,7 @@ Path Type: max
   - ff_LowTemp_HighVolt
   - ff_HighTemp_HighVolt (Fastest corners)
 
-- The following TCL script can be executed to perform STA for the available PVT corners using the Sky130 timing libraries.
+- The following TCL script <strong> (```pvt_corner_analysis.tcl```)</strong> can be executed to perform STA for the available PVT corners using the Sky130 timing libraries.
 ```bash
 # Load IP-specific Liberty files once
 read_liberty /data/OpenSTA/examples/timing_libs/avsdpll.lib
@@ -490,19 +490,20 @@ for {set i 1} {$i <= [array size list_of_lib_files]} {incr i} {
     read_sdc /data/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
 
     report_checks -path_delay min_max -fields {nets cap slew input_pins fanout} -digits {4} \
-        > /data/OpenSTA/examples/BabySoC/STA_OUTPUT/min_max_$list_of_lib_files($i).txt
+        > /data/OpenSTA/examples/BabySoC/sta_output/min_max_$list_of_lib_files($i).txt
 
-    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_max_slack.txt
-    report_worst_slack -max -digits {4} >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_max_slack.txt
+    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/sta_output/sta_worst_max_slack.txt
+    report_worst_slack -max -digits {4} >> /data/OpenSTA/examples/BabySoC/sta_output/sta_worst_max_slack.txt
 
-    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_min_slack.txt
-    report_worst_slack -min -digits {4} >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_worst_min_slack.txt
+    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/sta_output/sta_worst_min_slack.txt
+    report_worst_slack -min -digits {4} >> /data/OpenSTA/examples/BabySoC/sta_output/sta_worst_min_slack.txt
 
-    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_tns.txt
-    report_tns -digits {4} >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_tns.txt
+    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/sta_output/sta_tns.txt
+    report_tns -digits {4} >> /data/OpenSTA/examples/BabySoC/sta_output/sta_tns.txt
 
-    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_wns.txt
-    report_wns -digits {4} >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/sta_wns.txt
+    exec echo "$list_of_lib_files($i)" >> /data/OpenSTA/examples/BabySoC/sta_output/sta_wns.txt
+    report_wns -digits {4} >> /data/OpenSTA/examples/BabySoC/sta_output/sta_wns.txt
+}
 ```
 
 - The timing libraries can be downloaded from: https://github.com/efabless/skywater-pdk-libs-sky130_fd_sc_hd/tree/master/timing
@@ -539,8 +540,21 @@ total 329M
 -rw-rw-r-- 1 sdudigani sdudigani  13M Jun  5 12:50 sky130_fd_sc_hd__tt_100C_1v80.lib
 ```
 
+- Run the ```pvt_corner_analysis.tcl``` script to generate the output reports.
+```bash
+docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/pvt_corner_analysis.tcl
+```
+
+- The script executed succesfully and reports are generated.
+- 📂 All reports were saved in the /data/OpenSTA/examples/BabySoC/sta_output/ directory for post-processing and summary visualization.
+![Alt Text](images/sta_reports_for_13pvts_generated.png)
+
+#### Timing Summary Across PVT Corners (Post-Synthesis STA Results)
+The table below summarizes the sta results for the vsdbabysoc synthesized design across various 13 PVT (Process-Voltage-Temperature) corners using the Sky130 standard cell libraries. These values were recorded from the generated reports in sta_output/ after executing custom Tcl script (```pvt_corner_analysis.tcl```) that iterates through multiple Liberty files.
 
 ![Alt Text](images/table.png)
+
+#### Timing Plots Across PVT Corners
 
 ![Alt Text](images/worst_hold_slack.jpg)
 
