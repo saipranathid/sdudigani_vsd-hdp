@@ -540,6 +540,15 @@ total 329M
 ```
 
 
+![Alt Text](images/table.png)
+
+![Alt Text](images/worst_hold_slack.jpg)
+
+![Alt Text](images/worst_setup_slack.jpg)
+
+![Alt Text](images/wns.jpg)
+
+![Alt Text](images/tns.jpg)
 
 
 
