@@ -173,7 +173,6 @@ endmodule // top
 ##### Netlist diagram for example1.v generated using yosys
 ![Alt Text](images/example1_design.png)
 
-
 ##### Delay Breakdown
 
 📌 Arrival Time
@@ -236,6 +235,65 @@ report_checks -path_delay min_max
 - to execute the above tcl script in OpenSTA shell, run the follwoing command in terminal
 ```bash
 docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/min_max_delays1.tcl
+```
+
+##### Generated Timing Report
+```bash
+Startpoint: in1 (input port clocked by clk)
+Endpoint: r1 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 v input external delay
+   0.00    0.00 v in1 (in)
+   0.00    0.00 v r1/D (DFF_X1)
+           0.00   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ r1/CK (DFF_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.00   data arrival time
+---------------------------------------------------------
+           0.00   slack (VIOLATED)
+
+
+Startpoint: r2 (rising edge-triggered flip-flop clocked by clk)
+Endpoint: r3 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ r2/CK (DFF_X1)
+   0.23    0.23 v r2/Q (DFF_X1)
+   0.08    0.31 v u1/Z (BUF_X1)
+   0.10    0.41 v u2/ZN (AND2_X1)
+   0.00    0.41 v r3/D (DFF_X1)
+           0.41   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ r3/CK (DFF_X1)
+  -0.16    9.84   library setup time
+           9.84   data required time
+---------------------------------------------------------
+           9.84   data required time
+          -0.41   data arrival time
+---------------------------------------------------------
+           9.43   slack (MET)
+
 ```
 ![Alt Text](images/tcl_o1.png)
 ![Alt Text](images/tcl_o2.png)
