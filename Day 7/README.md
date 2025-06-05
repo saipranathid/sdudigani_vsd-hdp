@@ -124,7 +124,7 @@ Here,
 
 Once inside, you’ll see the sta> prompt — you're ready to use OpenSTA.
 
-## Timing Analysis using In line Commands
+### Timing Analysis using In line Commands
 - Basic timing analysis using in-line commands within OpenSTA shell (%).
 
 ```bash
@@ -154,7 +154,7 @@ report_checks
 - To report both setup (max) and hold (min) paths we can use `report_checks -path_delay min_max` 
 - Here, the path starts at the <strong> Q output of reg r2</strong> (a DFF) and the path ends at the <strong> D input of reg r3</strong> (another DFF).
 
-###### Analyzing report output:
+##### Analyzing report output:
 the netlist we used for the analysis here is <strong> `example1.v`</strong>
 ```bash
 module top (in1, in2, clk1, clk2, clk3, out);
@@ -170,11 +170,11 @@ module top (in1, in2, clk1, clk2, clk3, out);
 endmodule // top
 ```
 
-###### Netlist diagram for example1.v generated using yosys
+##### Netlist diagram for example1.v generated using yosys
 ![Alt Text](images/example1_design.png)
 
 
-###### Delay Breakdown
+##### Delay Breakdown
 
 📌 Arrival Time
 | **Delay (ns)** | **Time (ns)** | **Description**                          |
@@ -203,6 +203,39 @@ Slack = Data required time (9.84ns) - Data arrival time (0.41ns)
 Slack = 9.43ns (MET)
 
 - Since the slack is positive, setup timing is met. 
+
+
+### Timing Analysis using TCL file
+
+**min_max_delays1.tcl**
+```bash
+# min/max delay calc example
+read_liberty -max /data/OpenSTA/examples/nangate45_slow.lib.gz
+read_liberty -min /data/OpenSTA/examples/nangate45_fast.lib.gz
+read_verilog /data/OpenSTA/examples/example1.v
+link_design top
+create_clock -name clk -period 10 {clk1 clk2 clk3}
+set_input_delay -clock clk 0 {in1 in2}
+report_checks -path_delay min_max
+```
+![Alt Text](images/min_max_delays1_tcl.png)
+
+- to execute the above tcl script in OpenSTA shell, run the follwoing command in terminal
+```bash
+docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/min_max_delays1.tcl
+```
+![Alt Text](images/tcl_o1.png)
+![Alt Text](images/tcl_o2.png)
+
+### SPEF-Based Timing Analysis
+
+
+
+
+
+
+
+
 
 
 
