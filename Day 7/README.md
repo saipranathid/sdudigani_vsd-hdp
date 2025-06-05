@@ -3,7 +3,7 @@
 
 ## 📚 Contents
 - [Introduction to STA](#introduction-to-sta)
-- [OpenSTA and Installation](#opensta-and-installation)
+- [OpenSTA Tool Installation](#opensta-tool-installation)
 - [Timing Analysis using In-line Commands](#timing-analysis-using-in-line-commands)
 - [Timing Analysis using TCL File](#timing-analysis-using-tcl-file)
 - [SPEF-Based Timing Analysis](#spef-based-timing-analysis)
@@ -14,7 +14,7 @@ Static Timing Analysis (STA) is a crucial method in digital design used to verif
 
 Unlike dynamic timing analysis, which simulates input vectors and observes the behavior over time, STA is static, it does not depend on input values or functional simulation. This makes it extremely fast and exhaustive, making it the industry standard for sign-off timing verification in ASIC and SoC flows.
 
-## OpenSTA and Installation
+## OpenSTA Tool Installation
 
 OpenSTA is an open-source gate-level Static Timing Analysis tool developed by Parallax Software. 
 
