@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 6 : Timing Graphs using OpenSTA</strong></summary>
+  <Summary><strong> Day 7 : Timing Graphs using OpenSTA</strong></summary>
 
 ## 📚 Contents
 - [Introduction to STA](#introduction-to-sta)
