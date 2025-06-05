@@ -150,18 +150,64 @@ report_checks
 ![Alt Text](images/example1_slow_lib_report.png)
 
 - The report shows analysis for a <strong> maximum delay path (i.e setup check)</strong> from register `r2` to `r3` on the clock `clk`.
-- The default behavior of the `report_checks` in OpenSTA is to report maximum delay paths, unless explicitly asked for minumum (hold) analysis.
-- The path starts at the <strong> Q output of reg r2</strong> (a DFF) and the path ends at the <strong> D input of reg r3</strong> (another DFF).
+- The default behavior of the `report_checks` in OpenSTA is to report maximum delay paths (`report_checks -path_delay max`) , unless explicitly asked for minumum (hold) analysis (i.e `report_checks -path_delay min`).
+- To report both setup (max) and hold (min) paths we can use `report_checks -path_delay min_max` 
+- Here, the path starts at the <strong> Q output of reg r2</strong> (a DFF) and the path ends at the <strong> D input of reg r3</strong> (another DFF).
 
-##### Delay Breakdown
-###### Arrival Time
-Delay    Time     Description
+###### Analyzing report output:
+the netlist we used for the analysis here is <strong> `example1.v`</strong>
+```bash
+module top (in1, in2, clk1, clk2, clk3, out);
+  input in1, in2, clk1, clk2, clk3;
+  output out;
+  wire r1q, r2q, u1z, u2z;
 
-###### Required Time
+  DFF_X1 r1 (.D(in1), .CK(clk1), .Q(r1q));
+  DFF_X1 r2 (.D(in2), .CK(clk2), .Q(r2q));
+  BUF_X1 u1 (.A(r2q), .Z(u1z));
+  AND2_X1 u2 (.A1(r1q), .A2(u1z), .ZN(u2z));
+  DFF_X1 r3 (.D(u2z), .CK(clk3), .Q(out));
+endmodule // top
+```
 
-
-
+###### Netlist diagram for example1.v generated using yosys
 ![Alt Text](images/example1_design.png)
+
+
+Delay Breakdown
+📌 Arrival Time
+| **Delay (ns)** | **Time (ns)** | **Description**                          |
+|----------------|---------------|------------------------------------------|
+| 0.00           | 0.00          | Clock clk (rise edge) → start           |
+| 0.00           | 0.00          | Clock network delay (ideal)             |
+| 0.23           | 0.23          | r2/Q → r2/Q (output of DFF r2)          |
+| 0.08           | 0.31          | Through u1 (BUF_X1)                      |
+| 0.10           | 0.41          | Through u2 (AND2_X1)                     |
+| 0.00           | 0.41          | r3/D (input of DFF r3) → data arrival   |
+
+so, the arrival time = 0.41ns
+
+📌 Required Time
+| **Delay (ns)** | **Time (ns)** | **Description**                |
+|----------------|---------------|--------------------------------|
+| 10.00          | 10.00         | Next rising edge of clk        |
+| 10.00          | 10.00         | Ideal clock delay              |
+| 10.00          | 10.00         | r3/CK clock edge               |
+| -0.16          | 9.84          | Setup time requirement         |
+
+so, the data required time = 9.84ns
+
+✅ Result
+Slack = Data required time (9.84ns) - Data arrival time (0.41ns) 
+Slack = 9.43ns (MET)
+
+- Since the slack is positive, setup timing is met ✅ 
+
+
+
+
+
+
 
 
 
