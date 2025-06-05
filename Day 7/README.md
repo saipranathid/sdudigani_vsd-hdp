@@ -174,7 +174,8 @@ endmodule // top
 ![Alt Text](images/example1_design.png)
 
 
-Delay Breakdown
+###### Delay Breakdown
+
 📌 Arrival Time
 | **Delay (ns)** | **Time (ns)** | **Description**                          |
 |----------------|---------------|------------------------------------------|
@@ -201,7 +202,7 @@ so, the data required time = 9.84ns
 Slack = Data required time (9.84ns) - Data arrival time (0.41ns) 
 Slack = 9.43ns (MET)
 
-- Since the slack is positive, setup timing is met ✅ 
+- Since the slack is positive, setup timing is met. 
 
 
 
