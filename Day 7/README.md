@@ -307,6 +307,41 @@ Path Type: max
 ## SPEF-Based Timing Analysis
 
 ## VSDBabySoC Basic timing Analysis
+- This section documents the process of performing **static timing analysis (STA)** on the VSDBabySoC design using OpenSTA.
+- It includes preparing Liberty libraries, netlist, and constraints, followed by executing min/max delay checks.
+
+**Directory Preparation**
+```bash
+# Create directory to store Liberty timing libraries
+mkdir -p OpenSTA/examples/timing_libs/
+
+#Create directory to store synthesized netlist and SDC constraint files
+mkdir -p OpenSTA/examples/BabySoC/
+
+# Copy all Liberty (.lib) files (standard cell + IPs) to timing_libs folder
+cp /home/sdudigani/VLSI/VSDBabySoC/src/lib/* /home/sdudigani/OpenSTA/examples/timing_libs/
+
+# Copy SDC file containing clock and I/O timing constraints
+cp /home/sdudigani/VLSI/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc /home/sdudigani/OpenSTA/examples/BabySoC/
+
+# Copy synthesized gate-level Verilog netlist of VSDBabySoC
+cp /home/sdudigani/VLSI/VSDBabySoC/src/module/vsdbabysoc.synth.v /home/sdudigani/OpenSTA/examples/BabySoC/
+
+# (Optional) Copy GCD SDC file if used for testing or comparison
+cp examples/gcd_sky130hd.sdc /home/sdudigani/OpenSTA/examples/BabySoC/
+```
+
+```bash
+sdudigani@sdudigani-VirtualBox:~/OpenSTA$ pwd
+/home/sdudigani/OpenSTA
+sdudigani@sdudigani-VirtualBox:~/OpenSTA$ ls examples/BabySoC/
+gcd_sky130hd.sdc  vsdbabysoc_synthesis.sdc  vsdbabysoc.synth.v
+sdudigani@sdudigani-VirtualBox:~/OpenSTA$ ls examples/timing_libs/
+avsddac.lib  avsdpll.lib  sky130_fd_sc_hd__tt_025C_1v80.lib
+sdudigani@sdudigani-VirtualBox:~/OpenSTA$ 
+```
+
+## VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)
 
 
 
