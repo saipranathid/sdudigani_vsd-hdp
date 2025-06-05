@@ -12,6 +12,7 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 - [Day 4: GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day%204/README.md)
 - [Day 5: Introduction to BabySoC Modeling and Pre-Synthesis Simulation](Day%205/README.md)
 - [Day 6: VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)
+- [Day 7: Timing Graphs using OpenSTA](Day%207/README.md)
 
 ## 🛠️ Tools & Technologies
 
