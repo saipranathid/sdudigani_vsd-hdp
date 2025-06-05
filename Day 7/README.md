@@ -2,6 +2,12 @@
   <Summary><strong> Day 6 : Timing Graphs using OpenSTA</strong></summary>
 
 ## 📚 Contents
+- [Introduction to STA](#introduction-to-sta)
+- [OpenSTA and Installation](#opensta-and-installation)
+- [Timing Analysis using In-line Commands](#timing-analysis-using-in-line-commands)
+- [Timing Analysis using TCL File](#timing-analysis-using-tcl-file)
+- [SPEF-Based Timing Analysis](#spef-based-timing-analysis)
+- [VSDBabySoC Basic Timing Analysis](#vsdbabysoc-basic-timing-analysis)
 
 ## Introduction to STA
 Static Timing Analysis (STA) is a crucial method in digital design used to verify the timing performance of a circuit without requiring simulation or input stimulus. It checks all possible paths in a design for timing violations, ensuring that signals propagate within acceptable time limits and meet the design’s setup and hold requirements.
@@ -112,7 +118,7 @@ sudo docker build --file Dockerfile.ubuntu22.04 --tag opensta .
 ```
 - This will take a few minutes and install all dependencies (including CUDD) inside the Docker image.
 
-#### Step 6: Run OpenSTA from Docker
+##### Step 6: Run OpenSTA from Docker
 ```bash
 sudo docker run -it -v $HOME:/data opensta
 ```
@@ -122,9 +128,9 @@ Here,
 
 ![Alt Text](images/s6.png)
 
-Once inside, you’ll see the sta> prompt — you're ready to use OpenSTA.
+**Once inside, you’ll see the sta> prompt — you're ready to use OpenSTA.**
 
-### Timing Analysis using In line Commands
+## Timing Analysis using In line Commands
 - Basic timing analysis using in-line commands within OpenSTA shell (%).
 
 ```bash
@@ -154,7 +160,7 @@ report_checks
 - To report both setup (max) and hold (min) paths we can use `report_checks -path_delay min_max` 
 - Here, the path starts at the <strong> Q output of reg r2</strong> (a DFF) and the path ends at the <strong> D input of reg r3</strong> (another DFF).
 
-##### Analyzing report output:
+#### Analyzing report output:
 the netlist we used for the analysis here is <strong> `example1.v`</strong>
 ```bash
 module top (in1, in2, clk1, clk2, clk3, out);
@@ -204,7 +210,7 @@ Slack = 9.43ns (MET)
 - Since the slack is positive, setup timing is met. 
 
 
-### Timing Analysis using TCL file
+## Timing Analysis using TCL file
 
 **min_max_delays1.tcl**
 ```bash
@@ -298,7 +304,10 @@ Path Type: max
 ![Alt Text](images/tcl_o1.png)
 ![Alt Text](images/tcl_o2.png)
 
-### SPEF-Based Timing Analysis
+## SPEF-Based Timing Analysis
+
+## VSDBabySoC Basic timing Analysis
+
 
 
 
