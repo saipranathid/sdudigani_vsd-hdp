@@ -220,6 +220,19 @@ report_checks -path_delay min_max
 ```
 ![Alt Text](images/min_max_delays1_tcl.png)
 
+#### 📝 TCL Script Breakdown
+
+| **Command** | **Description** |
+|-------------|-----------------|
+| `read_liberty -max /data/OpenSTA/examples/nangate45_slow.lib.gz` | Loads the **slow timing corner** (used for setup checks / max delay analysis). |
+| `read_liberty -min /data/OpenSTA/examples/nangate45_fast.lib.gz` | Loads the **fast timing corner** (used for hold checks / min delay analysis). |
+| `read_verilog /data/OpenSTA/examples/example1.v` | Reads in the **gate-level netlist** for your synthesized design. |
+| `link_design top` | Specifies the **top module** of your design and connects it to the loaded libraries. |
+| `create_clock -name clk -period 10 {clk1 clk2 clk3}` | Creates a clock named `clk` with a **10 ns period**, applied to nets `clk1`, `clk2`, and `clk3`. |
+| `set_input_delay -clock clk 0 {in1 in2}` | Sets an **input arrival delay of 0 ns** relative to `clk` for input ports `in1` and `in2` (helps avoid false hold violations). |
+| `report_checks -path_delay min_max` | Reports **both min (hold) and max (setup)** timing paths for verification. |
+
+
 - to execute the above tcl script in OpenSTA shell, run the follwoing command in terminal
 ```bash
 docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/min_max_delays1.tcl
