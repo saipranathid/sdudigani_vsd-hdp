@@ -341,6 +341,118 @@ avsddac.lib  avsdpll.lib  sky130_fd_sc_hd__tt_025C_1v80.lib
 sdudigani@sdudigani-VirtualBox:~/OpenSTA$ 
 ```
 
+**TCL Script to run complete min/max timing checks on the SoC**
+```bash
+# Load Liberty Libraries (standard cell + IPs)
+read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
+read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsdpll.lib
+
+read_liberty -min /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
+read_liberty -max /data/VLSI/VSDBabySoC/OpenSTA/examples/timing_libs/avsddac.lib
+
+# Read Synthesized Netlist
+read_verilog /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc.synth.v
+
+# Link the Top-Level Design
+link_design vsdbabysoc
+
+# Apply SDC Constraints
+read_sdc /data/VLSI/VSDBabySoC/OpenSTA/examples/BabySoC/vsdbabysoc_synthesis.sdc
+
+# Generate Timing Report
+report_checks
+```
+
+**save the above script as vsdbabysoc_min_max_delays.tcl within ~/OpenSTA/examples/BabySoC directory**
+
+![Alt Text](images/2_tcl_script.png)
+
+- **Now run the above script inside the Docker container with the following command**
+  ```bash
+  docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/min_max_delays.tcl
+  ```
+
+- **❌It reports the following error** 
+  ```bash
+  sdudigani@sdudigani-VirtualBox:~/OpenSTA$ sudo docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/min_max_delays.tcl
+  OpenSTA 2.7.0 0c16e145bb Copyright (c) 2025, Parallax Software, Inc.
+  License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+  
+  This is free software, and you are free to change and redistribute it
+  under certain conditions; type `show_copying' for details. 
+  This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+  Warning: /data/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
+  Warning: /data/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
+  Warning: /data/OpenSTA/examples/timing_libs/sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
+  Error: /data/OpenSTA/examples/timing_libs/avsdpll.lib line 54, syntax error
+  % exit
+  ```
+![Alt Text](images/3_syntax_error.png)
+
+- **✅To fix this syntax error:**
+  - open the file
+    ```bash
+    gvim ~/OpenSTA/examples/timing_libs/avsdpll.lib
+    ```
+  - Go to line 54 as mentioned in error message and replace any lines like
+      ```bash
+        //pin (GND#2) {
+        direction : input;
+        ...
+        //}
+      ```
+
+    to:
+      ```bash
+      /*
+      pin (GND#2) {
+      direction : input;
+      ...
+      }
+      */
+    ```
+  - Save and close the file.
+  - Rerun the tcl script
+    ```bash
+    sudo docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/min_max_delays.tcl
+    ```
+
+![Alt Text](images/4_fix.png)
+
+**Generated Timing Report**
+```bash
+Startpoint: _10446_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _10034_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _10446_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   4.13    4.13 ^ _10446_/Q (sky130_fd_sc_hd__dfxtp_1)
+   5.06    9.19 v _8121_/Y (sky130_fd_sc_hd__clkinv_1)
+   0.57    9.76 ^ _8684_/Y (sky130_fd_sc_hd__o211ai_1)
+   0.00    9.76 ^ _10034_/D (sky130_fd_sc_hd__dfxtp_1)
+           9.76   data arrival time
+
+  11.00   11.00   clock clk (rise edge)
+   0.00   11.00   clock network delay (ideal)
+   0.00   11.00   clock reconvergence pessimism
+          11.00 ^ _10034_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.14   10.86   library setup time
+          10.86   data required time
+---------------------------------------------------------
+          10.86   data required time
+          -9.76   data arrival time
+---------------------------------------------------------
+           1.11   slack (MET)
+```
+
 ## VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)
 
 
