@@ -86,6 +86,31 @@ Caused by the resistance and capacitance of interconnects (wires) between cells.
 
 Net delay becomes more dominant than cell delay in advanced technology nodes (<90nm).
 
+### Setup Checks 
+A setup check ensures that data arrives early enough at the input of a flip-flop before the active clock edge. If data arrives too late, it might not be captured correctly — this is called a setup violation.
+
+*Setup Time = Minimum time data must be stable before the clock edge.*
+
+```Setup Slack = Required Time − Arrival Time```
+
+⚠️ Negative setup slack → Setup violation → Risk of incorrect data storage.
+
+### Hold Checks
+A hold check ensures that data remains stable for a short duration after the clock edge. If the data changes too soon, it may cause a hold violation, resulting in data corruption or metastability.
+
+*Hold Time = Minimum time data must remain stable after the clock edge.*
+
+```Hold Slack = Arrival Time − Required Time```
+
+⚠️ Negative hold slack → Hold violation → Data may become unstable right after being latched.
+
+### Slack
+Slack is the timing margin available for the signal to arrive safely within the required time window. It is calculated as the difference between when data is required to arrive and when it actually arrives.
+
+- Positive Slack ✅: Timing is met, design is safe.
+- Zero Slack ⚠️: Timing is just barely met, no margin.
+- Negative Slack ❌: Timing violation exists.
+
 ## OpenSTA Tool Installation
 
 OpenSTA is an open-source gate-level Static Timing Analysis tool developed by Parallax Software. 
