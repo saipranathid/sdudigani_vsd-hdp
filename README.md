@@ -5,14 +5,14 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 
 ## 📘 Day-wise Progress
 
-- [Day 0: Tools Installation & Environment Setup](Day%200/README.md)
-- [Day 1: Introduction to Verilog RTL design and Synthesis](Day%201/README.md)
-- [Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day%202/README.md)
-- [Day 3: Combinational and Sequential optmizations](Day%203/README.md)
-- [Day 4: GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day%204/README.md)
-- [Day 5: Introduction to BabySoC Modeling and Pre-Synthesis Simulation](Day%205/README.md)
-- [Day 6: VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)
-- [Day 7: Timing Graphs using OpenSTA](Day%207/README.md)
+- [Tools Installation & Environment Setup](Day%200/README.md)
+- [Introduction to Verilog RTL design and Synthesis](Day%201/README.md)
+- [Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day%202/README.md)
+- [Combinational and Sequential optmizations](Day%203/README.md)
+- [GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day%204/README.md)
+- [Introduction to BabySoC Modeling and Pre-Synthesis Simulation](Day%205/README.md)
+- [VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)
+- [Timing Graphs using OpenSTA](Day%207/README.md)
 
 ## 🛠️ Tools & Technologies
 
