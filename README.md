@@ -3,7 +3,7 @@
 Welcome to my learning journey through the **VSD Hardware Design Program (VSD-HDP)**!  
 This repository documents my hands-on progress, key takeaways, and daily explorations in digital hardware design.
 
-## 📘 Day-wise Progress
+## 🔗 Learning Modules & Logs
 
 - [Tools Installation & Environment Setup](Day%200/README.md)
 - [Introduction to Verilog RTL design and Synthesis](Day%201/README.md)
@@ -17,9 +17,10 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 ## 🛠️ Tools & Technologies
 
 - Verilog HDL
-- Yosys (Open-Source Synthesis Tool)
-- GTKWave
-- OpenLANE (Digital ASIC Design Flow)
+- Yosys 
+- GTKWave 
+- OpenSTA 
+- OpenLANE 
 - Sky130 PDK
 
 
