@@ -6,7 +6,6 @@
 - [OpenSTA Tool Installation](#opensta-tool-installation)
 - [Timing Analysis using In-line Commands](#timing-analysis-using-in-line-commands)
 - [Timing Analysis using TCL File](#timing-analysis-using-tcl-file)
-- [SPEF-Based Timing Analysis](#spef-based-timing-analysis)
 - [VSDBabySoC Basic Timing Analysis](#vsdbabysoc-basic-timing-analysis)
 - [VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)](#vsdbabysoc-pvt-corner-analysis-post-synthesis-timing)
 
@@ -400,8 +399,6 @@ Path Type: max
 ```
 ![Alt Text](images/tcl_o1.png)
 ![Alt Text](images/tcl_o2.png)
-
-## SPEF-Based Timing Analysis
 
 ## VSDBabySoC Basic timing Analysis
 - This section documents the process of performing **static timing analysis (STA)** on the VSDBabySoC design using OpenSTA.
