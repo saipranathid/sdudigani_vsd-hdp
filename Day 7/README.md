@@ -110,6 +110,10 @@ Slack is the timing margin available for the signal to arrive safely within the 
 - Zero Slack ⚠️: Timing is just barely met, no margin.
 - Negative Slack ❌: Timing violation exists.
 
+
+<details>
+  <Summary><strong> OpenSTA Tool Installation</strong></summary>
+
 ## OpenSTA Tool Installation
 
 OpenSTA is an open-source gate-level Static Timing Analysis tool developed by Parallax Software. 
@@ -225,6 +229,7 @@ Here,
 ![Alt Text](images/s6.png)
 
 **Once inside, you’ll see the % prompt — you're ready to use OpenSTA.**
+</details>
 
 ## Timing Analysis using In line Commands
 - Basic timing analysis using in-line commands within OpenSTA shell (%).
@@ -657,6 +662,8 @@ The table below summarizes the sta results for the vsdbabysoc synthesized design
 ![Alt Text](images/wns.jpg)
 
 ![Alt Text](images/tns.jpg)
+
+</details>
 
 
 
