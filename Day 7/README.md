@@ -2,45 +2,31 @@
   <Summary><strong> Day 7 : Timing Graphs using OpenSTA</strong></summary>
 
 ## 📚 Contents
-- [Introduction to STA](#introduction-to-sta)
+- [Introduction to Static Timing Analysis](#introduction-to-static-timing-analysis)
 - [OpenSTA Tool Installation](#opensta-tool-installation)
 - [Timing Analysis using In-line Commands](#timing-analysis-using-in-line-commands)
 - [Timing Analysis using TCL File](#timing-analysis-using-tcl-file)
 - [VSDBabySoC Basic Timing Analysis](#vsdbabysoc-basic-timing-analysis)
 - [VSDBabySoC PVT Corner Analysis (Post-Synthesis Timing)](#vsdbabysoc-pvt-corner-analysis-post-synthesis-timing)
 
-## Introduction to STA
-### 📌 What is STA?
-Static Timing Analysis (STA) is a vital technique used in digital design to evaluate whether a circuit meets its timing requirements—without needing test vectors or simulation. Instead of checking design behavior with input data, STA inspects all possible timing paths in the circuit and ensures that signals travel through them within defined time constraints.
+## Introduction to Static Timing Analysis
+Static Timing Analysis is an exhaustive method of analyzing, debugging, and validating the timing performance of a design. STA is capable of verifying every path in the design. The main goal is to verify that, all signals will arrive neither too early nor too late, and hence proper circuit operation can be assured. Performing Timing Analysis is critical to decide, whether to go ahead with design or any modifications to be done in the design
 
-It does this by:
-- Adding cell delays (from gates) and net delays (from interconnects) to compute path delays.
-- Comparing these delays against setup and hold requirements to detect timing violations.
-
-This method is especially useful for complex, high-speed designs where accurate timing verification is critical. Although analog simulations like SPICE are highly accurate, they are often too slow for large digital designs—this is where STA becomes indispensable due to its speed, coverage, and efficiency.
-
-Whether you're an architect, RTL designer, or backend engineer:
-- **Design engineers** use simulation for functionality and define timing constraints.
-- **Synthesis and PnR engineers** use STA to optimize and validate that the design meets timing across all paths and conditions.
-
-### 🎯 Why is STA Important?
+### Why is STA Important?
 STA plays two major roles in the design flow:
 1. Guiding Design Optimization : During synthesis and place-and-route, STA calculates delays and helps the tool select optimal cells from the library to meet timing requirements (e.g., choosing faster cells where needed).
-
 2. Verifying Timing Closure: After building the netlist or completing layout, STA ensures the circuit can operate correctly at the target frequency under various conditions.
 
 By ensuring all paths meet setup and hold timing, STA helps ensure that the final silicon will function reliably and at the desired speed.
 
 STA is used multiple times throughout the digital design cycle - during synthesis, placement and routing, and again for final signoff—to verify that the design meets timing constraints under different operating conditions. The diagram below illustrates where STA is applied in a typical RTL-to-GDSII flow:
 
-![Alt Text](images/sta_flow_chart_in_asic_design.png)
+![Alt Text](images/cmos_Design_flow.png)
 
 ### Timing Paths
-Timing paths represent the route a signal takes from one point in the circuit to another — typically from a flip-flop (or input port) through a series of logic gates and nets, to another flip-flop (or output port). STA tools break these paths down into two primary components:
+Timing paths represent the route a signal takes from one point in the circuit to another — typically from a flip-flop (or input port) through a series of logic gates and nets, to another flip-flop (or output port). STA tools break these paths down into two primary components which are combined to compute the total path delay and are compared against the required timing constraints (setup and hold times)
 - Cell Delays: Time it takes for a signal to propagate through a logic gate.
 - Net Delays: Delay introduced by the interconnect (wires) between cells.
-
-These delays are combined to compute the total path delay and are compared against the required timing constraints (setup and hold times).
 
 ### Timing Libraries
 Timing libraries, usually provided in .lib format, are technology files that describe the behavior and delays of standard cells used in a digital design. These libraries include:
@@ -54,13 +40,9 @@ Timing libraries, usually provided in .lib format, are technology files that des
 STA tools rely heavily on this library data to accurately model and verify the timing behavior of the design.
 
 ### Timing Arcs
-A timing arc defines a relationship between an input and an output pin of a cell. It models how a change on an input pin affects an output pin. Timing arcs are the basic units used by STA tools to trace signal transitions through the logic gates.
-
-There are two main types:
+A timing arc defines a relationship between an input and an output pin of a cell. It models how a change on an input pin affects an output pin. Timing arcs are the basic units used by STA tools to trace signal transitions through the logic gates. There are two main types:
 - Cell timing arcs (within gates)
 - Net timing arcs (between cells)
-
-Each arc includes characteristics like delay, slew, and unateness.
 
 ### Timing Arc Characteristics
 Every timing arc is described by several key properties:
@@ -71,14 +53,14 @@ Every timing arc is described by several key properties:
 - **Slew (Transition Time)**: Describes how fast the signal transitions from low to high (rise) or high to low (fall). It's affected by the driving strength and load on the pin.
 - **Delay**: Time taken for a signal to propagate through the cell, influenced by input slew and output load.
 
-🧱 Cell Delay
+<strong> Cell Delay</strong>
 Caused by the transistors and logic within a standard cell (like AND, OR, INV). Affected by:
   - Input slew (how fast the input changes)
   - Output load (capacitance the output drives)
 
 Measured using Lookup Tables (LUTs) in the library.
 
-🔌 Net Delay
+<strong> Net Delay</strong>
 Caused by the resistance and capacitance of interconnects (wires) between cells. Often estimated using:
 - Wire Load Models (WLMs) during synthesis
 - Extracted parasitics (SPEF) after place and route for accurate analysis
@@ -92,7 +74,7 @@ A setup check ensures that data arrives early enough at the input of a flip-flop
 
 ```Setup Slack = Required Time − Arrival Time```
 
-⚠️ Negative setup slack → Setup violation → Risk of incorrect data storage.
+Negative setup slack → Setup violation → Risk of incorrect data storage.
 
 ### Hold Checks
 A hold check ensures that data remains stable for a short duration after the clock edge. If the data changes too soon, it may cause a hold violation, resulting in data corruption or metastability.
@@ -101,15 +83,13 @@ A hold check ensures that data remains stable for a short duration after the clo
 
 ```Hold Slack = Arrival Time − Required Time```
 
-⚠️ Negative hold slack → Hold violation → Data may become unstable right after being latched.
+Negative hold slack → Hold violation → Data may become unstable right after being latched.
 
 ### Slack
 Slack is the timing margin available for the signal to arrive safely within the required time window. It is calculated as the difference between when data is required to arrive and when it actually arrives.
-
-- Positive Slack ✅: Timing is met, design is safe.
-- Zero Slack ⚠️: Timing is just barely met, no margin.
-- Negative Slack ❌: Timing violation exists.
-
+- *Positive Slack:* Timing is met, design is safe.
+- *Zero Slack:* Timing is just barely met, no margin.
+- *Negative Slack:* Timing violation exists.
 
 <details>
   <Summary><strong> OpenSTA Tool Installation</strong></summary>
@@ -326,7 +306,7 @@ report_checks -path_delay min_max
 ```
 ![Alt Text](images/min_max_delays1_tcl.png)
 
-#### 📝 TCL Script Breakdown
+#### TCL Script Breakdown
 
 | **Command** | **Description** |
 |-------------|-----------------|
@@ -474,7 +454,7 @@ report_checks
   docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/min_max_delays.tcl
   ```
 
-- **❌It reports the following error** 
+- **It reports the following error** 
   ```bash
   sdudigani@sdudigani-VirtualBox:~/OpenSTA$ sudo docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/min_max_delays.tcl
   OpenSTA 2.7.0 0c16e145bb Copyright (c) 2025, Parallax Software, Inc.
@@ -491,7 +471,7 @@ report_checks
   ```
 ![Alt Text](images/3_syntax_error.png)
 
-- **✅To fix this syntax error:**
+- **To fix this syntax error:**
   - open the file
     ```bash
     gvim ~/OpenSTA/examples/timing_libs/avsdpll.lib
@@ -645,7 +625,7 @@ docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/pvt_corner_
 ```
 
 - The script executed succesfully and reports are generated.
-- 📂 All reports were saved in the /data/OpenSTA/examples/BabySoC/sta_output/ directory for post-processing and summary visualization.
+- All reports were saved in the /data/OpenSTA/examples/BabySoC/sta_output/ directory for post-processing and summary visualization.
 ![Alt Text](images/sta_reports_for_13pvts_generated.png)
 
 #### Timing Summary Across PVT Corners (Post-Synthesis STA Results)
