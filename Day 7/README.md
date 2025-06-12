@@ -24,9 +24,34 @@ STA is used multiple times throughout the digital design cycle - during synthesi
 ![Alt Text](images/cmos_Design_flow.png)
 
 ### Timing Paths
-Timing paths represent the route a signal takes from one point in the circuit to another — typically from a flip-flop (or input port) through a series of logic gates and nets, to another flip-flop (or output port). STA tools break these paths down into two primary components which are combined to compute the total path delay and are compared against the required timing constraints (setup and hold times)
+Timing paths represent the route a signal takes from one point in the circuit to another — typically from a flip-flop (or input port) through a series of logic gates and nets, to another flip-flop (or output port). STA tools break these paths down into two primary components (cell delays and net delays) which are combined to compute the total path delay and are compared against the required timing constraints (setup and hold times)
 - Cell Delays: Time it takes for a signal to propagate through a logic gate.
 - Net Delays: Delay introduced by the interconnect (wires) between cells.
+
+Each timing path has a start point and an endpoint.
+  - Start points: Input ports or clock pins of flip flops.
+  - End points: Output ports or data input pins of flip flops
+![Alt Text](images/timing_paths.jpg)
+This figure shows four fundamental timing‐path categories. Knowing how each path is defined helps with static timing analysis (STA) and ensures we meet all setup/hold budgets and I/O constraints.
+1. **Primary‐Input → Register (Path 1)**  
+   - **Launch**: external signal **Data1**  
+   - **Combinational**: passes through the first logic block  
+   - **Capture**: at the D input of the first flip-flop  
+
+2. **Register → Register (Path 2)**  
+   - **Launch**: Q output of flip-flop 1  
+   - **Combinational**: through the middle logic network  
+   - **Capture**: at the D input of flip-flop 2  
+
+3. **Register → Primary‐Output (Path 3)**  
+   - **Launch**: Q output of flip-flop 2  
+   - **Combinational**: through the final logic stage  
+   - **Capture**: as the external output **DataOut1**  
+
+4. **Primary‐Input → Primary‐Output (Path 4)**  
+   - **Launch**: external signal **DataIn2**  
+   - **Combinational**: single logic block (no registers)  
+   - **Capture**: as the external output **DataOut2**  
 
 ### Timing Libraries
 Timing libraries, usually provided in .lib format, are technology files that describe the behavior and delays of standard cells used in a digital design. These libraries include:
