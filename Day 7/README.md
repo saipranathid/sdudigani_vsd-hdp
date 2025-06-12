@@ -33,24 +33,24 @@ Each timing path has a start point and an endpoint.
   - End points: Output ports or data input pins of flip flops
 ![Alt Text](images/timing_paths.jpg)
 This figure shows four fundamental timing‐path categories. Knowing how each path is defined helps with static timing analysis (STA) and ensures we meet all setup/hold budgets and I/O constraints.
-1. **Primary‐Input → Register (Path 1)**  
+1. **Input → Register (Path 1)**  
    - **Launch**: external signal **Data1**  
-   - **Combinational**: passes through the first logic block  
+   - **Combinational**: passes through the first combinational logic block  
    - **Capture**: at the D input of the first flip-flop  
 
 2. **Register → Register (Path 2)**  
    - **Launch**: Q output of flip-flop 1  
-   - **Combinational**: through the middle logic network  
+   - **Combinational**: through the middle combinational logic network  
    - **Capture**: at the D input of flip-flop 2  
 
-3. **Register → Primary‐Output (Path 3)**  
+3. **Register → Output (Path 3)**  
    - **Launch**: Q output of flip-flop 2  
-   - **Combinational**: through the final logic stage  
+   - **Combinational**: through the final combinational logic stage  
    - **Capture**: as the external output **DataOut1**  
 
-4. **Primary‐Input → Primary‐Output (Path 4)**  
+4. **Input → Output (Path 4)**  
    - **Launch**: external signal **DataIn2**  
-   - **Combinational**: single logic block (no registers)  
+   - **Combinational**: single combinational logic block (no registers)  
    - **Capture**: as the external output **DataOut2**  
 
 ### Timing Libraries
