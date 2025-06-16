@@ -1,3 +1,3 @@
 <details>
-  <Summary><strong> Day 8 : CMOS Circuit Design</strong></summary>
+  <Summary><strong> Day 8 : Circuit Design and Spice Simulation</strong></summary>
 
