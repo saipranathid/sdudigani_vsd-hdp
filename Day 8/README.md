@@ -113,6 +113,16 @@ This effect is known as the *Body Effect* or *Substrate Bias Effect*.
 ![Alt Text](images/body_effect_5.png)
 
 ### Resistive/ Linear/ Triode Region of Operation
+Here, Gate-Source potential (V<sub>gs</sub> >= V<sub>th</sub>) and a small value of V<sub>ds</sub> is applied across the channel from Drain-to-Source.
+![Alt Text](images/resistive_region_1.png)
+At this stage:
+- The channel is formed (strong inversion), and charge carriers flow from source to drain.
+- The gate-to-channel voltage at a point ‘x’ along the channel is: VGS - V(x).
+- The induced charge density (Qi) in the channel is proportional to (VGS - Vt).
+- The effective channel length L and voltage V(x) profile along x-axis determine the current flow.
+- This is the region where the transistor behaves like a voltage-controlled resistor.
+![Alt Text](images/resistive_region_2.png)
+
 #### Drift current theory
 
 ### Saturation/ Pinch-Off Region of Operation
