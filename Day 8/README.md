@@ -16,7 +16,7 @@ A circuit simulator is provided with an input file that contains:
 
 ### Why Use SPICE?  
 - **Verify Correctness**: Check that every gate, bias network or feedback loop operates as intended under realistic device models—catching design errors early.  
-- **Predict Performance**: Run DC sweeps and transient analyses to extract rise/fall times, propagation delays, bandwidth and short-circuit currents—critical for digital timing closure and analog bandwidth planning. 
+- **Predict Performance**: Run DC sweeps and transient analyses to extract rise/fall times, propagation delays, bandwidth and short-circuit currents critical for digital timing closure and analog bandwidth planning. 
 - **Assess Power**: Quantify dynamic and leakage power across supply-voltage, temperature and process corners to guide low-power design choices.
 - **Explore Variability**: Use parametric and Monte Carlo studies to probe component tolerances, layout parasitics and manufacturing variation—refining margins before tape-out.
 
@@ -68,24 +68,24 @@ This diagram shows a cross-section of an n-channel MOSFET (NMOS) and labels its 
 
 ![Alt Text](images/nmos_threshold1_SD_gnd.png)
 This diagram illustrates the NMOS transistor in its off (zero‐gate‐bias) condition and how the threshold voltage is defined. 
--  Here, with *all four terminals—gate, source, drain, and substrate—tied to ground*. With the gate-to-source voltage at zero, no inversion layer forms beneath teh thin silicon oxide gate dielectric, so the channel remains *non-conductive*.
+-  Here, with *all four terminals gate, source, drain, and substrate are tied to ground*. With the gate-to-source voltage at zero, no inversion layer forms beneath the thin silicon oxide gate dielectric, so the channel remains *non-conductive*.
 -  At the same time, the p–n junctions between the n⁺ source/drain regions and the p-type substrate behave like reverse-biased diodes, blocking any current path from source to drain. In effect, the transistor presents a very high resistance between its source and drain.
 
-The **threshold voltage (Vₜ)**, is defined as the minimum gate-to-source voltage required to attract enough electrons to the oxide interface to invert the channel region; only when V₍GS₎ rises above Vₜ does the device switch on and allow current to flow.
+The **threshold voltage (Vₜ)**, is defined as the minimum gate-to-source voltage required to attract enough electrons to the oxide interface to invert the channel region; only when V<sub>gs</sub> rises above Vₜ does the device switch on and allow current to flow.
 
 ![Alt Text](images/nmos_threshold3.png)
-**Applying +V<sub>GS</sub>**  
+**Applying +V<sub>gs</sub>**  
   As the gate voltage rises above 0 V, the gate electrode becomes positively charged.  
 - **Hole Depletion**: The electric field repels p-type holes away from the silicon–oxide interface, widening the depletion region beneath the gate.  
 - **Electron Attraction**: Negative carriers (electrons) from the n⁺ source/drain diffuse toward the gate region, beginning to accumulate at the silicon surface.  
-- **Onset of Inversion** : These accumulated electrons form the first “inversion layer” under the oxide—setting the stage for a continuous channel once V<sub>GS</sub> reaches the threshold voltage.
+- **Onset of Inversion** : These accumulated electrons form the first *“inversion layer”* under the oxide setting the stage for a continuous channel once V<sub>gs</sub> reaches the threshold voltage.
 
 ![Alt Text](images/nmos_threshold4.png)
-**Further Increase in V<sub>GS</sub>**  
-  Once V<sub>GS</sub> exceeds V<sub>t</sub>, the inversion channel is already established.  
-- **Stable Depletion Width** : The depletion region under the gate stops widening—additional gate bias doesn’t deepen depletion.  
+**Further Increase in V<sub>gs</sub>**  
+  Once V<sub>gs</sub> exceeds V<sub>t</sub>, the inversion channel is already established.  
+- **Stable Depletion Width** : The depletion region under the gate stops widening additional gate bias doesn’t deepen depletion.  
 - **Electron Supply from Source/Drain** : Electrons from the heavily doped n⁺ source/drain regions fill the channel region beneath the gate.  
-- **Conductivity ∝ (V<sub>GS</sub> − V<sub>t</sub>)** : The density of mobile electrons in the channel increases with V<sub>GS</sub>, lowering channel resistance and boosting drain current for a given V<sub>DS</sub>.
+- **Conductivity ∝ (V<sub>gs</sub> − V<sub>t</sub>)** : The density of mobile electrons in the channel increases with V<sub>gs</sub>, lowering channel resistance and boosting drain current for a given V<sub>DS</sub>.
 
 ### Effect of Subtrate/ Body Bias on Threshold Voltage
 *What is Body Effect?*
