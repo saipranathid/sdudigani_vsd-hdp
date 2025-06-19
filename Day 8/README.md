@@ -22,8 +22,8 @@ A circuit simulator is provided with an input file that contains:
 
 ### Common Spice Elements and Spice Units
 
-![Alt Text](images/common_spice_elements.png)
-![Alt Text](images/spice_units.png)
+![Alt Text](images/spice_elements.png)
+![Alt Text](images/units.png)
 
 ### Inverter Circuit**
 
