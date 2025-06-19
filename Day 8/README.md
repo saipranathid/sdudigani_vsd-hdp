@@ -55,6 +55,7 @@ This schematic shows a standard CMOS inverter:
 
 ### SPICE Simulation Results of Inverter Circuit
 ![Alt Text](images/inverter_characteristics.png)
+First graph shows the NMOS drain current (I<sub>D</sub>) versus output voltage (V<sub>out</sub>) for several gate‐to‐source biases (V<sub>in</sub>=0, 0.5, 1, 1.5, 2 V). Each curve is an I–V “slice” of the NMOS. While the second graph indicates voltage transfer charcteristics (V<sub>out</sub> vs V<sub>in</sub>)
 
 ### Understanding Delay Tables
 
