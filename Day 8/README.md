@@ -25,7 +25,7 @@ A circuit simulator is provided with an input file that contains:
 ![Alt Text](images/spice_elements.png)
 ![Alt Text](images/units.png)
 
-### Inverter Circuit**
+### Inverter Circuit
 
 An inverter is a simple circuit that reverses the input signal:
 - Uses two transistors: PMOS and NMOS.
@@ -53,10 +53,10 @@ This schematic shows a standard CMOS inverter:
 - NMOS connects from the output to VSS (GND).
 - C<sub>L</sub> represents the load capacitance, mimicking the next stage or parasitic load.
 
-### SPICE Simulation Results of Inverter Circuit**
+### SPICE Simulation Results of Inverter Circuit
 ![Alt Text](images/inverter_characteristics.png)
 
-### Understanding Delay Tables**
+### Understanding Delay Tables
 
 ## NMOS Transistor - Basic Element in Circuit Design
 
