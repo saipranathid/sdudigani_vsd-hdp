@@ -121,6 +121,7 @@ At this stage:
 - The induced charge density (Qi) in the channel is proportional to (VGS - Vt).
 - The effective channel length L and voltage V(x) profile along x-axis determine the current flow.
 - This is the region where the transistor behaves like a voltage-controlled resistor.
+
 ![Alt Text](images/resistive_region_2.png)
 
 #### Drift current theory
