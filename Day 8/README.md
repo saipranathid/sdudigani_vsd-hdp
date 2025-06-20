@@ -125,6 +125,35 @@ At this stage:
 ![Alt Text](images/resistive_region_2.png)
 
 #### Drift current theory
+**Drift current** refers to the movement of charge carriers (electrons or holes) in response to an electric field. This phenomenon is driven by the force exerted by the electric field on the charged particles, leading them to 'drift' in the direction of the field.
+
+- In the resistive region of NMOS operation (V<sub>gs</sub> > V<sub>t</sub>, small V<sub>t</sub>) current flow is mainly governed by **drift current** which arises due to the electric field created across the channel by the applied V<sub>ds</sub>.
+
+- The induced charge in the channel at point x is given by:
+  
+  **Q<sub>i</sub>(x) = -C<sub>ox</sub> × [(V<sub>gs</sub> - V(x)) - V<sub>t</sub>]**
+
+- The total drain current I<sub>D</sub> is:
+  
+  **I<sub>D</sub> = (velocity of charge carriers) X (available charge)X (channel width)**
+
+where,
+- I<sub>D</sub> is the **carrier drift** under the lateral electric field due to V<sub>ds</sub>
+- C<sub>ox</sub> = Gate oxide capacitance
+- V(x) = potential at point x along the channel
+- L = Effective channel length
+- W = Channel width
+
+In this region NMOS behaved like a ```voltage-controlled resistor```. the drift current dominates due to the potential difference between source and drain.
+![Alt Text](images/drift_current_1.png)
+![Alt Text](images/drift_current_2.png)
+![Alt Text](images/drift_current_3.png)
+![Alt Text](images/drift_current_4.png)
+
+#### Drain current model for linear region of operation
+
+
+#### Pinch-off region condition
 
 ### Saturation/ Pinch-Off Region of Operation
 
