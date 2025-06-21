@@ -151,7 +151,10 @@ In this region NMOS behaved like a ```voltage-controlled resistor```. the drift 
 ![Alt Text](images/drift_current_4.png)
 
 #### Drain current model for linear region of operation
-
+The following images shows the derivation of I<sub>D</sub> equation for NMOS in linear region, starting from first-order analysis and device physics.
+![Alt Text](images/id_1.jpg)
+![Alt Text](images/id_2.jpg)
+![Alt Text](images/id_3.jpg)
 
 #### Pinch-off region condition
 
