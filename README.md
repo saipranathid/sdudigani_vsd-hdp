@@ -13,6 +13,7 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 - [Introduction to BabySoC Modeling and Pre-Synthesis Simulation](Day%205/README.md)
 - [VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)
 - [Timing Graphs using OpenSTA](Day%207/README.md)
+- [Circuit Design and Spice Simulation](Day%208/README.md)
 
 ## 🛠️ Tools & Technologies
 
