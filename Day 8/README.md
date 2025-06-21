@@ -220,6 +220,12 @@ The following images show how a SPICE deck is written to perform DC analysis of 
 ![Alt Text](images/spn2.png)
 ![Alt Text](images/spn3.png)
 
+#### Circuit Description in SPICE Syntax
+![Alt Text](images/spice_nodes.jpg)
+![Alt Text](images/spice_nodes1.png)
+![Alt Text](images/spice_nodes2.png)
+![Alt Text](images/spice_nodes3.png)
+
 
 
 
