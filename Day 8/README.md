@@ -156,12 +156,35 @@ The following images shows the derivation of I<sub>D</sub> equation for NMOS in 
 ![Alt Text](images/id_2.jpg)
 ![Alt Text](images/id_3.jpg)
 
-#### Pinch-off region condition
+#### SPICE conclusion to resistive operation
+- SPICE simulation allows us to determine the drain current (I<sub>D</sub>) by sweeping the drain-source voltage (V<sub>DS</sub>) across a range of gate-source voltages (V<sub>GS</sub>), stopping at V<sub>GS</sub> = V<sub>GS</sub> - V<sub>t</sub> for each case.
 
-### Saturation/ Pinch-Off Region of Operation
+- This approach generates detailed ID-VDS curves and provides insight into how the transistor operates in the linear (resistive) region.
 
+![Alt Text](images/spice_1.jpg)
+![Alt Text](images/spice_2.jpg)
 
+### Saturation/ Pinch-off Region of Operation 
+When we increase the drain voltage substantially (V<sub>ds</sub> > V<sub>gs</sub> - V<sub>t</sub>, called the saturation voltage), The drain voltage becomes large enough that the gate-to-substrate potential at the drain is smaller than the threshold. Therefore, the channel thickness at this end goes to zero, which is called as **“pinch-off”** condition. 
 
+![Alt Text](images/pinch_off_1.png)
+![Alt Text](images/pinch_off_2.png)
+![Alt Text](images/pinch_off_3.png)
+
+#### Drain Current Model for Saturation Region of Operation
+These images show how the effective channel length reduces due to pinch-off and how the drain current (ID) becomes weakly dependent on VDS, leading to the saturation region equation with channel length modulation.
+![Alt Text](images/drain_current_model_1.png)
+![Alt Text](images/drain_current_model_2.png)
+
+### Basic SPICE Setup
+
+#### Circuit Description in SPICE Syntax
+
+#### Define Technology Parameters
+
+#### First SPICE Simulation
+
+#### SPICE Lab with sky130 models
 
 
 
