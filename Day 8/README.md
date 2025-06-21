@@ -199,8 +199,8 @@ A circuit simulator is provided with an input file that contains:
   - Inputs to the circuit, called _**stimulus**_
   - _**Simulation options**_ & _**analysis commands**_ that explain the type of simulation to be run.
 
-![Alt Text](Images/sp1.png)
-![Alt Text](Images/sp2.png)
+![Alt Text](images/sp1.png)
+![Alt Text](images/sp2.png)
 
 **Analysis Types supported by SPICE:**
 | Analysis Type | Details |
