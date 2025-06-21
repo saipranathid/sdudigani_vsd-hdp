@@ -216,3 +216,10 @@ A circuit simulator is provided with an input file that contains:
 
 The following images show how a SPICE deck is written to perform DC analysis of an NMOS transistor:
 
+![Alt Text](images/spn1.png)
+![Alt Text](images/spn2.png)
+![Alt Text](images/spn3.png)
+
+
+
+
