@@ -93,7 +93,7 @@ The **threshold voltage (Vₜ)**, is defined as the minimum gate-to-source volta
 - **Electron Supply from Source/Drain** : Electrons from the heavily doped n⁺ source/drain regions fill the channel region beneath the gate.  
 - **Conductivity ∝ (V<sub>gs</sub> − V<sub>t</sub>)** : The density of mobile electrons in the channel increases with V<sub>gs</sub>, lowering channel resistance and boosting drain current for a given V<sub>DS</sub>.
 
-*The gate-to-source (V<sub>gs</sub>) voltage at which strong inversion happens is called as Threshold Volatge.*
+*The gate-to-source (V<sub>gs</sub>) potential at which strong inversion happens is called as Threshold Volatge.*
 
 ### Effect of Subtrate/ Body Bias on Threshold Voltage
 *What is Body Effect?*
