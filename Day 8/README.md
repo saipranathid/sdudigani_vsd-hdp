@@ -89,11 +89,16 @@ The **threshold voltage (Vₜ)**, is defined as the minimum gate-to-source volta
 ![Alt Text](images/nmos_threshold4.png)
 **Further Increase in V<sub>gs</sub>**  
  As V<sub>gs</sub> continues to rise, the depletion region beneath the gate widens until the surface of the p-substrate between the n⁺ source and drain inverts to n-type material. This phenomenon is known as strong inversion (or surface inversion).
-- **Stable Depletion Width** : The depletion region under the gate stops widening additional gate bias doesn’t deepen depletion.  
-- **Electron Supply from Source/Drain** : Electrons from the heavily doped n⁺ source/drain regions fill the channel region beneath the gate.  
-- **Conductivity ∝ (V<sub>gs</sub> − V<sub>t</sub>)** : The density of mobile electrons in the channel increases with V<sub>gs</sub>, lowering channel resistance and boosting drain current for a given V<sub>DS</sub>.
 
 *The gate-to-source (V<sub>gs</sub>) potential at which strong inversion happens is called as Threshold Volatge.*
+
+As V<sub>gs</sub> continues to rise above the threshold voltage V<sub>t</sub>, the depletion region beneath the gate reaches its maximum width - additional positive bias can no longer deepen it. At this point, the gate field begins to attract electrons (negative carriers) from the heavily doped n⁺ source and drain regions into the channel region under the gate oxide. As more electrons accumulate:
+
+- **Channel formation** : The density of electrons grows until a continuous n-type channel forms between source and drain.
+- **Stable depletion width** : Since the region is already fully depleted of holes, further increases in V<sub>gs</sub> no longer widen the depletion region.
+- **Conductivity modulation** : The channel’s conductivity is proportional to (V<sub>gs</sub> – V<sub>t</sub>), so as V<sub>gs</sub> increases beyond V<sub>t</sub>, more electrons populate the channel, lowering its resistance and boosting drain current for a given V<sub>ds</sub>.
+
+This strong-inversion condition—where the surface of the p-substrate between the n⁺ source and drain is inverted to n-type—is what enables the MOSFET to switch fully on.
 
 ### Effect of Subtrate/ Body Bias on Threshold Voltage
 *What is Body Effect?*
