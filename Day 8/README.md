@@ -18,7 +18,7 @@
 - [Saturation or Pinch-off Region of Operation](#saturation-or-pinch-off-region-of-operation)  
 - [Basic SPICE Setup](#basic-spice-setup) 
 
-
+<a id="spice-simulation"></a>
 ## SPICE Simulation
 SPICE (Simulation Program with Integrated Circuit Emphasis) is a powerful simulation tool developed at UC Berkeley in the early 1970’s, used in electronics design to model and analyze the behavior of electronic circuits before they are physically built.
 
@@ -32,12 +32,15 @@ A circuit simulator is provided with an input file that contains:
 - Inputs to the circuit, called *stimulus*
 - *Simulation options* & *analysis commands* that explain the type of simulation to be run.
 
+<a id="why-use-spice"></a>
 ### Why Use SPICE?  
 - **Verify Correctness**: Check that every gate, bias network or feedback loop operates as intended under realistic device models—catching design errors early.  
 - **Predict Performance**: Run DC sweeps and transient analyses to extract rise/fall times, propagation delays, bandwidth and short-circuit currents critical for digital timing closure and analog bandwidth planning. 
 - **Assess Power**: Quantify dynamic and leakage power across supply-voltage, temperature and process corners to guide low-power design choices.
 - **Explore Variability**: Use parametric and Monte Carlo studies to probe component tolerances, layout parasitics and manufacturing variation—refining margins before tape-out.
 
+
+<a id="common-spice-elements-and-spice-units"></a>
 ### Common Spice Elements and Spice Units
 
 ![Alt Text](images/spice_elements.png)
