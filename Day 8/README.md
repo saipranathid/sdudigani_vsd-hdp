@@ -268,7 +268,7 @@ For the example scenario we were discussing, this translates to:
 ### Saturation or Pinch-off Region of Operation
 When we increase the drain voltage substantially (V<sub>ds</sub> > V<sub>gs</sub> - V<sub>t</sub>, called the saturation voltage), The drain voltage becomes large enough that the gate-to-substrate potential at the drain is smaller than the threshold. Therefore, the channel thickness at this end goes to zero, which is called as **“pinch-off”** condition. 
 
-![Alt Text](images/pinch_off_1.png)
+![Alt Text](images/saturation_region.png)
 ![Alt Text](images/pinch_off_2.png)
 ![Alt Text](images/pinch_off_3.png)
 
