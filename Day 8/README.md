@@ -74,7 +74,7 @@ This diagram shows a cross-section of an n-channel MOSFET (NMOS) and labels its 
 
 ![Alt Text](images/nmos_threshold1_SD_gnd.png)
 This diagram illustrates the NMOS transistor in its off (zero‐gate‐bias) condition and how the threshold voltage is defined. 
--  Here, with *all four terminals gate, source, drain, and substrate are tied to ground*. With the gate-to-source voltage at zero, no inversion layer forms beneath the thin silicon oxide gate dielectric, so the channel remains *non-conductive*.
+-  Here, with *source, drain, and substrate are tied to ground*. With the gate-to-source voltage at zero, no inversion layer forms beneath the thin silicon oxide gate dielectric, so the channel remains *non-conductive*.
 -  At the same time, the p–n junctions between the n⁺ source/drain regions and the p-type substrate behave like reverse-biased diodes, blocking any current path from source to drain. In effect, the transistor presents a very high resistance between its source and drain.
 
 The **threshold voltage (Vₜ)**, is defined as the minimum gate-to-source voltage required to attract enough electrons to the oxide interface to invert the channel region; only when V<sub>gs</sub> rises above Vₜ does the device switch on and allow current to flow.
@@ -82,16 +82,18 @@ The **threshold voltage (Vₜ)**, is defined as the minimum gate-to-source volta
 ![Alt Text](images/nmos_threshold3.png)
 **Applying +V<sub>gs</sub>**  
   As the gate voltage rises above 0 V, the gate electrode becomes positively charged.  
-- **Hole Depletion**: The electric field repels p-type holes away from the silicon–oxide interface, widening the depletion region beneath the gate.  
+- **Hole Depletion**: The electric field repels p-type holes away from the silicon–oxide interface, forming the depletion region beneath the gate.  
 - **Electron Attraction**: Negative carriers (electrons) from the n⁺ source/drain diffuse toward the gate region, beginning to accumulate at the silicon surface.  
 - **Onset of Inversion** : These accumulated electrons form the first *“inversion layer”* under the oxide setting the stage for a continuous channel once V<sub>gs</sub> reaches the threshold voltage.
 
 ![Alt Text](images/nmos_threshold4.png)
 **Further Increase in V<sub>gs</sub>**  
-  Once V<sub>gs</sub> exceeds V<sub>t</sub>, the inversion channel is already established.  
+ As V<sub>gs</sub> continues to rise, the depletion region beneath the gate widens until the surface of the p-substrate between the n⁺ source and drain inverts to n-type material. This phenomenon is known as strong inversion (or surface inversion).
 - **Stable Depletion Width** : The depletion region under the gate stops widening additional gate bias doesn’t deepen depletion.  
 - **Electron Supply from Source/Drain** : Electrons from the heavily doped n⁺ source/drain regions fill the channel region beneath the gate.  
 - **Conductivity ∝ (V<sub>gs</sub> − V<sub>t</sub>)** : The density of mobile electrons in the channel increases with V<sub>gs</sub>, lowering channel resistance and boosting drain current for a given V<sub>DS</sub>.
+
+*The gate-to-source (V<sub>gs</sub>) voltage at which strong inversion happens is called as Threshold Volatge.*
 
 ### Effect of Subtrate/ Body Bias on Threshold Voltage
 *What is Body Effect?*
