@@ -114,8 +114,11 @@ When V<sub>sb</sub> > 0, an additional reverse bias is introduced between Source
 - This increases the threshold voltage (V<sub>th</sub>).
 - The depletion layer near Source becomes wider.
 - More V<sub>gs</sub> is required to turn ON the transistor (stronger inversion).
+
 This effect is known as the *Body Effect* or *Substrate Bias Effect*.
+
 ![Alt Text](images/body_effect_4.png)
+
 **Threshold Voltage Equation considering Body Bias:**
 ![Alt Text](images/body_effect_5.png)
 
