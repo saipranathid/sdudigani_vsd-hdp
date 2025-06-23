@@ -1,6 +1,23 @@
 <details>
   <Summary><strong> Day 8 : Circuit Design and Spice Simulation</strong></summary>
 
+## Contents
+
+- [SPICE Simulation](#spice-simulation)  
+  - [Why Use SPICE?](#why-use-spice)  
+  - [Common Spice Elements and Spice Units](#common-spice-elements-and-spice-units)  
+  - [Inverter Circuit](#inverter-circuit)  
+  - [SPICE Simulation Results of Inverter Circuit](#spice-simulation-results-of-inverter-circuit)  
+  - [Understanding Delay Tables](#understanding-delay-tables)  
+- [NMOS Transistor Basic Element in Circuit Design](#nmos-transistor-basic-element-in-circuit-design)  
+  - [Effect of Substrate or Body Bias on Threshold Voltage](#effect-of-substrate-or-body-bias-on-threshold-voltage)  
+  - [Resistive/Linear/Triode Region of Operation](#resistive-linear-triode-region-of-operation)  
+    - [Drift Current Theory](#drift-current-theory)  
+    - [Drain Current Model for Linear Region of Operation](#drain-current-model-for-linear-region-of-operation)  
+- [SPICE Conclusion to Resistive Operation](#spice-conclusion-to-resistive-operation)  
+- [Saturation/Pinch-off Region of Operation](#saturationpinch-off-region-of-operation)  
+- [Basic SPICE Setup](#basic-spice-setup) 
+
 ## SPICE Simulation
 SPICE (Simulation Program with Integrated Circuit Emphasis) is a powerful simulation tool developed at UC Berkeley in the early 1970’s, used in electronics design to model and analyze the behavior of electronic circuits before they are physically built.
 
@@ -64,7 +81,8 @@ In digital timing analysis cell delay is a function of input slew (input transit
 Example of a 2D LUT is shown below:
 ![Alt Text](images/2D_LUT.png)
 Here, each buffer (CBUF1 and CBUF2) has a delay table defined which is indexed by input slew as rows (eg: 20ps, 40ps, 60ps, 80ps) and output load as columns (eg: 10fF, 30fF, 50fF, 70fF, 90fF, 110fF) while the corresponding delay values are x1 to x24 for CBUF1, y1 to y24 for CBUF2.
-## NMOS Transistor - Basic Element in Circuit Design
+
+## NMOS Transistor-Basic Element in Circuit Design
 
 ![Alt Text](images/nmos_basic_structure.png)
 This diagram shows a cross-section of an n-channel MOSFET (NMOS) and labels its key regions and terminals:
@@ -100,7 +118,7 @@ As V<sub>gs</sub> continues to rise above the threshold voltage V<sub>t</sub>, t
 
 This strong-inversion condition—where the surface of the p-substrate between the n⁺ source and drain is inverted to n-type—is what enables the MOSFET to switch fully on.
 
-### Effect of Subtrate/ Body Bias on Threshold Voltage
+### Effect of Subtrate or Body Bias on Threshold Voltage
 *What is Body Effect?*
 
 Whenever there is a voltage (potential) difference between the source and substrate (body), this leads to an increase or decrease in the threshold voltage of the transistor. This is called a “body effect.”
@@ -122,7 +140,7 @@ This effect is known as the *Body Effect* or *Substrate Bias Effect*.
 **Threshold Voltage Equation considering Body Bias:**
 ![Alt Text](images/body_effect_5.png)
 
-### Resistive/ Linear/ Triode Region of Operation
+### Resistive/Linear/Triode Region of Operation
 Here, Gate-Source potential (V<sub>gs</sub> >= V<sub>th</sub>) and a small value of V<sub>ds</sub> is applied across the channel from Drain-to-Source.
 ![Alt Text](images/resistive_region_1.png)
 At this stage:
