@@ -318,15 +318,35 @@ A circuit simulator is provided with an input file that contains:
 <br>
 
 The following images show how a SPICE deck is written to perform DC analysis of an NMOS transistor:
-
+![Alt Text](images/bs1.png)
 ![Alt Text](images/spn1.png)
 ![Alt Text](images/spn2.png)
 ![Alt Text](images/spn3.png)
 
 #### Circuit Description in SPICE Syntax
 ![Alt Text](images/spice_nodes.jpg)
-![Alt Text](images/spice_nodes1.png)
-![Alt Text](images/spice_nodes2.png)
+![Alt Text](images/spice_netlist_1.png)
+![Alt Text](images/spice_netlist_2.png)
+![Alt Text](images/spice_netlist_3.png)
+![Alt Text](images/spice_netlist_4.png)
+![Alt Text](images/spice_netlist_5.png)
+![Alt Text](images/spice_netlist_W6.png)
+![Alt Text](images/spice_netlist_L7.png)
+
+![Alt Text](images/spice_netlist_R1.png)
+![Alt Text](images/spice_netlist_R2.png)
+![Alt Text](images/spice_netlist_R3.png)
+![Alt Text](images/spice_netlist_R4.png)
+
+![Alt Text](images/spice_netlist_Vdd1.png)
+![Alt Text](images/spice_netlist_Vdd2.png)
+![Alt Text](images/spice_netlist_Vdd3.png)
+
+![Alt Text](images/spice_netlist_Vin1.png)
+![Alt Text](images/spice_netlist_Vin2.png)
+![Alt Text](images/spice_netlist_Vin3.png)
+![Alt Text](images/spice_netlist_Vin4.png)
+
 ![Alt Text](images/spice_nodes3.png)
 
 
