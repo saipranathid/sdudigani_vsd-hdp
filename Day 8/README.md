@@ -164,6 +164,56 @@ In this region NMOS behaved like a ```voltage-controlled resistor```. the drift 
 The following images shows the derivation of I<sub>D</sub> equation for NMOS in linear region, starting from first-order analysis and device physics.
 ![Alt Text](images/id_1.jpg)
 ![Alt Text](images/id_2.jpg)
+ - Let $V_{GS}$ be held constant at a value greater than $V_{TH}$.  
+  - The applied $V_{DS}$ appears as a voltage drop across the length of the channel.  
+  - As we travel along the channel from Source to Drain, the voltage (measured relative to the Source terminal) increases from zero to $V_{DS}$.
+  - Thus the voltage between the gate and points along the channel decreases from $V_{GS}$ at the Source end to $V_{GD} = V_{GS}-V_{DS}$ at the Drain end.
+
+
+  - At a point x along the channel, the voltage is $V(x)$, and the gate-to-channel voltage at that point equals $V_{GS} – V(x)$.
+
+Under the assumption that this voltage exceeds the threshold voltage all along the channel, the induced channel charge per unit area at point x can be computed.
+
+$Q_i(x) = -C_{ox} [V_{GS} - V(x) -V_{TH}]$  
+$where:$  
+$~~~~~~~~ C_{ox} = \dfrac{\epsilon_{ox}}{t_{ox}}$
+
+The current is given as the product of the drift velocity of the carriers, $v_n$ and the
+available charge. Due to charge conservation, it is a constant over the length of the channel.
+W is the width of the channel in a direction perpendicular to the current flow.
+
+$I_D = -v_n(x) * Q_i(x) * W$
+
+The electron velocity is related to the electric field through a parameter called the mobility $\mu_n$ (expressed in $\dfrac{m^2}{V.s}$).  
+
+Drift velocity, $v_n = -\mu_n \dfrac{dV}{dx}$
+
+$\therefore I_D = -\mu_n \dfrac{dV}{dx} * -C_{ox} [V_{GS} - V(x) - V_{TH}] * W$  
+
+$i.e., I_D dx = \mu_n C_{ox} W [V_{GS} - V(x) -V_{TH}] dV$
+
+Integrating the equation over the length of the channel L yields the voltage-current relation of the transistor:  
+$\boxed{I_D = {k_n}^\prime \dfrac{W}{L} \left[ (V_{GS}-V_{TH})V_{DS} - \dfrac{{V_{DS}}^2}{2} \right]
+     = k_n \left[ (V_{GS}-V_{TH})V_{DS} - \dfrac{{V_{DS}}^2}{2} \right]}$
+
+$where:$  
+$~~~~~~~~ {k_n}^\prime$ is the _process transconductance parameter._  
+$~~~~~~~~ {k_n}^\prime = \mu_nC_{ox}$
+
+The product of process transconductance, ${k_n}^\prime$ and the $\dfrac{W}{L}$ ratio of the transistor is called the _gain factor_, $k_n$ of the device.
+
+$~~~~~~~~ k_n = {k_n}^\prime * \left( \dfrac{W}{L} \right)$
+
+Now, the above equation for Drain Current:  
+$I_D = k_n * \left[(V_{GS} - V_{TH}) * V_{DS} - \dfrac{V_{DS}^2}{2}\right]$
+is a quadratic function of $V_{DS}$.  
+
+But at low values, the $\dfrac{V_{DS}^2}{2}$ term can be ignored as it is close to zero. Hence the equation for $I_D$ can be approximated to be a linear function of $V_{DS}$:  
+
+$\boxed {i.e., I_D = k_n * (V_{GS} - V_{TH}) * V_{DS}} ~~~~ $
+_Hence the name Linear Region_
+
+For the example scenario we were discussing, this translates to:
 ![Alt Text](images/id_3.jpg)
 
 #### SPICE conclusion to resistive operation
