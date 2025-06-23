@@ -127,9 +127,9 @@ Here, Gate-Source potential (V<sub>gs</sub> >= V<sub>th</sub>) and a small value
 ![Alt Text](images/resistive_region_1.png)
 At this stage:
 - The channel is formed (strong inversion), and charge carriers flow from source to drain.
-- The gate-to-channel voltage at a point ‘x’ along the channel is: VGS - V(x).
-- The induced charge density (Qi) in the channel is proportional to (VGS - Vt).
-- The effective channel length L and voltage V(x) profile along x-axis determine the current flow.
+- V(x) is voltage at a point 'x' along the channel and gate-to-channel voltage at that point is: V<sub>gs</sub> - V(x).
+- The induced charge density (Q<sub>i</sub>) in the channel is proportional to (V<sub>gs</sub> - V<sub>t</sub>).
+- The *effective channel length (L)* and voltage V(x) profile along x-axis determine the current flow.
 - This is the region where the transistor behaves like a voltage-controlled resistor.
 
 ![Alt Text](images/resistive_region_2.png)
