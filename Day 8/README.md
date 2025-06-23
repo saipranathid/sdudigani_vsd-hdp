@@ -9,14 +9,15 @@
   - [Inverter Circuit](#inverter-circuit)  
   - [SPICE Simulation Results of Inverter Circuit](#spice-simulation-results-of-inverter-circuit)  
   - [Understanding Delay Tables](#understanding-delay-tables)  
-- [NMOS Transistor Basic Element in Circuit Design](#nmos-transistor-basic-element-in-circuit-design)  
-  - [Effect of Substrate or Body Bias on Threshold Voltage](#effect-of-substrate-or-body-bias-on-threshold-voltage)  
-  - [Resistive/Linear/Triode Region of Operation](#resistive-linear-triode-region-of-operation)  
+- [NMOS Transistor Basic Element in Circuit Design](#nmos-transistor-basic-element-in-circuit-design)
+  - [Effect of Substrate or Body Bias on Threshold Voltage](#effect-of-substrate-or-body-bias-on-threshold-voltage)
+  - [Resistive or Linear or Triode Region of Operation](#resistive-or-linear-or-triode-region-of-operation)
     - [Drift Current Theory](#drift-current-theory)  
     - [Drain Current Model for Linear Region of Operation](#drain-current-model-for-linear-region-of-operation)  
 - [SPICE Conclusion to Resistive Operation](#spice-conclusion-to-resistive-operation)  
-- [Saturation/Pinch-off Region of Operation](#saturationpinch-off-region-of-operation)  
+- [Saturation or Pinch-off Region of Operation](#saturation-or-pinch-off-region-of-operation)  
 - [Basic SPICE Setup](#basic-spice-setup) 
+
 
 ## SPICE Simulation
 SPICE (Simulation Program with Integrated Circuit Emphasis) is a powerful simulation tool developed at UC Berkeley in the early 1970’s, used in electronics design to model and analyze the behavior of electronic circuits before they are physically built.
@@ -118,7 +119,7 @@ As V<sub>gs</sub> continues to rise above the threshold voltage V<sub>t</sub>, t
 
 This strong-inversion condition—where the surface of the p-substrate between the n⁺ source and drain is inverted to n-type—is what enables the MOSFET to switch fully on.
 
-### Effect of Subtrate or Body Bias on Threshold Voltage
+### Effect of Substrate or Body Bias on Threshold Voltage
 *What is Body Effect?*
 
 Whenever there is a voltage (potential) difference between the source and substrate (body), this leads to an increase or decrease in the threshold voltage of the transistor. This is called a “body effect.”
@@ -140,7 +141,7 @@ This effect is known as the *Body Effect* or *Substrate Bias Effect*.
 **Threshold Voltage Equation considering Body Bias:**
 ![Alt Text](images/body_effect_5.png)
 
-### Resistive/Linear/Triode Region of Operation
+### Resistive or Linear or Triode Region of Operation
 Here, Gate-Source potential (V<sub>gs</sub> >= V<sub>th</sub>) and a small value of V<sub>ds</sub> is applied across the channel from Drain-to-Source.
 ![Alt Text](images/resistive_region_1.png)
 At this stage:
@@ -242,7 +243,7 @@ For the example scenario we were discussing, this translates to:
 ![Alt Text](images/spice_1.jpg)
 ![Alt Text](images/spice_2.jpg)
 
-### Saturation/ Pinch-off Region of Operation 
+### Saturation or Pinch-off Region of Operation
 When we increase the drain voltage substantially (V<sub>ds</sub> > V<sub>gs</sub> - V<sub>t</sub>, called the saturation voltage), The drain voltage becomes large enough that the gate-to-substrate potential at the drain is smaller than the threshold. Therefore, the channel thickness at this end goes to zero, which is called as **“pinch-off”** condition. 
 
 ![Alt Text](images/pinch_off_1.png)
