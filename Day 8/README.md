@@ -46,6 +46,8 @@ A circuit simulator is provided with an input file that contains:
 ![Alt Text](images/spice_elements.png)
 ![Alt Text](images/units.png)
 
+
+<a id="inverter-circuit"></a>
 ### Inverter Circuit
 
 An inverter is a simple circuit that reverses the input signal:
@@ -74,10 +76,14 @@ This schematic shows a standard CMOS inverter:
 - NMOS connects from the output to VSS (GND).
 - C<sub>L</sub> represents the load capacitance, mimicking the next stage or parasitic load.
 
+
+<a id="spice-simulation-results-of-inverter-circuit"></a>
 ### SPICE Simulation Results of Inverter Circuit
 ![Alt Text](images/inverter_characteristics.png)
 First graph shows the NMOS drain current (I<sub>D</sub>) versus output voltage (V<sub>out</sub>) for several gate‐to‐source biases (V<sub>in</sub>=0, 0.5, 1, 1.5, 2 V). Each curve is an I–V “slice” of the NMOS. While the second graph indicates voltage transfer charcteristics (V<sub>out</sub> vs V<sub>in</sub>)
 
+
+<a id="understanding-delay-tables"></a>
 ### Understanding Delay Tables
 In digital timing analysis cell delay is a function of input slew (input transition) and output load. The delay values are usually stored in 2D LUTs (Lookup Tables) or 3D LUTs.
 - 2D LUT: Slew × Load → Delay
@@ -86,7 +92,9 @@ Example of a 2D LUT is shown below:
 ![Alt Text](images/2D_LUT.png)
 Here, each buffer (CBUF1 and CBUF2) has a delay table defined which is indexed by input slew as rows (eg: 20ps, 40ps, 60ps, 80ps) and output load as columns (eg: 10fF, 30fF, 50fF, 70fF, 90fF, 110fF) while the corresponding delay values are x1 to x24 for CBUF1, y1 to y24 for CBUF2.
 
-## NMOS Transistor-Basic Element in Circuit Design
+
+<a id="nmos-transistor-basic-element-in-circuit-design"></a>
+## NMOS Transistor Basic Element in Circuit Design
 
 ![Alt Text](images/nmos_basic_structure.png)
 This diagram shows a cross-section of an n-channel MOSFET (NMOS) and labels its key regions and terminals:
@@ -122,6 +130,8 @@ As V<sub>gs</sub> continues to rise above the threshold voltage V<sub>t</sub>, t
 
 This strong-inversion condition—where the surface of the p-substrate between the n⁺ source and drain is inverted to n-type—is what enables the MOSFET to switch fully on.
 
+
+<a id="effect-of-substrate-or-body-bias-on-threshold-voltage"></a>
 ### Effect of Substrate or Body Bias on Threshold Voltage
 *What is Body Effect?*
 
@@ -144,6 +154,8 @@ This effect is known as the *Body Effect* or *Substrate Bias Effect*.
 **Threshold Voltage Equation considering Body Bias:**
 ![Alt Text](images/body_effect_5.png)
 
+
+<a id="resistive-or-linear-or-triode-region-of-operation"></a>
 ### Resistive or Linear or Triode Region of Operation
 Here, Gate-Source potential (V<sub>gs</sub> >= V<sub>th</sub>) and a small value of V<sub>ds</sub> is applied across the channel from Drain-to-Source.
 ![Alt Text](images/resistive_region_1.png)
@@ -156,6 +168,8 @@ At this stage:
 
 ![Alt Text](images/resistive_region_2.png)
 
+
+<a id="drift-current-theory"></a>
 #### Drift current theory
 **Drift current** refers to the movement of charge carriers (electrons or holes) in response to an electric field. This phenomenon is driven by the force exerted by the electric field on the charged particles, leading them to 'drift' in the direction of the field.
 
@@ -182,6 +196,7 @@ In this region NMOS behaved like a ```voltage-controlled resistor```. the drift 
 ![Alt Text](images/drift_current_3.png)
 ![Alt Text](images/drift_current_4.png)
 
+<a id="drain-current-model-for-linear-region-of-operation"></a>
 #### Drain current model for linear region of operation
 The following images shows the derivation of I<sub>D</sub> equation for NMOS in linear region, starting from first-order analysis and device physics.
 ![Alt Text](images/id_1.jpg)
@@ -238,6 +253,7 @@ _Hence the name Linear Region_
 For the example scenario we were discussing, this translates to:
 ![Alt Text](images/id_3.jpg)
 
+<a id="spice-conclusion-to-resistive-operation"></a>
 #### SPICE conclusion to resistive operation
 - SPICE simulation allows us to determine the drain current (I<sub>D</sub>) by sweeping the drain-source voltage (V<sub>DS</sub>) across a range of gate-source voltages (V<sub>GS</sub>), stopping at V<sub>GS</sub> = V<sub>GS</sub> - V<sub>t</sub> for each case.
 
@@ -246,6 +262,7 @@ For the example scenario we were discussing, this translates to:
 ![Alt Text](images/spice_1.jpg)
 ![Alt Text](images/spice_2.jpg)
 
+<a id="saturation-or-pinch-off-region-of-operation"></a>
 ### Saturation or Pinch-off Region of Operation
 When we increase the drain voltage substantially (V<sub>ds</sub> > V<sub>gs</sub> - V<sub>t</sub>, called the saturation voltage), The drain voltage becomes large enough that the gate-to-substrate potential at the drain is smaller than the threshold. Therefore, the channel thickness at this end goes to zero, which is called as **“pinch-off”** condition. 
 
