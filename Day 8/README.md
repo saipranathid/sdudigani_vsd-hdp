@@ -15,8 +15,10 @@
     - [Drift Current Theory](#drift-current-theory)  
     - [Drain Current Model for Linear Region of Operation](#drain-current-model-for-linear-region-of-operation)  
 - [SPICE Conclusion to Resistive Operation](#spice-conclusion-to-resistive-operation)  
-- [Saturation or Pinch-off Region of Operation](#saturation-or-pinch-off-region-of-operation)  
-- [Basic SPICE Setup](#basic-spice-setup) 
+- [Saturation or Pinch-off Region of Operation](#saturation-or-pinch-off-region-of-operation)
+  - [Drain Current Model for Saturation Region of Operation](#drain-current-model-for-saturation-region-of-operation)  
+- [Basic SPICE Setup](#basic-spice-setup)
+  - [Circuit Description in SPICE Syntax](#circuit-description-in-spice-syntax)
 
 <a id="spice-simulation"></a>
 ## SPICE Simulation
@@ -270,6 +272,7 @@ When we increase the drain voltage substantially (V<sub>ds</sub> > V<sub>gs</sub
 ![Alt Text](images/pinch_off_2.png)
 ![Alt Text](images/pinch_off_3.png)
 
+<a id="drain-current-model-for-saturation-region-of-operation"></a>
 #### Drain Current Model for Saturation Region of Operation
 These images show how the effective channel length reduces due to pinch-off and how the drain current (ID) becomes weakly dependent on VDS, leading to the saturation region equation with channel length modulation.
 ![Alt Text](images/drain_current_model_1.png)
