@@ -59,5 +59,10 @@ Thus, this plot clearly demonstrates how velocity saturation alters the I<sub>d<
 ![Alt Text](images/velocity_saturation2.png)
 ![Alt Text](images/velocity_saturation3.png)
 
+Short Channel devices (with *channel length<250nm*), has 4 modes of operation:
+- Cutoff Region
+- Resistive Region
+- **Velocity Saturation Region** (Additional mode due to *velocity saturation* effect in short channel devices)
+- Saturation Region
 
 </details>
