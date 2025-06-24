@@ -365,10 +365,24 @@ Here:
 
 <a id="first-spice-simulation"></a>
 #### First SPICE Simulation
+- Clone the repo using the following command:
+```bash
+git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git
+```
+
+- All the SPICE example files are in ```design``` directory.
+
+```bash
+sdudigani@sdudigani-VirtualBox:~/sky130CircuitDesignWorkshop/design$ pwd
+/home/sdudigani/sky130CircuitDesignWorkshop/design
+sdudigani@sdudigani-VirtualBox:~/sky130CircuitDesignWorkshop/design$ ls
+day1_nfet_idvds_L2_W5.spice      day2_nfet_idvgs_L015_W039.spice  day3_inv_vtc_Wp084_Wn036.spice        day5_inv_devicevariation_wp7_wn042.spice  sky130_fd_pr
+day2_nfet_idvds_L015_W039.spice  day3_inv_tran_Wp084_Wn036.spice  day4_inv_noisemargin_wp1_wn036.spice  day5_inv_supplyvariation_Wp1_Wn036.spice
+sdudigani@sdudigani-VirtualBox:~/sky130CircuitDesignWorkshop/design$ 
+```
 
 <a id="spice-lab-with-sky130-models"></a>
 ##### SPICE Lab with sky130 models 
-**ID vs. VDS for different VGS - sky130 NMOS (W=5um, L=2um)**
 
   <details>
       <Summary><strong>SPICE File: day1_nfet_idvds_L2_W5.spice</strong></summary>
@@ -401,8 +415,13 @@ Here:
       
   </details>
 
-- To use SPICE with sky130
-- 
+- To plot the waveforms in ngspice:
+```bash
+ngspice day1_nfet_idvds_L2_W5.spice
+plot -vdd#branch
+```
+
+**ID vs. VDS for different VGS - sky130 NMOS (W=5um, L=2um)**
 ![Alt Text](images/ngspice_lab1.png)
 
 </details>
