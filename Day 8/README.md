@@ -14,11 +14,13 @@
   - [Resistive or Linear or Triode Region of Operation](#resistive-or-linear-or-triode-region-of-operation)
     - [Drift Current Theory](#drift-current-theory)  
     - [Drain Current Model for Linear Region of Operation](#drain-current-model-for-linear-region-of-operation)  
-- [SPICE Conclusion to Resistive Operation](#spice-conclusion-to-resistive-operation)  
-- [Saturation or Pinch-off Region of Operation](#saturation-or-pinch-off-region-of-operation)
-  - [Drain Current Model for Saturation Region of Operation](#drain-current-model-for-saturation-region-of-operation)  
+    - [SPICE Conclusion to Resistive Operation](#spice-conclusion-to-resistive-operation)  
+  - [Saturation or Pinch-off Region of Operation](#saturation-or-pinch-off-region-of-operation)
+    - [Drain Current Model for Saturation Region of Operation](#drain-current-model-for-saturation-region-of-operation)  
 - [Basic SPICE Setup](#basic-spice-setup)
   - [Circuit Description in SPICE Syntax](#circuit-description-in-spice-syntax)
+  - [First SPICE Simulation](#first-spice-simulation)
+  - [SPICE Lab with sky130 models](#spice-lab-with-sky130-models)
 
 <a id="spice-simulation"></a>
 ## SPICE Simulation
@@ -350,6 +352,13 @@ The following images show how a SPICE deck is written to perform DC analysis of 
 
 ![Alt Text](images/spice_netlist_tech_file.png)
 ![Alt Text](images/spice_netlist_tech_file1.png)
+
+<a id="first-spice-simulation"></a>
+#### First SPICE Simulation
+
+<a id="spice-lab-with-sky130-models"></a>
+#### SPICE Lab with sky130 models
+
 
 
 
