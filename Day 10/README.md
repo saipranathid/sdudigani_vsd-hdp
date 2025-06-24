@@ -195,10 +195,19 @@ The above image shows the CMOS inverter regions of operation and where V<sub>m</
 ![Alt Text](images/exp_5.png)
 
 **Conclusion**
+- This table shows how varying the Wp/Wn ratio affects:
+  - Rise Delay
+  - Fall Delay
+  - Switching Threshold (V<sub>m</sub>)
+
+- When W<sub>p</sub>/L<sub>p</sub> ≈ 2 × W<sub>n</sub>/L<sub>n</sub>, the inverter achieves balanced rise and fall delays (≈ 80 ps each).
+- At this point, the switching threshold V<sub>m</sub> ≈ 1.2 V.
 ![Alt Text](images/exp_6.png)
 
 <a id="applications-of-cmos-inverter-in-clock-network-and-sta"></a>
 ## Applications of CMOS Inverter in Clock Network and STA
-
+If the rise delay and fall delay of the clock buffer are well-matched, no duty cycle distortion correction is needed. However, if they are imbalanced due to PMOS/NMOS Ron mismatch, duty cycle correction circuits are used in the clock tree to maintain a 50% duty cycle.
+![Alt Text](images/cts.png)
+![Alt Text](images/cts_1.png)
 
 </details>
