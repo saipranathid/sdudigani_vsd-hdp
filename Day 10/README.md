@@ -185,11 +185,17 @@ The above image shows the CMOS inverter regions of operation and where V<sub>m</
 
 <a id="static-and-dynamic-simulation-of-cmos-inverter"></a>
 ## Static & Dynamic Simulation of CMOS Inverter
-
-
+![Alt Text](images/exp_1.png)
 
 <a id="dynamic-simulation-with-increased-pmos-width"></a>
 ## Static & Dynamic Simulation with Increased PMOS Width
+![Alt Text](images/exp_2.png)
+![Alt Text](images/exp_3.png)
+![Alt Text](images/exp_4.png)
+![Alt Text](images/exp_5.png)
+
+**Conclusion**
+![Alt Text](images/exp_6.png)
 
 <a id="applications-of-cmos-inverter-in-clock-network-and-sta"></a>
 ## Applications of CMOS Inverter in Clock Network and STA
