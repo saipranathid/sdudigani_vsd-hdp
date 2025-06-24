@@ -4,6 +4,7 @@
 ## Contents
 - [SPICE Simulation for lower nodes](#spice-simulation-for-lower-nodes)
   - [Drain Current vs Gate Voltage for long and short channel device](#drain-current-vs-gate-voltage-for-long-and-short-channel-device)
+  - [Velocity Saturation at lower and higher electric fields](#velocity-saturation-at-lower-and-higher-electric-fields)
 
 
 <a id="spice-simulation-for-lower-nodes"></a>
@@ -37,17 +38,26 @@ The plot below compares NMOS output characteristics for long channel and short c
 - In the above figures, the left plot corresponds to a device1 with W = 1.8μm and L = 1.2μm (long-channel device), and the right plot corresponds to device2 with W = 0.375μm and L = 0.25μm (short-channel device).
 - Since the channel length is < 0.25μm in the second case, it is classified as a short-channel device.
 - Both devices have the same W/L ratio, but different absolute Width (W) and Length (L), allowing us to compare their electrical behavior directly.
-- When we apply a constant Vds and sweep Vgs:
-  - In long-channel devices, the drain current (Id) shows an ideal quadratic dependence on Vgs.
-  - In short-channel devices, Id remains quadratic at low Vgs but gradually becomes linear at higher Vgs. This is due to velocity saturation, which limits carrier velocity as the electric field increases. Once the carrier velocity reaches its maximum limit (velocity saturation), the Id-Vgs curve flattens into a linear region.
+- When we apply a constant V<sub>ds</sub> and sweep V<sub>gs</sub>:
+  - In long-channel devices, the drain current (I<sub>d</sub>) shows an ideal quadratic dependence on V<sub>gs</sub>.
+  - In short-channel devices, I<sub>d</sub> remains quadratic at low V<sub>gs</sub> but gradually becomes linear at higher V<sub>gs</sub>. This is due to velocity saturation, which limits carrier velocity as the electric field increases. Once the carrier velocity reaches its maximum limit (velocity saturation), the I<sub>d</sub>-Vgs curve flattens into a linear region.
 
-Thus, this plot clearly demonstrates how velocity saturation alters the Id behavior in short-channel devices — causing a transition from quadratic to linear dependence at higher Vgs.
+Thus, this plot clearly demonstrates how velocity saturation alters the I<sub>d</sub> behavior in short-channel devices — causing a transition from quadratic to linear dependence at higher V<sub>gs</sub>.
 
 - For long-channel devices, drain current shows a quadratic dependence on gate voltage.
 - For short-channel devices, it is quadratic at low gate voltage but becomes linear at higher voltages due to velocity saturation.
 
 ![Alt Text](images/id_vs_vgs.png)
 
+<a id="velocity-saturation-at-lower-and-higher-electric-fields"></a>
 ### Velocity Saturation at lower and higher electric fields
+- At lower electric fields, carrier velocity increases linearly with the electric field.
+- At higher electric fields, velocity saturates and becomes constant due to velocity saturation.
+
+![Alt Text](images/velocity_saturation.png)
+![Alt Text](images/velocity_saturation1.png)
+![Alt Text](images/velocity_saturation2.png)
+![Alt Text](images/velocity_saturation2.png)
+
 
 </details>
