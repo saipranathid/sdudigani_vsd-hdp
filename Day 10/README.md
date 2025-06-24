@@ -7,12 +7,12 @@
   - [SPICE Simulation for CMOS inverter](#spice-simulation-for-cmos-inverter)
   - [Labs Sky130 SPICE Simulation for CMOS](#labs-sky130-spice-simulation-for-cmos)   
 - [Static Behavior Evaluation](#static-behavior-evaluation)
-- [Switching Threshold V<sub>m</sub>](#switching-threshold-v_m)
-- [Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>](#analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m)
-- [Static and Dyanamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
-- [Static & Dynamic Simulation with Increased PMOS Width](#dynamic-simulation-with-increased-pmos-width)
-- [Applications of CMOS Inverter in Clock Network and STA](#applications-of-cmos-inverter-in-clock-network-and-sta)
-  
+  - [Switching Threshold V<sub>m</sub>](#switching-threshold-v_m)
+  - [Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>](#analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m)
+  - [Static and Dyanamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
+  - [Static & Dynamic Simulation with Increased PMOS Width](#dynamic-simulation-with-increased-pmos-width)
+  - [Applications of CMOS Inverter in Clock Network and STA](#applications-of-cmos-inverter-in-clock-network-and-sta)
+    
 
 <a id="volatge-transfer-characteristics-spice-simulations"></a>
 # Voltage Transfer Charcateristics SPICE Simulations
@@ -137,8 +137,28 @@ How to calculate rise time and fall time from the transient analysis:
 
 <a id="static-behavior-evaluation"></a>
 # Static Behavior Evaluation
+The characteristics that define the CMOS inverter robustness are:
+- Switching Threshold Voltage (V<sub>m</sub>)
+- Noise Margin
+- Power Supply Variation
+- Device Variations
+
 <a id="switching-threshold-v_m"></a>
 ## Switching Threshold V<sub>m</sub>
+**Switching Threshold Voltage of CMOS Inverter (V<sub>m</sub>):** V<sub>m</sub> is the voltage at which the input voltage equals the output voltage (V<sub>in</sub> = V<sub>out</sub>)
+- It is an important parameter that impacts the noise margin and robustness of the inverter.
+- At V<sub>m</sub>, both the NMOS and PMOS transistors are operating in the saturation region, and both are turned ON, giving high voltage gain.
+
+The image compares two CMOS inverters with different PMOS/NMOS sizing:
+![Alt Text](images/Vm_1.png)
+In the left plot, (W<sub>n</sub>/L<sub>n</sub> = W<sub>p</sub>/L<sub>p</sub> = 0.375 µm/0.25 µm)
+- **Device sizing:** both NMOS and PMOS have the same W/L
+- Measured V<sub>m</sub> ≈ 0.98 V (Because the NMOS and PMOS strengths are equal, the threshold falls just below half the supply (1.25 V), here at ≈ 0.98 V)
+
+In the right plot, W<sub>n</sub>/L<sub>n</sub> = 0.375 µm/0.25 µm, W<sub>p</sub>/L<sub>p</sub> = 0.9375 µm/0.25 µm
+- PMOS widened by 2.5× relative to NMOS
+- Measured V<sub>m</sub> ≈ 1.20 V (The stronger pull-up shifts the balance point higher, so the inverter switches at a higher input voltage)
+
 
 <a id="analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m>"></a>
 ## Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>
