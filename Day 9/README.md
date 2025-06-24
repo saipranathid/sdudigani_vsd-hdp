@@ -7,7 +7,8 @@
   - [Velocity Saturation at lower and higher electric fields](#velocity-saturation-at-lower-and-higher-electric-fields)
   - [Velocity Saturation Drain Current Model](#velocity-saturation-drain-current-model)
   - [Lab Sky130 Id-Vgs](#lab-sky130-id-vgs)
-
+- [CMOS Voltage Transfer Characteristics](#cmos-voltage-transfer-characteristics)
+  - [MOSFET as a Switch](#mosfet-as-a-switch)
 
 <a id="spice-simulation-for-lower-nodes"></a>
 ## SPICE Simulation for lower nodes
@@ -160,5 +161,22 @@ plot -vdd#branch
 
 **The plot of Ids vs Vgs over constant Vds:**
 ![Alt Text](images/id-vgs_1.png)
+
+<a id="cmos-voltage-transfer-characteristics"></a>
+## CMOS Voltage Transfer Characteristics
+
+<a id="mosfet-as-a-switch"></a>
+### MOSFET as a Switch
+
+- OFF State: The MOSFET behaves as an open switch (infinite OFF resistance) when: |V<sub>gs</sub>| < |V<sub>th</sub>|
+- ON State: The MOSFET behaves as a closed switch (finite ON resistance) when: |V<sub>gs</sub>| > |V<sub>th</sub>|
+
+![Alt Text](images/mos_device_characteristics.png)
+
+### Introduction to standard MOS voltage current parameters
+- The figure below shows the CMOS inverter in both transistor-level and switch-level representations:
+
+![Alt Text](images/cmos_inverter_transistor_switch_view.png)
+
 
 </details>
