@@ -8,7 +8,7 @@
   - [Labs Sky130 SPICE Simulation for CMOS](#labs-sky130-spice-simulation-for-cmos)   
 - [Static Behavior Evaluation](#static-behavior-evaluation)
 - [Switching Threshold V<sub>m</sub>](#switching-threshold-v_m)
-- [Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>](#analytical-expression-of-w-/-l-and-w-l-as-a-function-of-v-m)
+- [Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>](#analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m)
 - [Static and Dyanamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
 - [Static & Dynamic Simulation with Increased PMOS Width](#dynamic-simulation-with-increased-pmos-width)
 - [Applications of CMOS Inverter in Clock Network and STA](#applications-of-cmos-inverter-in-clock-network-and-sta)
@@ -30,7 +30,7 @@
 <a id="switching-threshold-v_m"></a>
 ## Switching Threshold V<sub>m</sub>
 
-<a id="analytical-expression-of-w-/-l-and-w-l-as-a-function-of-v-m>"></a>
+<a id="analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m>"></a>
 ## Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>
 
 <a id="static-and-dynamic-simulation-of-cmos-inverter"></a>
