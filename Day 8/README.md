@@ -20,7 +20,7 @@
 - [Basic SPICE Setup](#basic-spice-setup)
   - [Circuit Description in SPICE Syntax](#circuit-description-in-spice-syntax)
   - [First SPICE Simulation](#first-spice-simulation)
-  - [SPICE Lab with sky130 models](#spice-lab-with-sky130-models)
+    - [SPICE Lab with sky130 models](#spice-lab-with-sky130-models)
 
 <a id="spice-simulation"></a>
 ## SPICE Simulation
@@ -353,12 +353,58 @@ The following images show how a SPICE deck is written to perform DC analysis of 
 ![Alt Text](images/spice_netlist_tech_file.png)
 ![Alt Text](images/spice_netlist_tech_file1.png)
 
+In this example:
+- The ```.include``` or ```.LIB``` command loads the technology model file into the simulation (```xxxx_025um_model.mod```).
+- The NMOS/PMOS *model names* (like nmos, pmos) used in the netlist must match those defined in the technology file.
+
+**Simulation goal:** To observe how the drain current (I<sub>D</sub>) varies with drain-source voltage (V<sub>DS</sub>) for a fixed gate-source voltage (V<sub>GS</sub>).
+
+Here:
+- V<sub>GS</sub> is fixed at 2.5 V.
+- V<sub>DS</sub> is swept from 0 V to 2.5 V.
+
 <a id="first-spice-simulation"></a>
 #### First SPICE Simulation
 
 <a id="spice-lab-with-sky130-models"></a>
-#### SPICE Lab with sky130 models
+##### SPICE Lab with sky130 models 
+**ID vs. VDS for different VGS - sky130 NMOS (W=5um, L=2um)**
 
+  <details>
+      <Summary><strong>SPICE File: day1_nfet_idvds_L2_W5.spice</strong></summary>
+  
+      
+        *** Model Description ***
+        .param temp=27
+        
+        *** Including sky130 library files ***
+        .lib "sky130_fd_pr/models/sky130.lib.spice" tt
+        
+        *** Netlist Description ***
+        XM1 vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
+        R1 n1 in 55
+        Vdd vdd 0 1.8
+        Vin in 0 1.8
+        
+        *** Simulation Commands ***
+        .op
+        .dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+        
+        .control
+        run
+        display
+        setplot dc1
+        .endc
+        
+        .end
+      
+      
+  </details>
 
+- To use SPICE with sky130
+- 
+![Alt Text](images/ngspice_lab1.png)
+
+</details>
 
 
