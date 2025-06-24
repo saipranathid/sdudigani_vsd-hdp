@@ -9,7 +9,9 @@
 <a id="spice-simulation-for-lower-nodes"></a>
 ## SPICE Simulation for lower nodes
 - The behavior of transistors with very short channel lengths (called short-channel devices) deviates considerably from the resistive and saturated models. The main reason for this deviation is the velocity saturation effect.
-- We had seen previously that the drift velocity is modelled by: *Drift velocity,  $v = -\mu \dfrac{dV}{dx}$* i.e., the velocity of the carriers is proportional to the electrical field, independent of the value of that field. In other words, the carrier mobility is a constant.
+- We had seen previously that the drift velocity is modelled by:
+
+  *Drift velocity,  v = -u (dV/dx)* i.e., the velocity of the carriers is proportional to the electrical field, independent of the value of that field. In other words, the carrier mobility is a constant.
 - However, at high electric field strengths, the carriers fail to follow this linear model.
 - When the electrical field along the channel reaches a critical value  E<sub>c</sub>, the velocity of the carriers tends to saturate due to scattering effects (collisions suffered by the carriers).
 - The plot below shows the output characteristics of an NMOS device with W=1.8μm, L=1.2μm (W/L = 1.5).
