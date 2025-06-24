@@ -77,9 +77,9 @@ For any signal to be reliably interpreted as logic '0' or logic '1', it must sta
 <a id="sky130-noise-margin-labs"></a>
 ## Sky130 Noise margin Labs
 
-<details>
-  <Summary><strong> day4_inv_noisemargin_wp1_wn036.spice</strong></summary>
+<details> <summary><strong>day3_inv_vtc_Wp084_Wn036.spice </strong></summary>
 
+```
 *Model Description
 .param temp=27
 
@@ -91,7 +91,7 @@ For any signal to be reliably interpreted as logic '0' or logic '1', it must sta
 *Netlist Description
 
 
-XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=0.84 l=0.15
 XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
 
 
@@ -111,8 +111,9 @@ run
 setplot dc1
 display
 .endc
-.end
 
+.end
+```
 </details>
 
 
