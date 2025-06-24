@@ -91,7 +91,7 @@ For any signal to be reliably interpreted as logic '0' or logic '1', it must sta
 *Netlist Description
 
 
-XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=0.84 l=0.15
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
 XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
 
 
@@ -113,6 +113,8 @@ display
 .endc
 
 .end
+
+
 ```
 </details>
 
