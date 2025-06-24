@@ -5,6 +5,7 @@
 - [SPICE Simulation for lower nodes](#spice-simulation-for-lower-nodes)
   - [Drain Current vs Gate Voltage for long and short channel device](#drain-current-vs-gate-voltage-for-long-and-short-channel-device)
   - [Velocity Saturation at lower and higher electric fields](#velocity-saturation-at-lower-and-higher-electric-fields)
+  - [Velocity Saturation Drain Current Model](#velocity-saturation-drain-current-model)
 
 
 <a id="spice-simulation-for-lower-nodes"></a>
@@ -64,5 +65,16 @@ Short Channel devices (with *channel length<250nm*), has 4 modes of operation:
 - Resistive Region
 - **Velocity Saturation Region** (Additional mode due to *velocity saturation* effect in short channel devices)
 - Saturation Region
+
+<a id="velocity-saturation-drain-current-model"></a>
+### Velocity Saturation Drain Current Model
+
+![Alt Text](images/vse1.png)
+V<sub>dsat</sub> - Saturation voltage i.e. voltage at which device velocity saturates and is independent of V<sub>gs</sub> or V<sub>ds</sub>. It is a Technology Parameter.
+![Alt Text](images/vse2.png)
+![Alt Text](images/vse3.png)
+
+**Observation 2: Peak Current Comparison - Long Channel vs Short Channel devices**
+
 
 </details>
