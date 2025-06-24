@@ -9,6 +9,7 @@
   - [Lab Sky130 Id-Vgs](#lab-sky130-id-vgs)
 - [CMOS Voltage Transfer Characteristics](#cmos-voltage-transfer-characteristics)
   - [MOSFET as a Switch](#mosfet-as-a-switch)
+  - [Load Line Curves for NMOS and PMOS](#load-line-curves-for-nmos-and-pmos)
 
 <a id="spice-simulation-for-lower-nodes"></a>
 ## SPICE Simulation for lower nodes
@@ -184,6 +185,7 @@ plot -vdd#branch
 ![Alt Text](images/drainIvsdrainV_1.png)
 ![Alt Text](images/drainIvsdrainV_2.png)
 
+<a id="load-line-curves-for-nmos-and-pmos"></a>
 ### Load Line Curves for NMOS and PMOS
 Step 1: Convert the PMOS gate-source voltage (VgsP) into an equivalent Vin.
 
@@ -198,7 +200,6 @@ Step 4: Merge the NMOS and PMOS load curves by equating their Ids characteristic
 Plot the Voltage Transfer Characteristic (VTC) by sweeping Vin and mapping the corresponding Vout, showing the inverter switching behavior from logic HIGH to LOW.
 
 ![Alt Text](images/step4.png)
-
 
 
 </details>
