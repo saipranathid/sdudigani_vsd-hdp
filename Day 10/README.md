@@ -8,6 +8,7 @@
   - [Labs Sky130 SPICE Simulation for CMOS](#labs-sky130-spice-simulation-for-cmos)   
 - [Static Behavior Evaluation](#static-behavior-evaluation)
   - [Switching Threshold V<sub>m</sub>](#switching-threshold-v_m)
+  - [Analytical Expression of V<sub>m</sub> as a function of (W/L)<sub>p</sub> and (W/L)<sub>n</sub>](#analytical-expression-of-v-m-as-a-function-of-w-l-and-w-l)
   - [Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>](#analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m)
   - [Static and Dyanamic Simulation of CMOS Inverter](#static-and-dynamic-simulation-of-cmos-inverter)
   - [Static & Dynamic Simulation with Increased PMOS Width](#dynamic-simulation-with-increased-pmos-width)
@@ -168,14 +169,20 @@ The above image shows the CMOS inverter regions of operation and where V<sub>m</
   - PMOS Saturation and NMOS Linear
   - PMOS OFF and NMOS Linear
 
-<a id="analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m>"></a>
-## Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>
+<a id="analytical-expression-of-v-m-as-a-function-of-w-l-and-w-l>"></a>
+## Analytical Expression of V<sub>m</sub> as a function of (W/L)<sub>p</sub> and (W/L)<sub>n</sub>
 ![Alt Text](images/derivation_1.png)
 ![Alt Text](images/derivation_2.png)
 ![Alt Text](images/derivation_3.png)
 
+
+<a id="analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m>"></a>
+## Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>
+
 <a id="static-and-dynamic-simulation-of-cmos-inverter"></a>
 ## Static & Dynamic Simulation of CMOS Inverter
+
+
 
 <a id="dynamic-simulation-with-increased-pmos-width"></a>
 ## Static & Dynamic Simulation with Increased PMOS Width
