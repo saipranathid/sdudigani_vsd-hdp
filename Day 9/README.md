@@ -112,9 +112,53 @@ V<sub>dsat</sub> - Saturation voltage i.e. voltage at which device velocity satu
           .end
   </details>
 
-to plot the waveforms in ngspice:
+**to plot the waveforms in ngspice:**
+
 ```bash
 ngspice day2_nfet_idvds_L015_W039.spice 
 plot -vdd#branch
 ```
+
+**The plot of Ids vs Vds over constant Vgs:**
+![Alt Text](images/id-vds_1.png)
+Peak current = 196uA
+
+  <details>
+      <Summary><strong> SPICE file: day2_nfet_idvds_L015_W039.spice</strong></summary>
+          
+          *Model Description
+          .param temp=27
+          
+          *Including sky130 library files
+          .lib "sky130_fd_pr/models/sky130.lib.spice" tt
+          
+          *Netlist Description
+          XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+          R1 n1 in 55
+          Vdd vdd 0 1.8V
+          Vin in 0 1.8V
+          
+          *simulation commands
+          .op
+          .dc Vin 0 1.8 0.1 
+          
+          .control
+          
+          run
+          display
+          setplot dc1
+          .endc
+          .end
+  </details>
+
+**to plot the waveforms in ngspice:**
+
+```bash
+ngspice day2_nfet_idvgs_L015_W039.spice
+plot -vdd#branch
+```
+
+**The plot of Ids vs Vgs over constant Vds:**
+![Alt Text](images/id-vgs_1.png)
+
 </details>
