@@ -15,7 +15,15 @@
 
 <a id="introduction-to-noise-margin"></a>
 ## Introduction to Noise Margin
-![Alt Text](images/spice_deck_1.png)
+**Noise margin** is the maximum noise voltage a CMOS circuit can tolerate without logic errors.
+- i.e Noise margin is the amount of noise that a CMOS circuit could withstand without compromising the operation of circuit.
+- Noise margin makes sure that:
+  - any signal which is logic 1 with finite noise added to it, is still recognized as logic 1 and not logic 0.
+  - similarly, any signal which is logic 0 with finite noise added to it, is still recognized as logic 0 and not logic 1.
+
+The following images show an ideal and a piece-wise linear VTC of a CMOS inverter:
+![Alt Text](images/nm_1.png)
+![Alt Text](images/nm_2.png)
 
 <a id="noise-margin-voltage-parameters"></a>
 ## Noise Margin Volatge Parameters
