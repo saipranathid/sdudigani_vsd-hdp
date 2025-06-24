@@ -114,8 +114,17 @@ display
 
 .end
 
-
 ```
 </details>
+
+**to plot the waveforms in ngspice**:
+```bash
+ngspice day4_inv_noisemargin_wp1_wn036.spice
+plot out vs in
+```
+
+![Alt Text](images/lab_1.png)
+
+
 
 
