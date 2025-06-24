@@ -47,8 +47,8 @@ The right diagram shows:
 <a id="noise-margin-equation-and-summary"></a>
 ## Noise Margin Equation and Summary
 **Noise Margins:**
-- ```NM<sub>H</sub> = V<sub>OH</sub> − V<sub>IH</sub>```: Noise Margin High — tolerance for noise on logic 1
-- ```NML = V<sub>IL</sub> − V<sub>OL</sub>```: Noise Margin Low — tolerance for noise on logic 0
+- NM<sub>H</sub> = V<sub>OH</sub> − V<sub>IH</sub>: Noise Margin High — tolerance for noise on logic 1
+- NML = V<sub>IL</sub> − V<sub>OL</sub>: Noise Margin Low — tolerance for noise on logic 0
 
 **Summary**
 This figure summarizes how Noise Margins help handle noisy "bumps" on signals — ensuring correct logic detection.
@@ -71,6 +71,48 @@ For any signal to be reliably interpreted as logic '0' or logic '1', it must sta
 
 <a id="noise-margin-variation-with-respect-to-pmos-width"></a>
 ## Noise Margin Variation with respect to PMOS width
+![Alt Text](images/nm_variations_wrt_pmos_width.png)
+![Alt Text](images/nm_variations_wrt_pmos_width_2.png)
 
 <a id="sky130-noise-margin-labs"></a>
 ## Sky130 Noise margin Labs
+
+<details>
+  <Summary><strong> day4_inv_noisemargin_wp1_wn036.spice</strong></summary>
+
+*Model Description
+.param temp=27
+
+
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+
+*Netlist Description
+
+
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
+
+
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*simulation commands
+
+.op
+
+.dc Vin 0 1.8 0.01
+
+.control
+run
+setplot dc1
+display
+.endc
+.end
+
+</details>
+
+
