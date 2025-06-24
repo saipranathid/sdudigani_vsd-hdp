@@ -170,7 +170,9 @@ The above image shows the CMOS inverter regions of operation and where V<sub>m</
 
 <a id="analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m>"></a>
 ## Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>
-
+![Alt Text](images/derivation_1.png)
+![Alt Text](images/derivation_2.png)
+![Alt Text](images/derivation_3.png)
 
 <a id="static-and-dynamic-simulation-of-cmos-inverter"></a>
 ## Static & Dynamic Simulation of CMOS Inverter
