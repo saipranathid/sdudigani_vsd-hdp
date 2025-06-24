@@ -14,6 +14,7 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 - [VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)
 - [Timing Graphs using OpenSTA](Day%207/README.md)
 - [Circuit Design and Spice Simulation](Day%208/README.md)
+- [Velocity Saturation and basics of CMOS inverter VTC](Day%209/README.md)
 
 ## 🛠️ Tools & Technologies
 
