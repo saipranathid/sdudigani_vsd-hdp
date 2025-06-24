@@ -348,8 +348,8 @@ The following images show how a SPICE deck is written to perform DC analysis of 
 ![Alt Text](images/spice_netlist_Vin3.png)
 ![Alt Text](images/spice_netlist_Vin4.png)
 
-![Alt Text](images/spice_nodes3.png)
-
+![Alt Text](images/spice_netlist_tech_file.png)
+![Alt Text](images/spice_netlist_tech_file1.png)
 
 
 
