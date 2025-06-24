@@ -44,13 +44,30 @@ The right diagram shows:
 - V<sub>OH</sub> and V<sub>OL</sub>: Valid output high/low voltage levels
 - V<sub>IL</sub> and V<sub>IH</sub>: Input thresholds where the slope = −1
 
+<a id="noise-margin-equation-and-summary"></a>
+## Noise Margin Equation and Summary
 **Noise Margins:**
 - ```NM<sub>H</sub> = V<sub>OH</sub> − V<sub>IH</sub>```: Noise Margin High — tolerance for noise on logic 1
 - ```NML = V<sub>IL</sub> − V<sub>OL</sub>```: Noise Margin Low — tolerance for noise on logic 0
 
-<a id="noise-margin-equation-and-summary"></a>
-## Noise Margin Equation and Summary
+**Summary**
+This figure summarizes how Noise Margins help handle noisy "bumps" on signals — ensuring correct logic detection.
+![Alt Text](images/nm_summary.png)
 
+**Input thresholds:**
+- V<sub>IL</sub>: Input voltage < V<sub>dd</sub>/2 (~10% of V<sub>dd</sub>) — treated as logic '0'
+- V<sub>IH</sub>: Input voltage > V<sub>dd</sub>/2 (~90% of V<sub>dd</sub>) — treated as logic '1'
+
+**Output thresholds:**
+- V<sub>OL</sub>: Output voltage near 0V — treated as logic '0' for next gate input
+- V<sub>OH</sub>: Output voltage near V<sub>dd</sub> — treated as logic '1' for next gate input
+
+**Noise Bump Scenarios:**
+- **Case (a):** Bump height lies between V<sub>OL</sub> and V<sub>IL</sub> → signal still treated as logic '0'.
+- **Case (b):** Bump height lies between V<sub>IL</sub> and V<sub>IH</sub> → output becomes undefined (logic unstable).
+- **Case (c):** Bump height lies between V<sub>IH</sub> and V<sub>OH</sub> → signal treated as logic '1'.
+
+For any signal to be reliably interpreted as logic '0' or logic '1', it must stay within the corresponding Noise Margin (NML or NMH) range — outside the undefined region.
 
 <a id="noise-margin-variation-with-respect-to-pmos-width"></a>
 ## Noise Margin Variation with respect to PMOS width
