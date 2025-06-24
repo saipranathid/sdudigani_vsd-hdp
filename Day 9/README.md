@@ -6,6 +6,7 @@
   - [Drain Current vs Gate Voltage for long and short channel device](#drain-current-vs-gate-voltage-for-long-and-short-channel-device)
   - [Velocity Saturation at lower and higher electric fields](#velocity-saturation-at-lower-and-higher-electric-fields)
   - [Velocity Saturation Drain Current Model](#velocity-saturation-drain-current-model)
+  - [Lab Sky130 Id vs Vgs](#lab-sky130-id-vs-vgs)
 
 
 <a id="spice-simulation-for-lower-nodes"></a>
@@ -81,4 +82,39 @@ V<sub>dsat</sub> - Saturation voltage i.e. voltage at which device velocity satu
 - Peak current of Short-channel device (I<sub>d</sub>) = 210 μA (Right plot)
 - Even though short-channel devices allow for faster switching and smaller sizes, their peak drain current (I<sub>d</sub>) is lower than long-channel devices. The reduction in peak current is due to velocity saturation — which limits carrier velocity in short-channel devices. In long-channel devices, carriers accelerate freely, giving higher I<sub>d</sub>.
 
+<a id="lab-sky130-id-vs-vgs"></a>
+### Lab Sky130 Id vs Vgs
+  <details>
+      <Summary><strong> SPICE file: day2_nfet_idvds_L015_W039.spice</strong></summary>
+          
+          *Model Description
+          .param temp=27
+          
+          *Including sky130 library files
+          .lib "sky130_fd_pr/models/sky130.lib.spice" tt
+          
+          *Netlist Description
+          XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+          R1 n1 in 55
+          Vdd vdd 0 1.8V
+          Vin in 0 1.8V
+          
+          *simulation commands
+          .op
+          .dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+          
+          .control
+          
+          run
+          display
+          setplot dc1
+          .endc
+          .end
+  </details>
+
+to plot the waveforms in ngspice:
+```bash
+ngspice day2_nfet_idvds_L015_W039.spice 
+plot -vdd#branch
+```
 </details>
