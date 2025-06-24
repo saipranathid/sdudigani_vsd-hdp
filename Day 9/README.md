@@ -75,6 +75,10 @@ V<sub>dsat</sub> - Saturation voltage i.e. voltage at which device velocity satu
 ![Alt Text](images/vse3.png)
 
 **Observation 2: Peak Current Comparison - Long Channel vs Short Channel devices**
-
+![Alt Text](images/obs2.png)
+- The figure above compares the peak drain current (I<sub>d</sub>) between a long-channel and short-channel NMOS device.
+- Peak current of Long-channel device (I<sub>d</sub>) = 410 μA (Left plot)
+- Peak current of Short-channel device (I<sub>d</sub>) = 210 μA (Right plot)
+- Even though short-channel devices allow for faster switching and smaller sizes, their peak drain current (I<sub>d</sub>) is lower than long-channel devices. The reduction in peak current is due to velocity saturation — which limits carrier velocity in short-channel devices. In long-channel devices, carriers accelerate freely, giving higher I<sub>d</sub>.
 
 </details>
