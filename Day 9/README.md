@@ -173,10 +173,32 @@ plot -vdd#branch
 
 ![Alt Text](images/mos_device_characteristics.png)
 
+<a id="introduction-to-standard-mos-voltage-current-parameters"></a>
 ### Introduction to standard MOS voltage current parameters
 - The figure below shows the CMOS inverter in both transistor-level and switch-level representations:
 
 ![Alt Text](images/cmos_inverter_transistor_switch_view.png)
+
+<a id="pmos/nmos-drain-current-v/s-drain-voltage"></a>
+### PMOS/NMOS drain current v/s drain voltage
+![Alt Text](images/drainIvsdrainV_1.png)
+![Alt Text](images/drainIvsdrainV_2.png)
+
+### Load Line Curves for NMOS and PMOS
+Step 1: Convert the PMOS gate-source voltage (VgsP) into an equivalent Vin.
+
+Replace all internal node voltages with Vin, Vdd, Vss, and Vout.
+![Alt Text](images/step1.png)
+
+Step 2 & 3: Convert PMOS and NMOS drain-source voltages to Vout.
+![Alt Text](images/step2.png)
+
+Step 4: Merge the NMOS and PMOS load curves by equating their Ids characteristics with respect to Vout.
+
+Plot the Voltage Transfer Characteristic (VTC) by sweeping Vin and mapping the corresponding Vout, showing the inverter switching behavior from logic HIGH to LOW.
+
+![Alt Text](images/step4.png)
+
 
 
 </details>
