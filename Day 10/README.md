@@ -159,9 +159,18 @@ In the right plot, W<sub>n</sub>/L<sub>n</sub> = 0.375 µm/0.25 µm, W<sub>p</su
 - PMOS widened by 2.5× relative to NMOS
 - Measured V<sub>m</sub> ≈ 1.20 V (The stronger pull-up shifts the balance point higher, so the inverter switches at a higher input voltage)
 
+![Alt Text](images/Vm_in_Vin_vs_Vout.png)
+The above image shows the CMOS inverter regions of operation and where V<sub>m</sub> is located.
+- Different regions of the curve correspond to the transistor operating regions:
+  - PMOS Linear and NMOS OFF
+  - PMOS Linear and NMOS Saturation
+  - PMOS Saturation and NMOS Saturation — This is where V<sub>m</sub> is located.
+  - PMOS Saturation and NMOS Linear
+  - PMOS OFF and NMOS Linear
 
 <a id="analytical-expression-of-w-l-and-w-l-as-a-function-of-v-m>"></a>
 ## Analytical Expression of (W/L)<sub>p</sub> and (W/L)<sub>n</sub> as a function of V<sub>m</sub>
+
 
 <a id="static-and-dynamic-simulation-of-cmos-inverter"></a>
 ## Static & Dynamic Simulation of CMOS Inverter
