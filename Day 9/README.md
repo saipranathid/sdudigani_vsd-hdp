@@ -6,7 +6,7 @@
   - [Drain Current vs Gate Voltage for long and short channel device](#drain-current-vs-gate-voltage-for-long-and-short-channel-device)
   - [Velocity Saturation at lower and higher electric fields](#velocity-saturation-at-lower-and-higher-electric-fields)
   - [Velocity Saturation Drain Current Model](#velocity-saturation-drain-current-model)
-  - [Lab Sky130 Id vs Vgs](#lab-sky130-id-vs-vgs)
+  - [Lab Sky130 Id-Vgs](#lab-sky130-id-vgs)
 
 
 <a id="spice-simulation-for-lower-nodes"></a>
@@ -82,8 +82,8 @@ V<sub>dsat</sub> - Saturation voltage i.e. voltage at which device velocity satu
 - Peak current of Short-channel device (I<sub>d</sub>) = 210 μA (Right plot)
 - Even though short-channel devices allow for faster switching and smaller sizes, their peak drain current (I<sub>d</sub>) is lower than long-channel devices. The reduction in peak current is due to velocity saturation — which limits carrier velocity in short-channel devices. In long-channel devices, carriers accelerate freely, giving higher I<sub>d</sub>.
 
-<a id="lab-sky130-id-vs-vgs"></a>
-### Lab Sky130 Id vs Vgs
+<a id="lab-sky130-id-vgs"></a>
+### Lab Sky130 Id-Vgs
   <details>
       <Summary><strong> SPICE file: day2_nfet_idvds_L015_W039.spice</strong></summary>
           
