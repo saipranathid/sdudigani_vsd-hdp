@@ -57,7 +57,7 @@ Thus, this plot clearly demonstrates how velocity saturation alters the I<sub>d<
 ![Alt Text](images/velocity_saturation.png)
 ![Alt Text](images/velocity_saturation1.png)
 ![Alt Text](images/velocity_saturation2.png)
-![Alt Text](images/velocity_saturation2.png)
+![Alt Text](images/velocity_saturation3.png)
 
 
 </details>
