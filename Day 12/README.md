@@ -105,7 +105,8 @@ Following image is waveform for different supplies:
 
 <a id="sources-of-variation--oxide-thickness"></a>
 ## Sources of Variation-Oxide Thickness
-
+![Alt Text](images/oxide_th_1.png)
+![Alt Text](images/oxide_th_2.png)
 
 <a id="smart-spice-simulation-for-device-variations"></a>
 ## Smart SPICE simulation for device variations
