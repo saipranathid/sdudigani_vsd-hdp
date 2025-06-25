@@ -130,7 +130,7 @@ Following image is waveform for different supplies:
 
 <a id="sky130-device-variation-labs"></a>  
 ## Sky130 device variation Labs
-<details> <summary><strong>day5_inv_supplyvariation_Wp1_Wn036.spice</strong></summary>
+<details> <summary><strong>day5_inv_devicevariation_wp7_wn042.spice</strong></summary>
 
 ```
 *Model Description
