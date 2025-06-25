@@ -23,7 +23,9 @@ Power supply scaling directly affects the static behavior of a CMOS inverter —
 ![Alt Text](images/ps_1.png)
 - The CMOS inverter is simulated at two different supply voltages: Vdd = 2.5V → scaled down to Vdd = 1V
 - PMOS and NMOS sizes remain constant: Wp = 0.9375 μm, Wn = 0.375 μm
-
+- As **V<sub>dd</sub> ↓**, inverter's **switching threshold V<sub>m</sub>** tends to move towards the center pf the supply voltage but the noise margin shrink.
+- **Lower V<sub>dd</sub>** results in **reduced noise immunity** and circuit becomes more sensitive to noise and supply variations.
+  
 <a id="advantages-and-disadvantages-using-low-supply-voltage"></a>
 ## Advantages and Disadvantages using low supply voltage
 
