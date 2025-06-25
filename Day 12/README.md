@@ -10,7 +10,6 @@
   - [Sources of Variation-Etching Process](#sources-of-variation--etching-process)
   - [Sources of Variation-Oxide Thickness](#sources-of-variation--oxide-thickness)
   - [Smart SPICE simulation for device variations](#smart-spice-simulation-for-device-variations)
-  - [Conclusion](#conclusion)
   - [Sky130 device variation Labs](#sky130-device-variation-labs)   
     
 
