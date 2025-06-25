@@ -101,9 +101,11 @@ Following image is waveform for different supplies:
 ## Sources of Variation-Etching Process
 **Etching Process Variation**: 
 ![Alt Text](images/etching_1.png)
+![Alt Text](images/etching_2.png)
 
 <a id="sources-of-variation--oxide-thickness"></a>
 ## Sources of Variation-Oxide Thickness
+
 
 <a id="smart-spice-simulation-for-device-variations"></a>
 ## Smart SPICE simulation for device variations
