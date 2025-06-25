@@ -16,11 +16,13 @@
 
 <a id="static-behavior-evaluation--cmos-inverter--power-supply-variation"></a>
 # Static Behavior Evaluation-CMOS Inverter-Power Supply Variation
-![Alt Text](images/ps_1.png)
-
+Power supply scaling directly affects the static behavior of a CMOS inverter — changing its switching threshold (Vm), noise margins, and overall robustness.
 <a id="smart-spice-simulation-for-power-supply-variations"></a>
 ## Smart SPICE simulation for power supply variations
-
+**SPICE Simulation**
+![Alt Text](images/ps_1.png)
+- The CMOS inverter is simulated at two different supply voltages: Vdd = 2.5V → scaled down to Vdd = 1V
+- PMOS and NMOS sizes remain constant: Wp = 0.9375 μm, Wn = 0.375 μm
 
 <a id="advantages-and-disadvantages-using-low-supply-voltage"></a>
 ## Advantages and Disadvantages using low supply voltage
