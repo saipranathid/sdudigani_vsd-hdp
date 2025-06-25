@@ -5,16 +5,22 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 
 ## 🔗 Learning Modules & Logs
 
-- [Tools Installation & Environment Setup](Day%200/README.md)
-- [Introduction to Verilog RTL design and Synthesis](Day%201/README.md)
-- [Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day%202/README.md)
-- [Combinational and Sequential optmizations](Day%203/README.md)
-- [GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch](Day%204/README.md)
-- [Introduction to BabySoC Modeling and Pre-Synthesis Simulation](Day%205/README.md)
-- [VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)
-- [Timing Graphs using OpenSTA](Day%207/README.md)
-- [Circuit Design and Spice Simulation](Day%208/README.md)
-- [Velocity Saturation and basics of CMOS inverter VTC](Day%209/README.md)
+| Day   | Topic                                                                                                                | Status       |
+|-------|----------------------------------------------------------------------------------------------------------------------|--------------|
+| Day 0 | [Tools Installation & Environment Setup](Day%200/README.md)                                                          | Done         |
+| Day 1 | [Introduction to Verilog RTL Design and Synthesis](Day%201/README.md)                                                | Done         |
+| Day 2 | [Timing Libraries, Hierarchical vs Flat Synthesis, Efficient Flop Styles](Day%202/README.md)                         | Done         |
+| Day 3 | [Combinational and Sequential Optimizations](Day%203/README.md)                                                      | Done         |
+| Day 4 | [GLS, Blocking vs Non-Blocking, Synthesis-Simulation Mismatch](Day%204/README.md)                                    | Done         |
+| Day 5 | [Introduction to BabySoC Modeling and Pre-Synthesis Simulation](Day%205/README.md)                                   | Done         |
+| Day 6 | [VSDBabySoC Post-Synthesis Simulation](Day%206/README.md)                                                            | Done         |
+| Day 7 | [Timing Graphs using OpenSTA](Day%207/README.md)                                                                     | Done         |
+| Day 8 | [Circuit Design and SPICE Simulation](Day%208/README.md)                                                             | Done         |
+| Day 9 | [Velocity Saturation and Basics of CMOS Inverter VTC](Day%209/README.md)                                             | Done         |
+| Day 10| [CMOS Switching Threshold and Dynamic Simulations](Day%2010/README.md)                                               | Done         |
+| Day 11| [CMOS Noise Margin Robustness Evaluation](Day%2011/README.md)                                                        | Done         |
+| Day 12| [CMOS Power Supply and Device Variation Robustness Evaluation](Day%2012/README.md)                                   | Done          |
+
 
 ## 🛠️ Tools & Technologies
 
