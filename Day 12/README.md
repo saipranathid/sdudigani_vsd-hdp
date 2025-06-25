@@ -30,9 +30,9 @@ Power supply scaling directly affects the static behavior of a CMOS inverter —
 ## Advantages and Disadvantages using low supply voltage
 ![Alt Text](images/ps_2.png)
 
-**Gain Fcator:** The inverter’s gain is defined as the ratio of the change in output voltage to the change in input voltage:
-
-**Gain Factor** = ΔV<sub>out</sub> / ΔV<sub>in</sub>  
+**Gain Factor:** 
+The inverter’s gain is defined as the ratio of the change in output voltage to the change in input voltage:
+- **Gain Factor = ΔV<sub>out</sub> / ΔV<sub>in</sub>**
 
 **Advantages of using 0.5V supply:** Using lower V<sub>dd</sub> (0.5V) provides benefits like ~50% gain improvement and ~90% reduction in energy consumption, demonstrating the efficiency of power supply scaling in CMOS inverters.
 **Disadvantage of using 0.5V supply:** While lowering Vdd improves gain and energy efficiency, it introduces performance impact — circuits may switch slower due to reduced drive strength.
