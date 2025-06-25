@@ -136,13 +136,17 @@ Following image is waveform for different supplies:
 *Model Description
 .param temp=27
 
+
 *Including sky130 library files
 .lib "sky130_fd_pr/models/sky130.lib.spice" tt
 
+
 *Netlist Description
+
 
 XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=7 l=0.15
 XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.42 l=0.15
+
 
 Cload out 0 50fF
 
@@ -150,6 +154,7 @@ Vdd vdd 0 1.8V
 Vin in 0 1.8V
 
 *simulation commands
+
 .op
 
 .dc Vin 0 1.8 0.01
@@ -161,12 +166,14 @@ display
 .endc
 
 .end
+
+
 ```
 </details>
 
 **plot the waveforms in ngspice**
 ```bash
-ngspice day5_inv_supplyvariation_Wp1_Wn036.spice
+ngspice day5_inv_devicevariation_wp7_wn042.spice
 plot out vs in
 ```
 
