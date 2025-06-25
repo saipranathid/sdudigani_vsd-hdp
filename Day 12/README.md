@@ -110,9 +110,67 @@ Following image is waveform for different supplies:
 
 <a id="smart-spice-simulation-for-device-variations"></a>
 ## Smart SPICE simulation for device variations
+![Alt Text](images/spice_sim_1.png)
 
-<a id="conclusion"></a>  
-## Conclusion
+**Transistor Strength Definitions**
+**Strong PMOS:**
+- Lower resistance PMOS — provides an easier path to charge the output capacitor.
+- Achieved by using a wider PMOS.
+
+**Weak NMOS:**
+- Higher resistance NMOS — since resistance is inversely proportional to area.
+- Achieved by using a narrower NMOS.
+
+**Weak PMOS:**
+- Higher resistance PMOS.
+- Achieved by using a narrower PMOS.
+
+**Strong NMOS:**
+- Lower resistance NMOS.
+- Achieved by using a wider NMOS.
 
 <a id="sky130-device-variation-labs"></a>  
 ## Sky130 device variation Labs
+<details> <summary><strong>day5_inv_supplyvariation_Wp1_Wn036.spice</strong></summary>
+
+```
+*Model Description
+.param temp=27
+
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+*Netlist Description
+
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=7 l=0.15
+XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.42 l=0.15
+
+Cload out 0 50fF
+
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*simulation commands
+.op
+
+.dc Vin 0 1.8 0.01
+
+.control
+run
+setplot dc1
+display
+.endc
+
+.end
+```
+</details>
+
+**plot the waveforms in ngspice**
+```bash
+ngspice day5_inv_supplyvariation_Wp1_Wn036.spice
+plot out vs in
+```
+
+**Output waveform of device variation:**
+![Alt Text](images/output.png)
+
