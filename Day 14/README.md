@@ -54,12 +54,12 @@ export DESIGN_NAME = vsdbabysoc
 export PLATFORM    = sky130hd
 
 # Design Paths
-export vsdbabysoc_DIR = /home/ananya123/OpenROAD-flow-scripts/flow/designs/sky130hd/$(DESIGN_NICKNAME)
+export vsdbabysoc_DIR = /home/sdudigani/OpenROAD-flow-scripts/flow/designs/sky130hd/$(DESIGN_NICKNAME)
 
 # Explicitly list Verilog files for synthesis
-export VERILOG_FILES = /home/ananya123/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/vsdbabysoc.v \
-                    /home/ananya123/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/rvmyth.v \
-                    /home/ananya123/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/clk_gate.v
+export VERILOG_FILES = /home/sdudigani/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/vsdbabysoc.v \
+                    /home/sdudigani/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/rvmyth.v \
+                    /home/sdudigani/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc/clk_gate.v
 
 
 # Include Directory for Verilog Header Files
