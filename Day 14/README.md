@@ -106,6 +106,39 @@ export SKIP_GATE_CLONING   = 1
 export MAGIC_ZEROIZE_ORIGIN = 0
 export MAGIC_EXT_USE_GDS    = 1
 ```
+**File structure after the setup**
+```bash
+sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow/designs/src/vsdbabysoc$ ls -ltrh
+total 3.1M
+-rw-rw-r-- 1 sdudigani sdudigani  947 Jun 30 14:05 avsdpll.v
+-rw-rw-r-- 1 sdudigani sdudigani 1.1K Jun 30 14:05 avsddac.v
+-rwxrwxr-x 1 sdudigani sdudigani 1.3K Jun 30 14:05 testbench.v
+-rw-rw-r-- 1 sdudigani sdudigani  603 Jun 30 14:05 testbench.rvmyth.post-routing.v
+-rw-rw-r-- 1 sdudigani sdudigani 2.3M Jun 30 14:05 sky130_fd_sc_hd.v
+-rw-rw-r-- 1 sdudigani sdudigani  17K Jun 30 14:05 rvmyth.v
+-rw-rw-r-- 1 sdudigani sdudigani  11K Jun 30 14:05 rvmyth.tlv
+-rw-rw-r-- 1 sdudigani sdudigani  19K Jun 30 14:05 rvmyth_gen.v
+-rw-rw-r-- 1 sdudigani sdudigani 3.1K Jun 30 14:05 pseudo_rand.sv
+-rw-rw-r-- 1 sdudigani sdudigani  908 Jun 30 14:05 pseudo_rand_gen.sv
+-rw-rw-r-- 1 sdudigani sdudigani 1.7K Jun 30 14:05 clk_gate.v
+-rw-rw-r-- 1 sdudigani sdudigani  590 Jun 30 14:05 vsdbabysoc.v
+-rw-rw-r-- 1 sdudigani sdudigani 743K Jun 30 14:05 vsdbabysoc.synth.v
+lrwxrwxrwx 1 sdudigani sdudigani   90 Jun 30 14:06 primitives.v -> /home/sdudigani/VLSI/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v
+```
+
+```bash
+sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow/designs/sky130hd/vsdbabysoc$ ls -ltrh
+total 28K
+drwxrwxr-x 2 sdudigani sdudigani 4.0K Jun 30 14:09 gds
+drwxrwxr-x 2 sdudigani sdudigani 4.0K Jun 30 14:09 include
+drwxrwxr-x 2 sdudigani sdudigani 4.0K Jun 30 14:09 lef
+drwxrwxr-x 2 sdudigani sdudigani 4.0K Jun 30 14:09 lib
+lrwxrwxrwx 1 sdudigani sdudigani   58 Jun 30 14:10 macro.cfg -> /home/VLSI/VSDBabySoC/src/layout_conf/vsdbabysoc/macro.cfg
+lrwxrwxrwx 1 sdudigani sdudigani   62 Jun 30 14:10 pin_order.cfg -> /home/VLSI/VSDBabySoC/src/layout_conf/vsdbabysoc/pin_order.cfg
+-rw-rw-r-- 1 sdudigani sdudigani 2.0K Jun 30 14:12 config.mk
+-rw-rw-r-- 1 sdudigani sdudigani   73 Jun 30 14:14 vsdbabysoc_synthesis.sdc
+sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow/designs/sky130hd/vsdbabysoc$ 
+```
 
 #### Now go to terminal and run the following commands:
 cd OpenROAD-flow-scripts
