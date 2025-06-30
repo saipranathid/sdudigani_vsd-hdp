@@ -346,12 +346,13 @@ Example of an unsupported block at Line 54:
 ![Alt Text](images/fp_error_reason.png)
 
 **Reason**
-- The OpenROAD Liberty parser follows the IEEE-1481 grammar, which only recognizes C-style comment delimiters (/* ... */). When it sees `//pin (GND#2)`, it treats the `//` as unexpected tokensand cause a syntax error.
+- The OpenROAD Liberty parser follows the IEEE-1481 grammar, which only recognizes C-style comment delimiters (/* ... */). When it sees `//pin (GND#2)`, it treats the `//` as unexpected tokens and cause a syntax error.
 
 **How to fix:**
 - Either remove those lines entirely, Or
 - Convert them into a C-style comment block. For example:
 
+```bash
 /* 
 pin (GND#2) {
   direction : input;
@@ -359,8 +360,9 @@ pin (GND#2) {
   capacitance : 0.001;
 }
 */
+```
 
-- Once you’ve replaced the // comments with a /* … */ block (or deleted the block), save the liberty and rerun the floorplan command, the syntax error should go away.
+- Once you’ve replaced the `//` comments with a `/* … */` block (or deleted the block), save the liberty and rerun the floorplan command, the syntax error should now go away.
 
 ![Alt Text](images/fp_result.png)
 
