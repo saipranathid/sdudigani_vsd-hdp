@@ -318,9 +318,16 @@ sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow$ gvim reports/sky130
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 ```
+![Alt Text](images/fp_error.png)
 
 <a id="error-and-fix"></a>
 #### Error and Fix
+The floorplan command resulted in the following error:
+```bash
+Running floorplan.tcl, stage 2_1_floorplan
+[ERROR STA-0164] /home/sdudigani/OpenROAD-flow-scripts/flow/designs/sky130hd/vsdbabysoc/lib/avsdpll.lib line 54, syntax error
+Error: floorplan.tcl, 4 STA-0164
+```
 
 <a id="fp-result"></a>
 #### Floorplan Result (GUI)
