@@ -315,18 +315,32 @@ sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow$ gvim reports/sky130
 
 <a id="run-fp"></a>
 ### Run Floorplan
+```bash
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
+```
 
 <a id="error-and-fix"></a>
 #### Error and Fix
 
 <a id="fp-result"></a>
 #### Floorplan Result (GUI)
+```bash
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
+```
 
 <a id="run-plc"></a>
 ### Run Placement
+```bash
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
+```
 
 <a id="plc-result"></a>
 #### Placement Result (GUI)
+```bash
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
+```
 
+**Placement Density heatmap in OpenROAD:**
+Go to **Tools --> Heat maps --> Placement Density**
 
 
