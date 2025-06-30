@@ -3,7 +3,7 @@
 
 # Contents
 - [RTL2GDS Flow for VSDBabySoC: Initial Steps](#rtl2gds-flow-for-vsdbabysoc)
-- [Commands to run synthesis](#synthesis)
+- [Run Synthesis](#synthesis)
 - [Run Floorplan](#run-fp)
   - [Error and fix](#error-and-fix)
   - [Floorplan result (GUI)](#fp-result)
