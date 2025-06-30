@@ -5,6 +5,6 @@
 - [RTL2GDS Flow for VSDBabySoC](#rtl2gds-flow-for-vsdbabysoc)
 
 <a id="rtl2gds-flow-for-vsdbabysoc"></a>
-# Steps to Install OpenROAD and Run GUI
+# RTL2GDS Flow for VSDBabySoC
 
 ![Alt Text](images/1.png)
