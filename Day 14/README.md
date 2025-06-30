@@ -322,6 +322,9 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 
 <a id="error-and-fix"></a>
 #### Error and Fix
+
+**Error**
+
 - The floorplan command resulted in the following error:
   ```bash
   Running floorplan.tcl, stage 2_1_floorplan
@@ -329,8 +332,9 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
   Error: floorplan.tcl, 4 STA-0164
   ```
 
-- The error is due to the following lines (commented block structures) in liberty files *designs/sky130hd/vsdbabysoc/lib/**avsdpll.lib***
+- The error is due to the following type of lines (commented block structures) in the liberty file -->  `designs/sky130hd/vsdbabysoc/lib/avsdpll.lib`
 
+Example at Line 54:
 ```bash
   //pin (GND#2) {
   //  direction : input;
@@ -338,14 +342,31 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
   //  capacitance : 0.001;
   //}
 ```
+
 ![Alt Text](images/fp_error_reason.png)
-- Remove the above lines, save the liberty and rerun the floorplan command
+
+**How to fix:**
+- Either remove those lines entirely, Or
+- Convert them into a C-style comment block. For example:
+
+/* 
+pin (GND#2) {
+  direction : input;
+  max_transition : 2.5;
+  capacitance : 0.001;
+}
+*/
+
+- Once you’ve replaced the // comments with a /* … */ block (or deleted the block), save the liberty and rerun the floorplan command, the syntax error should go away
+
+![Alt Text](images/fp_result.png)
 
 <a id="fp-result"></a>
 #### Floorplan Result (GUI)
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ```
+![Alt Text](images/fp_result_gui.png)
 
 <a id="run-plc"></a>
 ### Run Placement
