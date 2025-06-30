@@ -14,7 +14,7 @@
 # Steps to Install OpenROAD and Run GUI
 
 <a id="step1"></a>
-- Step1: Clone the OpenRoad Repository
+- **Step1: Clone the OpenRoad Repository**
 ```bash
   git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
   cd OpenROAD-flow-script
@@ -22,21 +22,21 @@
 ![Alt Text](images/1.png)
 
 <a id="step2"></a>
-- Step 2: Run the Setup Script
+- **Step 2: Run the Setup Script**
 ```bash
 sudo ./setup.sh
 ```
 ![Alt Text](images/2.png)
 
 <a id="step3"></a>
-- Step 3: Build OpenROAD
+- **Step 3: Build OpenROAD**
 ```bash
 ./build_openroad.sh --local
 ```
 ![Alt Text](images/3.png)
 
 <a id="step4"></a>
-- Step 4: Verify Installation
+- **Step 4: Verify Installation**
 ```bash
 source ./env.sh
 yosys -help  
@@ -46,7 +46,7 @@ openroad -help
 ![Alt Text](images/4_2.png)
 
 <a id="step5"></a>
-- Step 5: Run the OpenROAD Flow
+- **Step 5: Run the OpenROAD Flow**
 ```bash
 cd flow
 make
@@ -54,7 +54,7 @@ make
 ![Alt Text](images/5.png)
 
 <a id="step6"></a>
-- Step 6: Launch the graphical user interface (GUI) to visualize the final layout
+- **Step 6: Launch the graphical user interface (GUI) to visualize the final layout**
 ```bash
 make gui_final
 ```
