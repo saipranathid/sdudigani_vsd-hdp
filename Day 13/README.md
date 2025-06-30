@@ -24,3 +24,26 @@ sudo ./setup.sh
 ./build_openroad.sh --local
 ```
 ![Alt Text](images/3.png)
+
+- Step 4: Verify Installation
+```bash
+source ./env.sh
+yosys -help  
+openroad -help
+```
+![Alt Text](images/4_1.png)
+![Alt Text](images/4_2.png)
+
+- Step 5: Run the OpenROAD Flow
+```bash
+cd flow
+make
+```
+![Alt Text](images/5.png)
+
+- Step 6: Launch the graphical user interface (GUI) to visualize the final layout:
+```bash
+make gui_final
+```
+![Alt Text](images/6.png)
+
