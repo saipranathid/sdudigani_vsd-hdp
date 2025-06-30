@@ -322,12 +322,24 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 
 <a id="error-and-fix"></a>
 #### Error and Fix
-The floorplan command resulted in the following error:
+- The floorplan command resulted in the following error:
+  ```bash
+  Running floorplan.tcl, stage 2_1_floorplan
+  [ERROR STA-0164] /home/sdudigani/OpenROAD-flow-scripts/flow/designs/sky130hd/vsdbabysoc/lib/avsdpll.lib line 54, syntax error
+  Error: floorplan.tcl, 4 STA-0164
+  ```
+
+- The error is due to the following lines (commented block structures) in liberty files *designs/sky130hd/vsdbabysoc/lib/**avsdpll.lib***
+
 ```bash
-Running floorplan.tcl, stage 2_1_floorplan
-[ERROR STA-0164] /home/sdudigani/OpenROAD-flow-scripts/flow/designs/sky130hd/vsdbabysoc/lib/avsdpll.lib line 54, syntax error
-Error: floorplan.tcl, 4 STA-0164
+  //pin (GND#2) {
+  //  direction : input;
+  //  max_transition : 2.5;
+  //  capacitance : 0.001;
+  //}
 ```
+![Alt Text](images/fp_error_reason.png)
+- Remove the above lines, save the liberty and rerun the floorplan command
 
 <a id="fp-result"></a>
 #### Floorplan Result (GUI)
