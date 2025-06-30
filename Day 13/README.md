@@ -46,4 +46,10 @@ make
 make gui_final
 ```
 ![Alt Text](images/6.png)
+![Alt Text](images/6_1.png)
+
+OpenRoad tool installation complete! You can now explore the full RTL-to-GDSII flow using OpenROAD.
+
+## OpenRoad Flow Scripts Directory Structure
+![Alt Text](images/7.png)
 
