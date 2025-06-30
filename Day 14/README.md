@@ -3,6 +3,12 @@
 
 # Contents
 - [RTL2GDS Flow for VSDBabySoC: Initial Steps](#rtl2gds-flow-for-vsdbabysoc)
+- [Commands to run synthesis](#synthesis)
+- [Run Floorplan](#run-fp)
+  - [Error and fix](#error-and-fix)
+  - [Floorplan result (GUI)](#fp-result)
+- [Run Placement](#run-plc)
+  - [Placement Result (GUI)](#plc-result)
 
 **Structure of OpenROAD-flow-scripts**
 ```bash
@@ -140,7 +146,7 @@ lrwxrwxrwx 1 sdudigani sdudigani   62 Jun 30 14:10 pin_order.cfg -> /home/VLSI/V
 sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow/designs/sky130hd/vsdbabysoc$ 
 ```
 
-#### Now go to terminal and run the following commands:
+### Now go to terminal and run the following commands:
 ```bash
 cd OpenROAD-flow-scripts
 source env.sh
@@ -148,7 +154,8 @@ cd flow
 ```
 ![Alt Text](images/1.png)
 
-#### Commands to run synthesis:
+<a id="synthesis"></a>
+### Commands to run synthesis:
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 ```
@@ -305,4 +312,21 @@ sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow$ gvim reports/sky130
      of which used for sequential elements: 22901.964800 (43.27%)
 ```
 </details>
+
+<a id="run-fp"></a>
+### Run Floorplan
+
+<a id="error-and-fix"></a>
+#### Error and Fix
+
+<a id="fp-result"></a>
+#### Floorplan Result (GUI)
+
+<a id="run-plc"></a>
+### Run Placement
+
+<a id="plc-result"></a>
+#### Placement Result (GUI)
+
+
 
