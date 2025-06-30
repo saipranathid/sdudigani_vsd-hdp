@@ -154,3 +154,10 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 ```
 ![Alt Text](images/2.png)
 
+**Synthesis netlist**
+```bash
+sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow$ gvim results/sky130hd/vsdbabysoc/base/1_1_yosys.v 
+```
+![Alt Text](images/3_netlist.png)
+
+
