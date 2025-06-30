@@ -389,7 +389,8 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ```
 ![Alt Text](images/plc_gui.png)
 
-**Placement Density heatmap in OpenROAD:**
+**Placement Density heatmap in OpenROAD**
+
 Go to **Tools --> Heat maps --> Placement Density**
 ![Alt Text](images/plc_density_map.png)
 
