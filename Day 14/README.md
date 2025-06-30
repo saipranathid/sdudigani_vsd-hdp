@@ -9,6 +9,7 @@
   - [Floorplan result (GUI)](#fp-result)
 - [Run Placement](#run-plc)
   - [Placement Result (GUI)](#plc-result)
+  - [Placement Density heatmap in OpenROAD](#plc-density-heatmap)
 
 **Structure of OpenROAD-flow-scripts**
 ```bash
@@ -389,6 +390,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ```
 ![Alt Text](images/plc_gui.png)
 
+<a id="plc-density-heatmap"></a>
 **Placement Density heatmap in OpenROAD**
 
 Go to **Tools --> Heat maps --> Placement Density**
