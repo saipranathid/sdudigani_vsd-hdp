@@ -141,10 +141,16 @@ sdudigani@sdudigani-VirtualBox:~/OpenROAD-flow-scripts/flow/designs/sky130hd/vsd
 ```
 
 #### Now go to terminal and run the following commands:
+```bash
 cd OpenROAD-flow-scripts
 source env.sh
 cd flow
+```
+![Alt Text](images/1.png)
 
 #### Commands to run synthesis:
+```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
+```
+![Alt Text](images/2.png)
 
