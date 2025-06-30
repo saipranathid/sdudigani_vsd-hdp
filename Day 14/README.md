@@ -349,6 +349,7 @@ Example of an unsupported block at Line 54:
 - The OpenROAD Liberty parser follows the IEEE-1481 grammar, which only recognizes C-style comment delimiters (/* ... */). When it sees `//pin (GND#2)`, it treats the `//` as unexpected tokens and cause a syntax error.
 
 **How to fix:**
+To ensure the Liberty file parse cleanly during floorplanning stage:
 - Either remove those lines entirely, Or
 - Convert them into a C-style comment block. For example:
 
@@ -378,14 +379,18 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 ```
+![Alt Text](images/run_plc.png)
+![Alt Text](images/plc_done.png)
 
 <a id="plc-result"></a>
 #### Placement Result (GUI)
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ```
+![Alt Text](images/plc_gui.png)
 
 **Placement Density heatmap in OpenROAD:**
 Go to **Tools --> Heat maps --> Placement Density**
+![Alt Text](images/plc_density_map.png)
 
 
