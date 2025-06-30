@@ -1,8 +1,8 @@
 <details>
-  <Summary><strong> Day 14 : Floorplan and Placement for VSDBabySoC: Initial Steps</strong></summary>
+  <Summary><strong> Day 14 : Floorplan and Placement for VSDBabySoC</strong></summary>
 
 # Contents
-- [RTL2GDS Flow for VSDBabySoC](#rtl2gds-flow-for-vsdbabysoc)
+- [RTL2GDS Flow for VSDBabySoC: Initial Steps](#rtl2gds-flow-for-vsdbabysoc)
 
 **Structure of OpenROAD-flow-scripts**
 ```bash
