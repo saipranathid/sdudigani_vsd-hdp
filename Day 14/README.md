@@ -155,7 +155,7 @@ cd flow
 ![Alt Text](images/1.png)
 
 <a id="synthesis"></a>
-### Commands to run synthesis:
+### Run Synthesis
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 ```
