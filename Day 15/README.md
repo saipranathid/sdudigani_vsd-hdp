@@ -96,6 +96,27 @@ Between the abstract RISC-V specification and the physical layout, we use a hard
 
 <a id="from-software-applications-to-hardware"></a>
 ## From Software Applications to Hardware
+To run a software application on real silicon, high-level code must be transformed—step by step—into transistor-switching signals.  In modern systems this chain looks like:
+1. **Application Software**  
+   Written in C, C++, Java, etc., and used to implement user-facing functionality (e.g., a web browser or stopwatch).
+
+2. **System Software**  
+   Acts as the bridge between your app and the bare metal:
+   - **Operating System (OS)**  
+     Manages I/O, memory allocation, system calls, and resource scheduling.  
+   - **Compiler**  
+     Translates your high-level source into target-specific assembly (e.g., RISC-V instructions).  
+   - **Assembler**  
+     Converts that assembly into binary machine code, ready for the processor.  
+
+3. **Instruction Set Architecture (ISA)**  
+   The ISA (here, **RISC-V**) defines the exact binary opcodes your CPU core understands—this is the “language” in which your compiled code speaks to the hardware.
+
+4. **Hardware Description & RTL**  
+   A Hardware Description Language (HDL) like Verilog implements the ISA at the register-transfer level (RTL), describing how each instruction maps to flip-flops, adders, and control logic.
+
+5. **Physical Design**  
+   RTL is synthesized into a gate-level netlist, then placed, routed, and finally taped out in silicon.
 
 
 <a id="soc-design-and-openlane"></a>
