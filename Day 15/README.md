@@ -92,6 +92,7 @@ Below is a side-by-side comparison of in-house **macros** and **foundry IPs**, f
 The ISA is the “language” of the computer - the interface through which software talks to hardware. When you write C code, it must be executed on a specific processor layout. First, the compiler translates your C into RISC-V assembly; next, an assembler converts that into binary machine code, which is then fed to the processor to produce the required output.
 
 Between the abstract RISC-V specification and the physical layout, we use a hardware description language (HDL) such as Verilog or VHDL. In this flow, the RTL description implements the RISC-V ISA, and that RTL is then synthesized and placed-and-routed to generate the final silicon layout.
+![Alt Text](images/isa.png)
 
 <a id="from-software-applications-to-hardware"></a>
 ## From Software Applications to Hardware
