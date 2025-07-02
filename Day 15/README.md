@@ -5,6 +5,7 @@
 - [How to Talk to Computers](#how-to-talk-to-computers)
   - [Introduction to QFN-48 Package - Chip - Pads - Core - Die and IPs](#introduction-to-qfn--48-package--chip--pads--core--die-and-ips)
   - [Introduction to RISC-V](#introduction-to-risc--v)
+    - [ISA (instruction Set Architecture)](#isa)
   - [From Software Applications to Hardware](#from-software-applications-to-hardware)   
 - [SoC Design and OpenRoad](#soc-design-and-openroad)
   - [Introduction to all Components of open-source digital ASIC design](#introduction-to-all-components-of-open--source-digital-asic-design)
@@ -19,10 +20,15 @@
 **Package:** In any embedded board we have seen, the part of the board we consider as the chip is only the PACKAGE of the chip which is nothing but a protective layer or packet bound over the actual chip and the actual manufatured chip is usually present at the center of a package wherein, the connections from package is fed to the chip by WIRE BOUND method which is none other than basic wired connection.
 
 ![Alt Text](images/1.png)
+
+The architecture inside the arduino chip is shown below
+
 ![Alt Text](images/2.png)
 
 ### QFN-48 (Quad Flat No-Leads) Package
 The QFN-48 is a compact, high-performance IC package offering 48 solder-able pads on a 7 mm × 7 mm footprint. Its leadless “no-leads” design minimizes PCB real estate while providing excellent thermal and electrical characteristics.
+
+The architecture inside the processor/ Soc is shown below. Various packages are available and the chip is present inside the package as shown in the diagram below.
 ![Alt Text](images/3_package_example.png)
 
 **Key Features:**
@@ -40,15 +46,16 @@ The QFN-48 is a compact, high-performance IC package offering 48 solder-able pad
 - Precision data-converter packages
 
 **Chip Overview**
-![Alt Text](images/4.png)
-![Alt Text](images/5.png)
-
 Beneath the package sits the bare silicon die - a landscape of transistors and interconnects implementing everything from logic to memory to analog front-ends. This single piece of silicon handles computation, storage, and I/O.
 
-Core Functional Blocks:
+**Core Functional Blocks:**
 - Processing Units: One or more CPU cores (e.g., RISC-V, ARM) execute instructions and control data flow.
 - Memory: SRAM, ROM, or flash cells store code, data, and configuration.
 - I/O Interfaces: Digital GPIOs, high-speed serial links (QSPI, UART), and analog converters connect to the outside world.
+
+The boundaries of the chip is connected to the pins present in the boundaries of the package.
+![Alt Text](images/4.png)
+![Alt Text](images/5.png)
 
 **Chip Components Overview**
 1. **Pads:** Small metal lands on the package periphery. Serve as the electrical interface between PCB traces and on-die interconnect
@@ -80,6 +87,11 @@ Below is a side-by-side comparison of in-house **macros** and **foundry IPs**, f
 
 <a id="introduction-to-risc--v"></a>
 ## Introduction to RISC-V
+<a id="isa"></a>
+### ISA (instruction Set Architecture)
+The ISA is the “language” of the computer - the interface through which software talks to hardware. When you write C code, it must be executed on a specific processor layout. First, the compiler translates your C into RISC-V assembly; next, an assembler converts that into binary machine code, which is then fed to the processor to produce the required output.
+
+Between the abstract RISC-V specification and the physical layout, we use a hardware description language (HDL) such as Verilog or VHDL. In this flow, the RTL description implements the RISC-V ISA, and that RTL is then synthesized and placed-and-routed to generate the final silicon layout.
 
 <a id="from-software-applications-to-hardware"></a>
 ## From Software Applications to Hardware
