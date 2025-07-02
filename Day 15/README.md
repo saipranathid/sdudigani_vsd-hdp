@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 15 : Inception of open-source EDA - OpenRoad and Sky130PDK</strong></summary>
+  <Summary><strong> Day 15 : Inception of open-source EDA - OpenLANE and Sky130PDK</strong></summary>
 
 # Contents
 - [How to Talk to Computers](#how-to-talk-to-computers)
@@ -7,7 +7,7 @@
   - [Introduction to RISC-V](#introduction-to-risc--v)
     - [ISA (instruction Set Architecture)](#isa)
   - [From Software Applications to Hardware](#from-software-applications-to-hardware)   
-- [SoC Design and OpenRoad](#soc-design-and-openroad)
+- [SoC Design and OpenLANE](#soc-design-and-openlane)
   - [Introduction to all Components of open-source digital ASIC design](#introduction-to-all-components-of-open--source-digital-asic-design)
   - [Simplified RTL2GDS flow](#simplified-rtl2gds-flow)
 
@@ -98,8 +98,8 @@ Between the abstract RISC-V specification and the physical layout, we use a hard
 ## From Software Applications to Hardware
 
 
-<a id="soc-design-and-openroad"></a>
-# SoC Design and OpenRoad
+<a id="soc-design-and-openlane"></a>
+# SoC Design and OpenLANE
 
 <a id="introduction-to-all-components-of-open--source-digital-asic-design"></a>
 ## Introduction to all Components of open-source digital ASIC design
