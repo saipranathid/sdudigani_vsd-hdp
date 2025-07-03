@@ -10,6 +10,8 @@
 - [SoC Design and OpenLANE](#soc-design-and-openlane)
   - [Introduction to all Components of open-source digital ASIC design](#introduction-to-all-components-of-open--source-digital-asic-design)
   - [Simplified RTL2GDS flow](#simplified-rtl2gds-flow)
+  - [Introduction to OpenLANE and strive chipsets](#strive-chipsets)
+  - [Introduction to OpenLANE detailed ASIC design flow](#openlane-detailed-asic-design-flow)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
@@ -156,8 +158,6 @@ This image demonstrates the complete transformation of a machine instruction (e.
 ![Alt Text](images/stop_watch_3.png)
 
 
-
-
 <a id="soc-design-and-openlane"></a>
 # SoC Design and OpenLANE
 
@@ -166,3 +166,9 @@ This image demonstrates the complete transformation of a machine instruction (e.
 
 <a id="simplified-rtl2gds-flow"></a>
 ## Simplified RTL2GDS flow
+
+<a id="strive-chipsets"></a>
+## Introduction to OpenLANE and strive chipsets
+
+<a id="openlane-detailed-asic-design-flow"></a>
+## Introduction to OpenLANE detailed ASIC design flow
