@@ -188,6 +188,17 @@ In a state-of-the-art digital ASIC design methodology, three categories of input
 <a id="simplified-rtl2gds-flow"></a>
 ## Simplified RTL2GDS flow
 
+This diagram illustrates the core steps in a typical RTL-to-GDSII ASIC implementation flow, using your RTL source and the foundry’s PDK as primary inputs:
+
+![Alt Text](images/open_source_digital_asic_design_3.png)
+
+1. **Synthesis:** Map RTL (Verilog/VHDL) into a gate-level netlist using the standard-cell library from the PDK. Perform technology mapping, logic optimization, and area/timing trade-offs.
+2. **Floor & Power Planning:** Partitions the chip area, places key components (macros/IPs), and defines the power grid and I/O pad placement. This step aims to reduce power consumption and improve signal integrity by optimizing physical layout.
+3. **Placement:** Assigns physical locations to standard cells, targeting minimal wirelength, low signal delay, and better area utilization. A well-placed design improves performance, reduces congestion, and eases routing complexity.
+4. **Clock Tree Synthesis (CTS):** Builds a clock distribution network to deliver the clock signal uniformly to all sequential elements like flip-flops and registers. CTS ensures minimal skew, balanced paths, and robust clock propagation.
+5. **Routing:** Connects all placed components based on netlist connectivity. The router optimizes wire paths for signal integrity, avoids congestion, and satisfies design rule constraints set by the foundry.
+6. **Sign-off:** Final validation stage - Timing analysis, Power analysis and Physical verification
+
 <a id="strive-chipsets"></a>
 ## Introduction to OpenLANE and strive chipsets
 
