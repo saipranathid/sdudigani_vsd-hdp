@@ -12,6 +12,12 @@
   - [Simplified RTL2GDS flow](#simplified-rtl2gds-flow)
   - [Introduction to OpenLANE and strive chipsets](#strive-chipsets)
   - [Introduction to OpenLANE detailed ASIC design flow](#openlane-detailed-asic-design-flow)
+- [Get Familiar to open-source EDA tools](#get-familiar-to-opensource-eda-tools)
+- [OpenLANE Directory structure in detail](#openlane-directory-structure-in-detail)
+- [Design Preparation Step](#-design-preparation-step)
+- [Review files after design prep and run synthesis](#review-files-after-design-prep-and-run-synthesis)
+- [OpenLANE Project Git Link Description](#openlane-project-git-link-description)
+- [Steps to Characterize synthesis results](#steps-to-characterize-synthesis-results)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
@@ -176,6 +182,8 @@ In a state-of-the-art digital ASIC design methodology, three categories of input
   - Digital Standard Cell Libraries: Liberty (.lib) timing models, LEF abstract views, GDSII layouts for each cell  
   - I/O libraries: Specialized cells for pads, ESD protection, level shifters, SERDES PHYs, etc.
 - PDK serves as the interface between the FAB and the designers.
+
+![Alt Text](images/open_source_digital_asic_design_2.png)
 
 <a id="simplified-rtl2gds-flow"></a>
 ## Simplified RTL2GDS flow
