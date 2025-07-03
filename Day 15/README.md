@@ -172,3 +172,23 @@ This image demonstrates the complete transformation of a machine instruction (e.
 
 <a id="openlane-detailed-asic-design-flow"></a>
 ## Introduction to OpenLANE detailed ASIC design flow
+
+
+
+<a id="get-familiar-to-opensource-eda-tools"></a>
+# Get Familiar to open-source EDA tools
+
+<a id="openlane-directory-structure-in-detail"></a>
+## OpenLANE Directory structure in detail
+
+<a id="-design-preparation-step"></a>
+## Design Preparation Step
+
+<a id="review-files-after-design-prep-and-run-synthesis"></a>
+## Review files after design prep and run synthesis
+
+<a id="openlane-project-git-link-description"></a>
+## OpenLANE Project Git Link Description
+
+<a id="steps-to-characterize-synthesis-results"></a>
+## Steps to Characterize synthesis results
