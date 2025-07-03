@@ -118,6 +118,7 @@ To run a software application on real silicon, high-level code must be transform
 5. **Physical Design**  
    RTL is synthesized into a gate-level netlist, then placed, routed, and finally taped out in silicon.
 
+![Alt Text](images/sys_sw.png)
 
 <a id="soc-design-and-openlane"></a>
 # SoC Design and OpenLANE
