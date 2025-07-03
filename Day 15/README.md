@@ -164,6 +164,10 @@ This image demonstrates the complete transformation of a machine instruction (e.
 <a id="introduction-to-all-components-of-open--source-digital-asic-design"></a>
 ## Introduction to all Components of open-source digital ASIC design
 ![Alt Text](images/open_source_digital_asic_design_1.png)
+In a state-of-the-art digital ASIC design methodology, three categories of inputs converge within EDA toolchains to yield a manufacturable layout and GDSII database:
+- RTL IP's
+- EDA Tools
+- PDK Data
 
 **What is PDK?**
 - Process Design Kit (PDK) is the collection of files used to model a fabrication process for the EDA tools used to design an IC. Typical PDK components include:
