@@ -10,8 +10,7 @@
 - [SoC Design and OpenLANE](#soc-design-and-openlane)
   - [Introduction to all Components of open-source digital ASIC design](#introduction-to-all-components-of-open--source-digital-asic-design)
   - [Simplified RTL2GDS flow](#simplified-rtl2gds-flow)
-  - [Introduction to OpenLANE and strive chipsets](#strive-chipsets)
-  - [Introduction to OpenLANE detailed ASIC design flow](#openlane-detailed-asic-design-flow)
+  - [OpenLANE ASIC design flow](#openlane-detailed-asic-design-flow)
 - [Get Familiar to open-source EDA tools](#get-familiar-to-opensource-eda-tools)
   - [OpenLANE Directory structure in detail](#openlane-directory-structure-in-detail)
   - [Design Preparation Step](#-design-preparation-step)
@@ -205,6 +204,9 @@ This diagram illustrates the core steps in a typical RTL-to-GDSII ASIC implement
 4. **Placement:** Assigns physical locations to standard cells, targeting minimal wirelength, low signal delay, and better area utilization. A well-placed design improves performance, reduces congestion, and eases routing complexity.
 
 ![Alt Text](images/plc.png)
+
+Global placement provide approximate locations for all cells based on connectivity but in this stage the cells may be overlapped on each other and in detailed placement the positions obtained from global placements are minimally altered to make it legal (non-overlapping and in site-rows)
+
 ![Alt Text](images/plc_1.png)
 
 6. **Clock Tree Synthesis (CTS):** Builds a clock distribution network to deliver the clock signal uniformly to all sequential elements like flip-flops and registers. CTS ensures minimal skew, balanced paths, and robust clock propagation.
@@ -214,6 +216,9 @@ This diagram illustrates the core steps in a typical RTL-to-GDSII ASIC implement
 8. **Routing:** Connects all placed components based on netlist connectivity. The router optimizes wire paths for signal integrity, avoids congestion, and satisfies design rule constraints set by the foundry.
 
 ![Alt Text](images/routing.png)
+
+skywater PDK has 6 routing layers in which the lowest layer is called the local interconnect layer which is a Titanium Nitride layer the following 5 layers are all Aluminium layers.
+
 ![Alt Text](images/routing_1.png)
 
 9. **Sign-off:** Final validation stage - Timing analysis, Power analysis and Physical verification
@@ -222,13 +227,11 @@ This diagram illustrates the core steps in a typical RTL-to-GDSII ASIC implement
 
 11. **GDSII File Generation:** Produces the GDSII file containing all physical layout data. This file is used by foundries to generate photomasks and manufacture the silicon chip. The GDSII is essentially the final blueprint for chip fabrication.
 
-<a id="strive-chipsets"></a>
-## Introduction to OpenLANE and strive chipsets
-
 <a id="openlane-detailed-asic-design-flow"></a>
-## Introduction to OpenLANE detailed ASIC design flow
+## OpenLANE ASIC design flow
+![Alt Text](images/open_lane_1.png)
 
-
+OpenLANE flow is an automated RTL2GDSII flow where all required tools are embedded into it and you have complete control of each process. We control them by using env variables which will be discussed at each stage since they are unique for each of them. This OpenLANE flow is specially designed for no human interaction based RTL2GDSII flow. Hence we have automated mode and interactive mode to run the OpenLANE flow. 
 
 <a id="get-familiar-to-opensource-eda-tools"></a>
 # Get Familiar to open-source EDA tools
