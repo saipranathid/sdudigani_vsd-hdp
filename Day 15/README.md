@@ -163,6 +163,15 @@ This image demonstrates the complete transformation of a machine instruction (e.
 
 <a id="introduction-to-all-components-of-open--source-digital-asic-design"></a>
 ## Introduction to all Components of open-source digital ASIC design
+![Alt Text](images/open_source_digital_asic_design_1.png)
+
+**What is PDK?**
+- Process Design Kit (PDK) is the collection of files used to model a fabrication process for the EDA tools used to design an IC. Typical PDK components include:
+  - Process design rules: DRC, LVS, PEX
+  - Device Models : SPICE models for transistors, diodes, capacitors, resistors, etc.  
+  - Digital Standard Cell Libraries: Liberty (.lib) timing models, LEF abstract views, GDSII layouts for each cell  
+  - I/O libraries: Specialized cells for pads, ESD protection, level shifters, SERDES PHYs, etc.
+- PDK serves as the interface between the FAB and the designers.
 
 <a id="simplified-rtl2gds-flow"></a>
 ## Simplified RTL2GDS flow
