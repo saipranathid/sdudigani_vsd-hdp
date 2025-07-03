@@ -13,11 +13,11 @@
   - [Introduction to OpenLANE and strive chipsets](#strive-chipsets)
   - [Introduction to OpenLANE detailed ASIC design flow](#openlane-detailed-asic-design-flow)
 - [Get Familiar to open-source EDA tools](#get-familiar-to-opensource-eda-tools)
-- [OpenLANE Directory structure in detail](#openlane-directory-structure-in-detail)
-- [Design Preparation Step](#-design-preparation-step)
-- [Review files after design prep and run synthesis](#review-files-after-design-prep-and-run-synthesis)
-- [OpenLANE Project Git Link Description](#openlane-project-git-link-description)
-- [Steps to Characterize synthesis results](#steps-to-characterize-synthesis-results)
+  - [OpenLANE Directory structure in detail](#openlane-directory-structure-in-detail)
+  - [Design Preparation Step](#-design-preparation-step)
+  - [Review files after design prep and run synthesis](#review-files-after-design-prep-and-run-synthesis)
+  - [OpenLANE Project Git Link Description](#openlane-project-git-link-description)
+  - [Steps to Characterize synthesis results](#steps-to-characterize-synthesis-results)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
