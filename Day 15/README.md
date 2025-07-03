@@ -233,6 +233,15 @@ skywater PDK has 6 routing layers in which the lowest layer is called the local 
 
 OpenLANE flow is an automated RTL2GDSII flow where all required tools are embedded into it and you have complete control of each process. We control them by using env variables which will be discussed at each stage since they are unique for each of them. This OpenLANE flow is specially designed for no human interaction based RTL2GDSII flow. Hence we have automated mode and interactive mode to run the OpenLANE flow. 
 
+![Alt Text](images/open_lane_synthesis_exploration.png)
+![Alt Text](images/OL_design_explaoration.png)
+![Alt Text](images/OL_pnr.png)
+![Alt Text](images/OL_antenna_rule_violations.png)
+![Alt Text](images/OL_antenna_rule_violations_1.png)
+![Alt Text](images/OL_antenna_rule_violations_2.png)
+![Alt Text](images/OL_signoff_1.png)
+![Alt Text](images/OL_signoff_2.png)
+
 <a id="get-familiar-to-opensource-eda-tools"></a>
 # Get Familiar to open-source EDA tools
 
