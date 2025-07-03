@@ -209,7 +209,7 @@ This diagram illustrates the core steps in a typical RTL-to-GDSII ASIC implement
 
 6. **Clock Tree Synthesis (CTS):** Builds a clock distribution network to deliver the clock signal uniformly to all sequential elements like flip-flops and registers. CTS ensures minimal skew, balanced paths, and robust clock propagation.
 
-![Alt Text](images/cts1.png)
+![Alt Text](images/cts_1.png)
 
 8. **Routing:** Connects all placed components based on netlist connectivity. The router optimizes wire paths for signal integrity, avoids congestion, and satisfies design rule constraints set by the foundry.
 
