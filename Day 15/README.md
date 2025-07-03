@@ -192,12 +192,35 @@ This diagram illustrates the core steps in a typical RTL-to-GDSII ASIC implement
 
 ![Alt Text](images/open_source_digital_asic_design_3.png)
 
-1. **Synthesis:** Map RTL (Verilog/VHDL) into a gate-level netlist using the standard-cell library from the PDK. Perform technology mapping, logic optimization, and area/timing trade-offs.
-2. **Floor & Power Planning:** Partitions the chip area, places key components (macros/IPs), and defines the power grid and I/O pad placement. This step aims to reduce power consumption and improve signal integrity by optimizing physical layout.
-3. **Placement:** Assigns physical locations to standard cells, targeting minimal wirelength, low signal delay, and better area utilization. A well-placed design improves performance, reduces congestion, and eases routing complexity.
-4. **Clock Tree Synthesis (CTS):** Builds a clock distribution network to deliver the clock signal uniformly to all sequential elements like flip-flops and registers. CTS ensures minimal skew, balanced paths, and robust clock propagation.
-5. **Routing:** Connects all placed components based on netlist connectivity. The router optimizes wire paths for signal integrity, avoids congestion, and satisfies design rule constraints set by the foundry.
-6. **Sign-off:** Final validation stage - Timing analysis, Power analysis and Physical verification
+1. **RTL Synthesis:** Map RTL (Verilog/VHDL) into a gate-level netlist using the standard-cell library from the PDK. Perform technology mapping, logic optimization, and area/timing trade-offs.
+
+![Alt Text](images/synthesis.png)
+![Alt Text](images/synthesis_1.png)
+3. **Floor & Power Planning:** Partitions the chip area, places key components (macros/IPs), and defines the power grid and I/O pad placement. This step aims to reduce power consumption and improve signal integrity by optimizing physical layout.
+
+![Alt Text](images/chip_fp.png)
+![Alt Text](images/fp.png)
+![Alt Text](images/pp.png)
+
+4. **Placement:** Assigns physical locations to standard cells, targeting minimal wirelength, low signal delay, and better area utilization. A well-placed design improves performance, reduces congestion, and eases routing complexity.
+
+![Alt Text](images/plc.png)
+![Alt Text](images/plc_1.png)
+
+6. **Clock Tree Synthesis (CTS):** Builds a clock distribution network to deliver the clock signal uniformly to all sequential elements like flip-flops and registers. CTS ensures minimal skew, balanced paths, and robust clock propagation.
+
+![Alt Text](images/cts1.png)
+
+8. **Routing:** Connects all placed components based on netlist connectivity. The router optimizes wire paths for signal integrity, avoids congestion, and satisfies design rule constraints set by the foundry.
+
+![Alt Text](images/routing.png)
+![Alt Text](images/routing_1.png)
+
+9. **Sign-off:** Final validation stage - Timing analysis, Power analysis and Physical verification
+
+![Alt Text](images/signoff.png)
+
+11. **GDSII File Generation:** Produces the GDSII file containing all physical layout data. This file is used by foundries to generate photomasks and manufacture the silicon chip. The GDSII is essentially the final blueprint for chip fabrication.
 
 <a id="strive-chipsets"></a>
 ## Introduction to OpenLANE and strive chipsets
