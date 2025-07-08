@@ -36,6 +36,7 @@ The architecture inside the arduino chip is shown below
 The QFN-48 is a compact, high-performance IC package offering 48 solder-able pads on a 7 mm × 7 mm footprint. Its leadless “no-leads” design minimizes PCB real estate while providing excellent thermal and electrical characteristics.
 
 The architecture inside the processor/ Soc is shown below. Various packages are available and the chip is present inside the package as shown in the diagram below.
+
 ![Alt Text](images/3_package_example.png)
 
 **Key Features:**
