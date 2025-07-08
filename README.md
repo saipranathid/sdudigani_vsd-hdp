@@ -21,6 +21,7 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 | Day 11| [CMOS Noise Margin Robustness Evaluation](Day%2011/README.md)                                                        | Done   |
 | Day 12| [CMOS Power Supply and Device Variation Robustness Evaluation](Day%2012/README.md)                                   | Done   |
 | Day 13| [OpenRoad Installation](Day%2013/README.md)                                                                          | Done   |
-| Day 14| [Floorplan and Placement for VSDBabySoC](Day%2014/README.md)                                                        | Done   |
+| Day 14| [Floorplan and Placement for VSDBabySoC](Day%2014/README.md)                                                         | Done   |
+| Day 15| [Inception of open-source EDA - OpenLANE and Sky130PDK](Day%2015/README.md)                                          | Done   |
 
 
