@@ -13,16 +13,16 @@
   - [Review floorplan files and steps to view floorplan](#review-floorplan-files-and-steps-to-view-floorplan)
   - [Review floorplan layout in magin](#review-floorplan-layout-in-magic)
 - [Library Binding and Placement](#library-binding-and-placement)
-  - [Netlist binding and initial place design]
-  - [Optimize placement using estimated wire-length and capacitance]
-  - [Final placement optimization]
-  - [Need for libraries and characterization]
-  - [Congestion aware placement using RePlAce]
+  - [Netlist binding and initial place design](netlist-binidng-and-initial-place-design)
+  - [Optimize placement using estimated wire-length and capacitance](#optimize-placement-using-estimated-wl-cap)
+  - [Final placement optimization](final-placement-opt)
+  - [Need for libraries and characterization](#need-for-libraries-and-char)
+  - [Congestion aware placement using RePlAce](#congestion-aware-placement-using-replace)
 - [Cell design and characterization flows](#cell-design-and-char-flows)
-  - [Inputs for cell design flow]
-  - [Circuit design step]
-  - [Layout design step]
-  - [Typical Characterization flow]
+  - [Inputs for cell design flow](#inputs-for-cell-design-flow)
+  - [Circuit design step](#circuit-design-step)
+  - [Layout design step](#layout-design-step)
+  - [Typical Characterization flow](#typical-char-flow)
 - [General Timing Characterization Parameters](#general-timing-char-parameters)  
   - [Timing threshold definations](#timing-threshold-definations)
   - [Propogation delay and transition time](#propogation-delay-and-transition-time)
@@ -63,10 +63,35 @@
 <a id="library-binding-and-placement"></a>
 # Library Binding and Placement
 
+<a id="netlist-binidng-and-initial-place-design"></a>
+## Netlist binding and initial place design
+
+<a id="optimize-placement-using-estimated-wl-cap"></a>
+## Optimize placement using estimated wire-length and capacitance
+
+<a id="final-placement-opt"></a>
+## Final placement optimization
+
+<a id="need-for-libraries-and-char"></a>
+## Need for libraries and characterization
+
+<a id="congestion-aware-placement-using-replace"></a>
+## Congestion aware placement using RePlAce
 
 <a id="cell-design-and-char-flows"></a>
 # Cell design and characterization flows
 
+<a id="inputs-for-cell-design-flow"></a>
+## Inputs for cell design flow
+
+<a id="circuit-design-step"></a>
+## Circuit design step
+
+<a id="layout-design-step"></a>
+## Layout design step
+
+<a id="typical-char-flow"></a>
+## Typical Characterization flow
 
 <a id="general-timing-char-parameters"></a>
 # General Timing Characterization Parameters
