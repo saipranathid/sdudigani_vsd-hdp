@@ -57,6 +57,23 @@ The above figure shows the rough calculation of minimum area that is occupied bu
 - **Wafer:** multiple dice are fabricated together on a circular wafer.
 ![Alt Text](images/5_core_die_in_chip.png)
 
+![Alt Text](images/6_uti_formula.png)
+
+- In this example, the four blocks completely occupy the core area (4 unit² occupied / 4 unit² total = 1.0 → 100 %).
+![Alt Text](images/7_uti_cal.png)
+
+**Note:** Real designs typically target 60–80 % utilization to leave room for routing nets, filler cells, and power straps etc.
+
+- **Aspect ratio** wiil decide the size and shape of the chip. It is the ratio of vertical routing resources to the horizontal routing resources. If its value is 1 then the chip is in square shape and if it is greater than 1 then the chip is in rectangular shape.
+
+$$  
+\text{Aspect Ratio}
+\=\
+\frac{\text{Height of the core area}}
+     {\text{Width of the core area}}
+$$
+
+- **Core Utilisation** defines the area occupied by macros, standard cells and other cells. If Core utilisation is 70% - 70% of core area is used for placing the standard cells, macros and other cells while remaining 30% can be used for routing. In other words it is the area occupied by the netlist.
 
 $$  
 \text{Utilization Factor}
@@ -65,15 +82,12 @@ $$
      {\text{Total Core Area}}
 $$
 
-![Alt Text](images/6_uti_formula.png)
-
-- In this example, the four blocks completely occupy the core area (4 unit² occupied / 4 unit² total = 1.0 → 100 %).
-![Alt Text](images/7_uti_cal.png)
-
-**Note:** Real designs typically target 60–80 % utilization to leave room for routing nets, filler cells, and power straps etc.
+![Alt Text](images/8_uti25_aspectration1.png)
 
 <a id="cencept-of-pre--placed-cells"></a>
 ## Concept of pre-placed cells
+
+
 
 <a id="de--coupling-capacitors"></a>
 ## De-coupling Capacitors
