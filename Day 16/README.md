@@ -73,7 +73,7 @@ $$
      {\text{Width of the core area}}
 $$
 
-- **Core Utilisation** defines the area occupied by macros, standard cells and other cells. If Core utilisation is 70% - 70% of core area is used for placing the standard cells, macros and other cells while remaining 30% can be used for routing. In other words it is the area occupied by the netlist.
+- **Core Utilization** defines the area occupied by macros, standard cells and other cells. If Core utilisation is 70% - 70% of core area is used for placing the standard cells, macros and other cells while remaining 30% can be used for routing. In other words it is the area occupied by the netlist.
 
 $$  
 \text{Utilization Factor}
@@ -86,8 +86,14 @@ $$
 
 <a id="cencept-of-pre--placed-cells"></a>
 ## Concept of pre-placed cells
+- Before running automated placement & routing (APR), we often “pre-place” large or critical blocks (IPs) at fixed locations.
+- **Pre-placed cells** are large timing-critical blocks (like memories, clock-gating cells, or custom macros) that are fixed at specific locations in design floorplan before running automated placement and routing. By “black-boxing” each block - exposing only its I/O pins and hiding its internal gates they are ensured that APR treats it as a fixed macro, giving us predictable timing, power-grid alignment, and routing channels around those anchored blocks.
+- Functionality of pre-placed cells is implemented only once and APR tools do not alter their locations.
 
-
+![Alt Text](images/preplaced_cells_1.png)
+![Alt Text](images/preplaced_cells_2.png)
+![Alt Text](images/preplaced_cells_3.png)
+![Alt Text](images/preplaced_cells_4.png)
 
 <a id="de--coupling-capacitors"></a>
 ## De-coupling Capacitors
