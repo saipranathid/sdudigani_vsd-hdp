@@ -11,12 +11,8 @@
   - [Introduction to all Components of open-source digital ASIC design](#introduction-to-all-components-of-open--source-digital-asic-design)
   - [Simplified RTL2GDS flow](#simplified-rtl2gds-flow)
   - [OpenLANE ASIC design flow](#openlane-detailed-asic-design-flow)
-- [Get Familiar to open-source EDA tools](#get-familiar-to-opensource-eda-tools)
-  - [OpenLANE Directory structure in detail](#openlane-directory-structure-in-detail)
-  - [Design Preparation Step](#-design-preparation-step)
-  - [Review files after design prep and run synthesis](#review-files-after-design-prep-and-run-synthesis)
-  - [OpenLANE Project Git Link Description](#openlane-project-git-link-description)
-  - [Steps to Characterize synthesis results](#steps-to-characterize-synthesis-results)
+- [Openlane Installation](#openlane-installation)
+  - [Steps to build OpenLANE](#steps-to-build-openlane)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
@@ -262,20 +258,81 @@ OpenLANE flow is an automated RTL2GDSII flow where all required tools are embedd
 ![Alt Text](images/OL_signoff_1.png)
 ![Alt Text](images/OL_signoff_2.png)
 
-<a id="get-familiar-to-opensource-eda-tools"></a>
-# Get Familiar to open-source EDA tools
+<a id="openlane-installation"></a>
+# Openlane Installation
 
-<a id="openlane-directory-structure-in-detail"></a>
-## OpenLANE Directory structure in detail
+- Steps to install OpenLane and all its dependencies on an Ubuntu system using an automated build script.
+- The scripts in this repo are :
+  - `openlane_script.sh` : It is a standalone script that installs OpenLane (latest version) and all its dependencies.
+  - `openlane_script_wo_depends.sh` : It is a lighter version that works alongside the [vsdflow script](https://github.com/kunalg123/vsdflow), assuming some tools are already pre-installed.
 
-<a id="-design-preparation-step"></a>
-## Design Preparation Step
+## Steps to build OpenLANE
 
-<a id="review-files-after-design-prep-and-run-synthesis"></a>
-## Review files after design prep and run synthesis
+1. `git clone https://github.com/nickson-jose/openlane_build_script`
+2. `sudo -i` #switch to root user (or have root user password ready).
+3. Change directory to where openlane_build_script folder was cloned. `cd /path/to/openlane_build_script`
+4. Execute the script as below:
 
-<a id="openlane-project-git-link-description"></a>
-## OpenLANE Project Git Link Description
+      - **For standalone build**
+       
+        - `chmod 775 openlane_script.sh`
+        - `./openlane_script.sh`
+     
+      - **For build in conjunction with vsdflow**
+       
+        -  Copy the `openlane_script_wo_depends.sh` to vsdflow folder.
+        - `chmod 775  openlane_script_wo_depends.sh`
+        - `./openlane_script_wo_depends.sh`
+      
+5. This script would create following directory structure:
 
-<a id="steps-to-characterize-synthesis-results"></a>
-## Steps to Characterize synthesis results
+- **For build in conjunction with vsdflow**
+```bash 
+vsdflow/
+  └── work
+     └── tools
+      ├── cmake-3.13.0
+      ├── cmake-3.13.0.tar.gz
+      ├── graywolf
+      ├── magic-8.3.50
+      ├── magic-8.3.50.tgz
+      ├── netgen-1.5.134
+      ├── netgen-1.5.134.tgz
+      ├── openlane_working_dir
+      ├── OpenSTA
+      ├── OpenTimer
+      ├── qflow-1.3.17
+      ├── qflow-1.3.17.tgz
+      ├── qrouter-1.4.59
+      ├── qrouter-1.4.59.tgz
+
+```
+- **For standalone build**
+ ```bash  
+ Desktop/
+ ...
+  └── work
+    └── tools 
+        └── openlane_working_dir
+         |__ Openlane
+                       
+```              
+ 
+# STEPS TO RUN OPENLANE
+
+1. Go to /path/to/openlane (i.e., ~/work/tools/openlane_working_dir/Openlane)
+2. There are two ways of invoking openlane. The easiest of the two would be:
+   - `make mount`
+
+   The second way would be to explicitly specify the path to PDK_ROOT and OPENLANE_IMAGE_NAME and invoking docker with these inputs
+   - `export PDK_ROOT=<absolute path to where skywater-pdk and open_pdks reside>`
+   - `export OPENLANE_IMAGE_NAME=<docker image name>`
+   - `docker run -it -v $(pwd):/openlane -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME`
+   
+3. **Note:** If you face "permission denied" during docker invocation in setup or in above step, do refer below link to resolve:
+   - [Fix Docker Permission Denied Issue](https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue)
+
+4. `./flow.tcl -design spm`
+(the above flow.tcl command will run RTL2GDS flow for design named "spm". Same can be done for other designs which are present in ~/work/tools/openlane_working_dir/Openlane/designs)
+
+5. Refer to: https://github.com/efabless/openlane for detailed instructions.
