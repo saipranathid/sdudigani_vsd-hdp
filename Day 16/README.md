@@ -9,9 +9,6 @@
   - [De-coupling Capacitors](#de--coupling-capacitors)
   - [Power planning](#power-planning)
   - [Pin-placement and logical cell placement blockage](#pin--placement-and-logical-cell-placement-blockage)
-  - [Steps-to-run-floorplan-using-OpenLANE](#steps-to-run-floorplan-using-openlane)
-  - [Review floorplan files and steps to view floorplan](#review-floorplan-files-and-steps-to-view-floorplan)
-  - [Review floorplan layout in magin](#review-floorplan-layout-in-magic)
 - [Library Binding and Placement](#library-binding-and-placement)
   - [Netlist binding and initial place design](netlist-binidng-and-initial-place-design)
   - [Optimize placement using estimated wire-length and capacitance](#optimize-placement-using-estimated-wl-cap)
@@ -135,20 +132,6 @@ $$
 ![Alt Text](images/pin_plc_3.png)
 ![Alt Text](images/pin_plc_4.png)
 ![Alt Text](images/pin_plc_5.png)
-
-<a id="steps-to-run-floorplan-using-openlane"></a>
-## Steps-to-run-floorplan-using-OpenLANE
-
-  
-<a id="review-floorplan-files-and-steps-to-view-floorplan"></a>
-## Review floorplan files and steps to view floorplan
-
-
-<a id="review-floorplan-layout-in-magic"></a>
-## Review floorplan layout in magin
-
-<a id="library-binding-and-placement"></a>
-## Library Binding and Placement
 
 
 <a id="library-binding-and-placement"></a>
