@@ -57,7 +57,14 @@ The above figure shows the rough calculation of minimum area that is occupied bu
 - **Wafer:** multiple dice are fabricated together on a circular wafer.
 ![Alt Text](images/5_core_die_in_chip.png)
 
-Utilization Factor = Area occupied by netlist/total core area
+
+$$  
+\text{Utilization Factor}
+\=\
+\frac{\text{Area Occupied by Netlist}}
+     {\text{Total Core Area}}
+$$
+
 ![Alt Text](images/6_uti_formula.png)
 
 - In this example, the four blocks completely occupy the core area (4 unit² occupied / 4 unit² total = 1.0 → 100 %).
