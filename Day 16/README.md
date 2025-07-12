@@ -5,7 +5,7 @@
 # Contents
 - [Chip Floor planning considerations](#chip-floor-planning-considerations)
   - [Utilization factor and aspect ratio](#utilization-factor-and-aspect-ratio)
-  - [Concept of pre-placed cells](#cencept-of-pre--placed-cells)
+  - [Pre-placed cells](#cencept-of-pre--placed-cells)
   - [De-coupling Capacitors](#de--coupling-capacitors)
   - [Power planning](#power-planning)
   - [Pin-placement and logical cell placement blockage](#pin--placement-and-logical-cell-placement-blockage)
@@ -85,18 +85,29 @@ $$
 ![Alt Text](images/8_uti25_aspectration1.png)
 
 <a id="cencept-of-pre--placed-cells"></a>
-## Concept of pre-placed cells
+## Pre-placed cells
 - Before running automated placement & routing (APR), we often “pre-place” large or critical blocks (IPs) at fixed locations.
 - **Pre-placed cells** are large timing-critical blocks (like memories, clock-gating cells, or custom macros) that are fixed at specific locations in design floorplan before running automated placement and routing. By “black-boxing” each block - exposing only its I/O pins and hiding its internal gates they are ensured that APR treats it as a fixed macro, giving us predictable timing, power-grid alignment, and routing channels around those anchored blocks.
-- Functionality of pre-placed cells is implemented only once and APR tools do not alter their locations.
 
 ![Alt Text](images/preplaced_cells_1.png)
 ![Alt Text](images/preplaced_cells_2.png)
 ![Alt Text](images/preplaced_cells_3.png)
 ![Alt Text](images/preplaced_cells_4.png)
 
+- Functionality of pre-placed cells is implemented only once and APR tools do not alter their locations.
+- The location of pre-placed cells are defined depending upon the design scenario or background.
+
+![Alt Text](images/preplaced_cells_5.png)
+
 <a id="de--coupling-capacitors"></a>
 ## De-coupling Capacitors
+
+- Decouples the circuit from the V<sub>DD</sub> rail.
+- Reduce Zpdn for the required frequencies of operation
+- Serve as a charge reservoir for the switching current demands that the VDD rail cannot satisfy.
+- Surround pre-placed cells with Decaps to compensate for the switching current demands (di/dt)
+
+![Alt Text](images/decap_1.png)
 
 <a id="power-planning"></a>
 ## Power planning
