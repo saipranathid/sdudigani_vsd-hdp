@@ -130,6 +130,12 @@ $$
 <a id="pin--placement-and-logical-cell-placement-blockage"></a>
 ## Pin-placement and logical cell placement blockage
 
+![Alt Text](images/pin_plc_1.png)
+![Alt Text](images/pin_plc_2.png)
+![Alt Text](images/pin_plc_3.png)
+![Alt Text](images/pin_plc_4.png)
+![Alt Text](images/pin_plc_5.png)
+
 <a id="steps-to-run-floorplan-using-openlane"></a>
 ## Steps-to-run-floorplan-using-OpenLANE
 
