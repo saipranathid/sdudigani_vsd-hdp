@@ -134,7 +134,17 @@ $$
 ![Alt Text](images/pin_plc_5.png)
 
 **Calculate the die area in microns from the values in floorplan def**
+
 ![Alt Text](images/7_spm_def.png)
+
+- Die Area from spm.def 
+    unit to micron scale: 1000 units = 1 micron
+    Die area: (0 0) to (101850 112570)
+
+- Calculated dimensions:
+    Die width = 101850/1000 = 101.85 μm
+    Die height = 112570/1000 = 112.57 μm
+    Die Area = 101.85 μm × 112.57 μm = 11465.2545 µm²
 
 <a id="library-binding-and-placement"></a>
 # Library Binding and Placement
