@@ -112,6 +112,21 @@ $$
 <a id="power-planning"></a>
 ## Power planning
 
+ - SSN
+   - L*di/dt
+     * Discharging : Ground bounce
+     * Charging    : Voltage Droop
+   - **Solution:** Reduce the Vdd/ Vss parasitics ->
+     * Power grid
+     * Multiple VDD, VSS pins/ balls 
+
+![Alt Text](images/powerplan_3.png)
+
+![Alt Text](images/powerplan_4.png)
+
+![Alt Text](images/powerplan_5.png)
+
+
 <a id="pin--placement-and-logical-cell-placement-blockage"></a>
 ## Pin-placement and logical cell placement blockage
 
