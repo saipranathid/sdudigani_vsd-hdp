@@ -320,6 +320,9 @@ vsdflow/
                        
 ```              
 
+![Alt Text](images/1_openlane_script_Sh.png)
+![Alt Text](images/2_build_done.png)
+
 <a id="steps-to-run-openalne"></a>
 ## Steps to run OpenLANE
 
@@ -339,3 +342,21 @@ vsdflow/
 (the above flow.tcl command will run RTL2GDS flow for design named "spm". Same can be done for other designs which are present in ~/work/tools/openlane_working_dir/Openlane/designs)
 
 5. Refer to: https://github.com/efabless/openlane for detailed instructions.
+
+
+![Alt Text](images/3_run_openlane_for_spm.png)
+![Alt Text](images/4_run_openlane_spm_done.png)
+
+
+### Calculation of Flop Ratio and DFF % from synthesis statistics report file
+
+```math
+Flop\ Ratio = \frac{64}{317} = 0.201892
+```
+```math
+Percentage\ of\ DFF's = 0.201892 * 100 = 20.1892\ \%
+```
+
+![Alt Text](images/5_synth_stat.png)
+![Alt Text](images/6_synth_pre_stat.png)
+
