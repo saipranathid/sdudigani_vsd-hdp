@@ -9,20 +9,8 @@
   - [De-coupling Capacitors](#de--coupling-capacitors)
   - [Power planning](#power-planning)
   - [Pin-placement and logical cell placement blockage](#pin--placement-and-logical-cell-placement-blockage)
-- [Library Binding and Placement](#library-binding-and-placement)
-  - [Netlist binding and initial place design](netlist-binidng-and-initial-place-design)
-  - [Optimize placement using estimated wire-length and capacitance](#optimize-placement-using-estimated-wl-cap)
-  - [Final placement optimization](final-placement-opt)
-  - [Need for libraries and characterization](#need-for-libraries-and-char)
-  - [Congestion aware placement using RePlAce](#congestion-aware-placement-using-replace)
-- [Cell design and characterization flows](#cell-design-and-char-flows)
-  - [Inputs for cell design flow](#inputs-for-cell-design-flow)
-  - [Circuit design step](#circuit-design-step)
-  - [Layout design step](#layout-design-step)
-  - [Typical Characterization flow](#typical-char-flow)
-- [General Timing Characterization Parameters](#general-timing-char-parameters)  
-  - [Timing threshold definations](#timing-threshold-definations)
-  - [Propogation delay and transition time](#propogation-delay-and-transition-time)
+  - [Calculate the die area in microns from the values in floorplan def](#die-area-in-microns)
+  - [Viewing Test Design Outputs](#view-test-design-outputs)
 
 <a id="chip-floor-planning-considerations"></a>
 # Chip Floor planning considerations
@@ -133,6 +121,7 @@ $$
 ![Alt Text](images/pin_plc_4.png)
 ![Alt Text](images/pin_plc_5.png)
 
+<a id="die-area-in-microns"></a>
 **Calculate the die area in microns from the values in floorplan def**
 
 ![Alt Text](images/7_spm_def.png)
@@ -146,7 +135,7 @@ $$
     Die height = 112570/1000 = 112.57 μm
     Die Area = 101.85 μm × 112.57 μm = 11465.2545 µm²
 
-
+<a id="view-test-design-outputs"></a>
 **Viewing Test Design Outputs**
 - Open the spm.gds using KLayout
 
@@ -156,44 +145,3 @@ klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/Op
 ![Alt Text](images/klayout_1.png)
 
 
-<a id="library-binding-and-placement"></a>
-# Library Binding and Placement
-
-<a id="netlist-binidng-and-initial-place-design"></a>
-## Netlist binding and initial place design
-
-<a id="optimize-placement-using-estimated-wl-cap"></a>
-## Optimize placement using estimated wire-length and capacitance
-
-<a id="final-placement-opt"></a>
-## Final placement optimization
-
-<a id="need-for-libraries-and-char"></a>
-## Need for libraries and characterization
-
-<a id="congestion-aware-placement-using-replace"></a>
-## Congestion aware placement using RePlAce
-
-<a id="cell-design-and-char-flows"></a>
-# Cell design and characterization flows
-
-<a id="inputs-for-cell-design-flow"></a>
-## Inputs for cell design flow
-
-<a id="circuit-design-step"></a>
-## Circuit design step
-
-<a id="layout-design-step"></a>
-## Layout design step
-
-<a id="typical-char-flow"></a>
-## Typical Characterization flow
-
-<a id="general-timing-char-parameters"></a>
-# General Timing Characterization Parameters
-
-<a id="timing-threshold-definations"></a>
-## Timing threshold definations
-
-<a id="propogation-delay-and-transition-time"></a>
-## Propogation delay and transition time
