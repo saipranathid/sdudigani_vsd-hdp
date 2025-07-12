@@ -13,6 +13,7 @@
   - [OpenLANE ASIC design flow](#openlane-detailed-asic-design-flow)
 - [Openlane Installation](#openlane-installation)
   - [Steps to build OpenLANE](#steps-to-build-openlane)
+  - [Steps to run OpenLNAE](#steps-to-run-openlane)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
@@ -266,6 +267,7 @@ OpenLANE flow is an automated RTL2GDSII flow where all required tools are embedd
   - `openlane_script.sh` : It is a standalone script that installs OpenLane (latest version) and all its dependencies.
   - `openlane_script_wo_depends.sh` : It is a lighter version that works alongside the [vsdflow script](https://github.com/kunalg123/vsdflow), assuming some tools are already pre-installed.
 
+<a id="steps-to-build-openalne"></a>
 ## Steps to build OpenLANE
 
 1. `git clone https://github.com/nickson-jose/openlane_build_script`
@@ -317,8 +319,9 @@ vsdflow/
          |__ Openlane
                        
 ```              
- 
-# STEPS TO RUN OPENLANE
+
+<a id="steps-to-run-openalne"></a>
+## Steps to run OpenLANE
 
 1. Go to /path/to/openlane (i.e., ~/work/tools/openlane_working_dir/Openlane)
 2. There are two ways of invoking openlane. The easiest of the two would be:
