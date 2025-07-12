@@ -153,6 +153,8 @@ $$
 ```bash
 klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/OpenLane/designs/spm/runs/RUN_2025.07.12_21.05.18/results/final/gds/spm.gds
 ```
+![Alt Text](images/klayout_1.png)
+
 
 <a id="library-binding-and-placement"></a>
 # Library Binding and Placement
