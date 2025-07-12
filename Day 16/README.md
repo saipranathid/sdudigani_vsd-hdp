@@ -146,6 +146,14 @@ $$
     Die height = 112570/1000 = 112.57 μm
     Die Area = 101.85 μm × 112.57 μm = 11465.2545 µm²
 
+
+**Viewing Test Design Outputs**
+- Open the spm.gds using KLayout
+
+```bash
+klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/OpenLane/designs/spm/runs/RUN_2025.07.12_21.05.18/results/final/gds/spm.gds
+```
+
 <a id="library-binding-and-placement"></a>
 # Library Binding and Placement
 
