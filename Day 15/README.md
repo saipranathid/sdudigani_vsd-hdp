@@ -351,12 +351,12 @@ vsdflow/
 ### Calculation of Flop Ratio and DFF % from synthesis statistics report file
 
 ```math
-Flop\ Ratio = \frac{64}{317} = 0.201892
+Flop\ Ratio = \frac{63}{253} = 0.249011
 ```
 ```math
-Percentage\ of\ DFF's = 0.201892 * 100 = 20.1892\ \%
+Percentage\ of\ DFF's = 0.249011 * 100 = 24.9011\ \%
 ```
 
-![Alt Text](images/5_synth_stat.png)
 ![Alt Text](images/6_synth_pre_stat.png)
 
+![Alt Text](images/5_synth_stat.png)
