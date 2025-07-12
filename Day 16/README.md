@@ -32,6 +32,38 @@
 
 <a id="utilization-factor-and-aspect-ratio"></a>
 ## Utilization factor and aspect ratio
+**Define width and height of core and die:**
+- Let us consider a minimal design consisting of two flip-flops (FF) feeding two standard-cell gates (A1, O1). The netlist defines connectivity but says nothing about physical dimensions.
+![Alt Text](images/1_eg_netlist.png)
+
+- Enclose each logical element in a rectangular “footprint.” For rough estimation, we assume every cell (FF or gate) is a 1 unit × 1 unit square.
+![Alt Text](images/2_phy_dimensions.png)
+
+By convention:
+- Standard cell = 1 unit × 1 unit → 1 unit²
+- Flip-flop = 1 unit × 1 unit → 1 unit²
+![Alt Text](images/3_std_cell_area.png)
+
+- Tile the four 1 unit² blocks into a 2×2 array.
+  - Core width = 2 units
+  - Core height = 2 units
+  - Core area = 4 unit²
+![Alt Text](images/4_rough_min_area_cal_of_netlist.png)
+
+The above figure shows the rough calculation of minimum area that is occupied bu the netlist.
+
+- **Core:** the region containing all standard cells (our 2×2 tile).
+- **Die:** the die includes the core plus I/O pads, power rings, and metal guard-bands.
+- **Wafer:** multiple dice are fabricated together on a circular wafer.
+![Alt Text](images/5_core_die_in_chip.png)
+
+Utilization Factor = Area occupied by netlist/total core area
+![Alt Text](images/6_uti_formula.png)
+
+- In this example, the four blocks completely occupy the core area (4 unit² occupied / 4 unit² total = 1.0 → 100 %).
+![Alt Text](images/7_uti_cal.png)
+
+**Note:** Real designs typically target 60–80 % utilization to leave room for routing nets, filler cells, and power straps etc.
 
 <a id="cencept-of-pre--placed-cells"></a>
 ## Concept of pre-placed cells
