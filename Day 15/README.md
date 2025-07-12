@@ -54,7 +54,7 @@ The architecture inside the processor/ Soc is shown below. Various packages are 
 - Precision data-converter packages
 
 **Chip Overview**
-Beneath the package sits the bare silicon die - a landscape of transistors and interconnects implementing everything from logic to memory to analog front-ends. This single piece of silicon handles computation, storage, and I/O.
+- Integrated circuit is the one in which thousand of gates ,resistors and capacitors are fabricated into it.An IC act as a memory,timer,counter ,amplifier etc.The main advantage of Ic is they are small in size and when comes to the functionality they does the best job.They are availabel in the form of packages.
 
 **Core Functional Blocks:**
 - Processing Units: One or more CPU cores (e.g., RISC-V, ARM) execute instructions and control data flow.
@@ -73,9 +73,11 @@ The boundaries of the chip is connected to the pins present in the boundaries of
   
 ![Alt Text](images/6_risc-v_soc.png)
 
-**Foundry IPs:** Pre-characterized circuit blocks supplied by the foundry. Delivered as GDSII, LEF/DEF and timing libraries, these IPs accelerate design by providing plug-and-play analog and mixed-signal functionality.
+- In the above figure IP represents the Intellectual Property (IP) which are specific foundary. RISC-V and SRAM are the macros which are placed inside core. In the area surrounding the core I/O cells are placed. Physical design is the step which is used to place Intellectual Property (IP) and macros inside the core area.
 
-**Macros:** Macros are large functional blocks designed by the SoC team (or third-party vendors) to meet specific on-chip requirements - such as custom SRAM banks, DMA controllers, or specialized accelerators.
+- **Foundry IPs:** Pre-characterized circuit blocks supplied by the foundry. Delivered as GDSII, LEF/DEF and timing libraries, these IPs accelerate design by providing plug-and-play analog and mixed-signal functionality.
+
+- **Macros:** Macros are large functional blocks designed by the SoC team (or third-party vendors) to meet specific on-chip requirements - such as custom SRAM banks, DMA controllers, or specialized accelerators.
 
 ### Macros vs. Foundry IPs Comparison
 
