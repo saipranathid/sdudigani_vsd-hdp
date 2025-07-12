@@ -133,6 +133,8 @@ $$
 ![Alt Text](images/pin_plc_4.png)
 ![Alt Text](images/pin_plc_5.png)
 
+**Calculate the die area in microns from the values in floorplan def**
+![Alt Text](images/7_spm_def.png)
 
 <a id="library-binding-and-placement"></a>
 # Library Binding and Placement
