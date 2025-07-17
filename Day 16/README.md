@@ -9,8 +9,7 @@
   - [De-coupling Capacitors](#de--coupling-capacitors)
   - [Power planning](#power-planning)
   - [Pin-placement and logical cell placement blockage](#pin--placement-and-logical-cell-placement-blockage)
-  - [Calculate the die area in microns from the values in floorplan def](#die-area-in-microns)
-  - [Viewing Test Design Outputs](#view-test-design-outputs)
+- [Floorplanning using OpenLANE for picorv32a](#floorplan-using-openlane-for-picorv32a)
 
 <a id="chip-floor-planning-considerations"></a>
 # Chip Floor planning considerations
@@ -144,4 +143,7 @@ klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/Op
 ```
 ![Alt Text](images/klayout_1.png)
 
+
+<a id="floorplan-using-openlane-for-picorv32a"></a>
+# Floorplanning using OpenLANE for `picorv32a`
 
