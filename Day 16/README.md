@@ -11,6 +11,10 @@
   - [Pin-placement and logical cell placement blockage](#pin--placement-and-logical-cell-placement-blockage)
 - [Floorplanning using OpenLANE for picorv32a](#floorplan-using-openlane-for-picorv32a)
 
+
+<details>
+  <Summary><strong> Chip Floor planning considerations</strong></summary>
+  
 <a id="chip-floor-planning-considerations"></a>
 # Chip Floor planning considerations
 
@@ -143,6 +147,7 @@ klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/Op
 ```
 ![Alt Text](images/klayout_1.png)
 
+</details>
 
 <a id="floorplan-using-openlane-for-picorv32a"></a>
 # Floorplanning using OpenLANE for `picorv32a`
