@@ -404,13 +404,45 @@ make
 sudo make install
 ```
 
+![Alt Text](images/1_1_building_openpdks_done.jpg)
+
 ![Alt Text](images/1_building_pdks_frm_source.jpg)
 
-***Step 3: Run OpenLANE Synthesis Flow for `picorv32a` design**
+**Step 3: Run OpenLANE Synthesis Flow for `picorv32a` design**
 1. Export the PDK_ROOT variable to point to your sky130A PDK
+```bash
+export PDK_ROOT=/home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks/
+```
 2. Change directory to the OpenLANE flow working directory
+```bash
+cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/
+```
 3. (Optional) Alias the docker command to simplify OpenLANE invocation
+```bash
+alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+```
 4. Launch the Docker container (OpenLANE interactive shell)
+```bash
+docker
+```
 5. Once inside the Docker container, launch the OpenLANE interactive shell using:
-6. Run the OpenLANE Flow Commands from the Interactive Shell
-7. View the Yosys Synthesis Report
+```bash
+./flow.tcl -interactive
+```
+
+![Alt Text](images/2_launch_openlane_intercative_shell.png)
+
+6. Run the OpenLANE Synthesis Flow Commands from the Interactive Shell for picorv32a design
+  - Load the required OpenLANE package for proper functionality and prepare the design (creates necessary directory structure, config files, and copies RTL files)
+  ```bash
+  package require openlane 0.9
+  prep -design picorv32a
+  ```
+  ![Alt Text](images/3_prep_design_picorv32a.png)
+
+  -  Run `synthesis`
+  ```bash
+  run_synthesis
+  ```
+
+9. View the Yosys Synthesis Report
