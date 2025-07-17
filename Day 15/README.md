@@ -259,6 +259,10 @@ OpenLANE flow is an automated RTL2GDSII flow where all required tools are embedd
 ![Alt Text](images/OL_signoff_1.png)
 ![Alt Text](images/OL_signoff_2.png)
 
+
+<details>
+  <Summary><strong> Openlane Installation and spm</strong></summary>
+
 <a id="openlane-installation"></a>
 # Openlane Installation
 
@@ -360,3 +364,39 @@ Percentage\ of\ DFF's = 0.249011 * 100 = 24.9011\ \%
 ![Alt Text](images/6_synth_pre_stat.png)
 
 ![Alt Text](images/5_synth_stat.png)
+
+</details>
+
+
+# Familiarize with OpenLANE flow
+
+## OpenLANE Directory Structure:
+```bash
+├── OpenLane             -> directory where the tool can be invoked (run docker first)
+│   ├── designs          -> All designs must be extracted from this folder
+│   │   │   ├── picorv32a -> Design used as case study for this workshop
+│   |   |   ├── ...
+|   |   ├── ...
+├── pdks                 -> contains pdk related files 
+│   ├── skywater-pdk     -> all Skywater 130nm PDKs
+│   ├── open-pdks        -> contains scripts that makes the commerical PDK (which is normally just compatible to commercial tools) to also be compatible with the open-source EDA tool
+│   ├── sky130A          -> pdk variant made especially compatible for open-source tools
+│   │   │  ├── libs.ref  -> files specific to node process (timing lib, cell lef, tech lef) for example is `sky130_fd_sc_hd` (Sky130nm Foundry Standard Cell High Density)  
+│   │   │  ├── libs.tech -> files specific for the tool (klayout,netgen,magic...)
+```
+
+**Step 1: Clone the Repo**
+- To get started, clone the required files and project setup from the below GitHub repository:
+`git clone https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd`
+- This repository contains all the necessary resources, scripts, and design files to follow along with the OpenLANE-based Advanced Physical Design flow, including the picorv32a case study.
+
+**Step 2: Build PDKs from Source**
+- To build and [install the OpenPDKs](https://github.com/RTimothyEdwards/open_pdks) (Process Design Kits) for the Sky130 process node, follow these steps:
+
+```bash
+git clone https://github.com/RTimothyEdwards/open_pdks.git
+cd open_pdks
+./configure --enable-sky130-pdk
+make
+sudo make install
+```
