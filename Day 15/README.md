@@ -492,7 +492,7 @@ set ::env(SYNTH_CAP_LOAD) 5.0
 run_synthesis
 ```
 
-Note: Here `5.0` means “target `5 fF` per output pin.” We can tune that up or down depending on your speed/area goals.
+Note: Here `5.0` means “target `5 fF` per output pin.” We can tune that up or down depending on the speed/area goals.
 
 [OR]
 
