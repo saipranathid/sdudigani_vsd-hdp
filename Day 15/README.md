@@ -404,7 +404,7 @@ make
 sudo make install
 ```
 
-![Alt Text](images/1_building_pdks_frm_source.png)
+![Alt Text](images/1_building_pdks_frm_source.jpg)
 
 ***Step 3: Run OpenLANE Synthesis Flow for `picorv32a` design**
 1. Export the PDK_ROOT variable to point to your sky130A PDK
