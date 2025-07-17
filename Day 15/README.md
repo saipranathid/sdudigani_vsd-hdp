@@ -18,7 +18,7 @@
   - [Directory Structure](#directory-structure)
   - [Clone the Repo](#clone-repo)
   - [Build PDKs from Source](#build-pdks)
-  - [OpenLANE Synthesis for picorv32a](openlane-synthesis)
+  - [OpenLANE Synthesis for picorv32a](#openlane-synthesis)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
