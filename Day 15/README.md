@@ -540,10 +540,10 @@ Total Cells = 14871
 DFF Cells = 1613
 
 ```math
-Flop\ Ratio = \frac{DFFs}{Total Cells} = \frac{1613}{14871} = 0.10846
+Flop\ Ratio = \frac{DFFs}{Total Cells}   =   \frac{1613}{14871} = 0.10846
 ```
 
 ```math
-Percentage\ of\ DFF's = \frac{DFFs}{Total cells} X 100 = 0.108846 x 100 = 10.846%
+Percentage\ of\ DFF's = \frac{DFFs} {Total cells} X 100 = 0.108846 X 100 = **10.846%**
 ```
 
