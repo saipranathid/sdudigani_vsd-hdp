@@ -404,7 +404,7 @@ make
 sudo make install
 ```
 
-![Alt Text](images/1_1_building_openpdks_done.jpg)
+![Alt Text](images/1_1_building_openpdks_done.png)
 
 ![Alt Text](images/1_building_pdks_frm_source.jpg)
 
