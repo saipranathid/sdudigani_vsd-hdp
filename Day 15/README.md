@@ -521,3 +521,14 @@ Add the env variable to /openlane/designs/picorv32a/config.tcl, save and re-run 
 ```bash
 gvim ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-07_20-29/results/synthesis/picorv32a.synthesis.v
 ```
+
+**Synthesized Netlist**
+![Alt Text](images/6_synthesis_netlist.png)
+
+
+```bash
+cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-07_20-29/reports/synthesis/
+gvim 2-1-yosys_4.stat.rpt
+```
+**Statistics**
+![Alt Text](images/7_yosys_synth_stat.png)
