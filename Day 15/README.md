@@ -13,7 +13,12 @@
   - [OpenLANE ASIC design flow](#openlane-detailed-asic-design-flow)
 - [Openlane Installation](#openlane-installation)
   - [Steps to build OpenLANE](#steps-to-build-openlane)
-  - [Steps to run OpenLNAE](#steps-to-run-openlane)
+  - [Steps to run OpenLANE for spm design](#steps-to-run-openlane)
+- [Openlane Flow for picorv32a design](#openlane-flow-for-picorv32a-design)
+  - [Directory Structure](#directory-structure)
+  - [Clone the Repo](#clone-repo)
+  - [Build PDKs from Source](#build-pdks)
+  - [OpenLANE Synthesis for picorv32a](openlane-synthesis)
 
 <a id="how-to-talk-to-computers"></a>
 # How to Talk to Computers
@@ -367,9 +372,10 @@ Percentage\ of\ DFF's = 0.249011 * 100 = 24.9011\ \%
 
 </details>
 
+<a id="openlane-flow-for-picorv32a-design"></a>
+# OpenLANE flow for picorv32a Design
 
-# OpenLANE flow
-
+<a id="directory-structure"></a>
 ## OpenLANE Directory Structure:
 ```bash
 ├── OpenLane             -> directory where the tool can be invoked (run docker first)
@@ -385,6 +391,7 @@ Percentage\ of\ DFF's = 0.249011 * 100 = 24.9011\ \%
 │   │   │  ├── libs.tech -> files specific for the tool (klayout,netgen,magic...)
 ```
 
+<a id="clone-repo"></a>
 **Step 1: Clone the Repo**
 - To get started, clone the required files and project setup from the following GitHub repository:
 
@@ -393,6 +400,7 @@ git clone https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd
 ```
 - This repository contains all the necessary resources, scripts, and design files to follow along with the OpenLANE-based Advanced Physical Design flow, including the picorv32a case study.
 
+<a id="build-pdks"></a>
 **Step 2: Build PDKs from Source**
 - To build and [install the OpenPDKs](https://github.com/RTimothyEdwards/open_pdks) (Process Design Kits) for the Sky130 process node, follow these steps:
 
@@ -408,6 +416,8 @@ sudo make install
 
 ![Alt Text](images/1_building_pdks_frm_source.jpg)
 
+
+<a id="openlane-synthesis"></a>
 **Step 3: Run OpenLANE Synthesis Flow for `picorv32a` design**
 1. Export the PDK_ROOT variable to point to your sky130A PDK
 ```bash
