@@ -434,6 +434,7 @@ docker
 
 6. Run the OpenLANE Synthesis Flow Commands from the Interactive Shell for picorv32a design
   - Load the required OpenLANE package for proper functionality and prepare the design (creates necessary directory structure, config files, and copies RTL files)
+  
   ```bash
   package require openlane 0.9
   prep -design picorv32a
@@ -441,8 +442,72 @@ docker
   ![Alt Text](images/3_prep_design_picorv32a.png)
 
   -  Run `synthesis`
+  
   ```bash
   run_synthesis
   ```
 
+**Error:**
+You may encounter the following error:
+```bash
+% run_synthesis
+[INFO]: Running Synthesis...
+[INFO]: current step index: 1
+ERROR: TCL interpreter returned an error: can't read "::env(SYNTH_CAP_LOAD)": no such variable
+[ERROR]: during executing: "yosys -c /openLANE_flow/scripts/synth.tcl -l /openLANE_flow/designs/picorv32a/runs/17-07_20-29/logs/synthesis/1-yosys.log |& tee >&@stdout"
+[ERROR]: Exit code: 1
+[ERROR]: Last 10 lines:
+child process exited abnormally
+
+[ERROR]: Please check yosys  log file
+[ERROR]: Dumping to /openLANE_flow/designs/picorv32a/runs/17-07_20-29/error.log
+[INFO]: Calculating Runtime From the Start...
+[INFO]: Flow failed for picorv32a/17-07_20-29 in 0h8m41s
+[INFO]: Generating Final Summary Report...
+[INFO]: Design Name: picorv32a
+Run Directory: /openLANE_flow/designs/picorv32a/runs/17-07_20-29
+Source not found.
+----------------------------------------
+
+LVS Summary:
+Source: /openLANE_flow/designs/picorv32a/runs/17-07_20-29/results/lvs/picorv32a.lvs_parsed.gds.log
+Source not found.
+----------------------------------------
+
+Antenna Summary:
+No antenna report found.
+[INFO]: check full report here: /openLANE_flow/designs/picorv32a/runs/17-07_20-29/reports/final_summary_report.csv
+[ERROR]: Flow Failed.
+```
+
+![Alt Text](images/4_synth_error.png)
+
+**Reason:** OpenLane’s synthesis script expected an environment variable called `SYNTH_CAP_LOAD` but didn’t find it in the design’s `config.tcl`. That variable is used to size cells based on a target load capacitance (in fF) during Yosys synthesis.
+
+**Fix:**
+Inside interactive session run the following:
+```bash
+# inside the interactive prompt, before "run_synthesis"
+set ::env(SYNTH_CAP_LOAD) 5.0
+run_synthesis
+```
+
+Note: Here `5.0` means “target `5 fF` per output pin.” We can tune that up or down depending on your speed/area goals.
+
+[OR]
+
+Add the env variable to /openlane/designs/picorv32a/config.tcl, save and re-run the flow.
+
+`set ::env(SYNTH_CAP_LOAD) 5.0`
+![Alt Text](images/5_synth_successful_with_cap_load_5.png)
+
+`set ::env(SYNTH_CAP_LOAD) 10.0`
+![Alt Text](images/5_synth_successful_with_cap_load_10.png)
+
+`set ::env(SYNTH_CAP_LOAD) 30.0`
+![Alt Text](images/5_synth_successful_with_cap_load_30.png)
+
 9. View the Yosys Synthesis Report
+```bash
+gvim ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-07_20-29/results/synthesis/picorv32a.synthesis.v
+```
