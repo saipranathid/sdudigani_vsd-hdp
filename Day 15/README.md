@@ -368,7 +368,7 @@ Percentage\ of\ DFF's = 0.249011 * 100 = 24.9011\ \%
 </details>
 
 
-# Familiarize with OpenLANE flow
+# OpenLANE flow
 
 ## OpenLANE Directory Structure:
 ```bash
@@ -386,8 +386,11 @@ Percentage\ of\ DFF's = 0.249011 * 100 = 24.9011\ \%
 ```
 
 **Step 1: Clone the Repo**
-- To get started, clone the required files and project setup from the below GitHub repository:
-`git clone https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd`
+- To get started, clone the required files and project setup from the following GitHub repository:
+
+```bash
+git clone https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd
+```
 - This repository contains all the necessary resources, scripts, and design files to follow along with the OpenLANE-based Advanced Physical Design flow, including the picorv32a case study.
 
 **Step 2: Build PDKs from Source**
@@ -400,3 +403,14 @@ cd open_pdks
 make
 sudo make install
 ```
+
+![Alt Text](images/1_building_pdks_frm_source.png)
+
+***Step 3: Run OpenLANE Synthesis Flow for `picorv32a` design**
+1. Export the PDK_ROOT variable to point to your sky130A PDK
+2. Change directory to the OpenLANE flow working directory
+3. (Optional) Alias the docker command to simplify OpenLANE invocation
+4. Launch the Docker container (OpenLANE interactive shell)
+5. Once inside the Docker container, launch the OpenLANE interactive shell using:
+6. Run the OpenLANE Flow Commands from the Interactive Shell
+7. View the Yosys Synthesis Report
