@@ -600,6 +600,7 @@ $$
      {\text{Width of the core area}}
 $$
 
+
 - **Core Utilization** defines the area occupied by macros, standard cells and other cells. If Core utilisation is 70% - 70% of core area is used for placing the standard cells, macros and other cells while remaining 30% can be used for routing. In other words it is the area occupied by the netlist.
 
 $$  
