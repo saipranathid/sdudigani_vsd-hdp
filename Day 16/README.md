@@ -1,6 +1,6 @@
 
 <details>
-  <Summary><strong> Day 16 : Good Floorplan vs Bad Floorplan and Introduction to Library cells</strong></summary>
+  <Summary><strong> Day 16 : Good Floorplan vs Bad Floorplan - Library cells - picorv32a Floorplanning using OpenLANE</strong></summary>
 
 # Contents
 - [Chip Floor planning considerations](#chip-floor-planning-considerations)
