@@ -1,4 +1,3 @@
-
 <details>
   <Summary><strong> Day 16 : Physical Design using OpenLANE for picorv32a</strong></summary>
 
@@ -8,6 +7,17 @@
 
 <a id="openlane-flow-for-picorv32a"></a>
 # OpenLANE Flow for `picorv32a`
+
+Install OpenLane, PDKs:
+```bash
+cd ~
+git clone https://github.com/The-OpenROAD-Project/OpenLane --recurse-submodules 
+cd OpenLane
+make
+make test
+cd /home/sdudigani/OpenLane/designs/ci
+cp -r * ../
+```
 
 ![Alt Text](images/a.png)
 
@@ -160,4 +170,93 @@ Basic test passed
 
 ```
 </details>
+
+- When you run make test you will have a Basic test passed on your terminal. At this step when openlane is running, include the picorv32a. In order to start open lane and run synthesis follow the next steps.
+
+## `run_synthesis`
+
+```bash
+cd ~/OpenLane
+make mount
+./flow.tcl -interactive
+package require openlane 1.0.1
+prep -design picorv32a
+run_synthesis
+```
+
+![Alt Text](images/c_make_mount.png)
+
+![Alt Text](images/d_prep_synth_fp.png)
+
+### view nelist:
+
+```bash
+cd ~/OpenLanedesigns/picorv32a/runs/RUN_2025.07.18_20.24.50/results/synthesis/
+gvim picorv32a.v
+```
+
+![Alt Text](images/e_view_synth_netlist.png)
+
+### view the statistics report:
+
+```bash
+cd ~/OpenLane/designs/picorv32a/runs/RUN_2025.07.18_20.24.50/reports/synthesis
+gvim 1-synthesis.AREA_0.stat.rpt
+```
+
+![Alt Text](images/f_synth_stat_report.png)
+
+### Flop ratio:
+
+
+## `run_floorplan`
+
+```bash
+run_floorplan
+```
+
+![Alt Text](images/g_run_fp.png)
+
+### view the floorplan def in magic:
+
+```bash
+cd ~/OpenLane/designs/picorv32a/runs/RUN_2025.07.18_20.24.50/results/floorplan
+magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+```
+
+![Alt Text](images/g_run_fp.png)
+
+## `run_placement`
+
+```bash
+run_placement
+```
+
+![Alt Text](images/i_run_plc.png)
+
+### view the placement def in magic:
+
+```bash
+cd ~/OpenLane/designs/picorv32a/runs/RUN_2025.07.18_20.24.50/results/placement
+magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+```
+
+![Alt Text](images/j_plc_def_magic.png)
+
+![Alt Text](images/k_plc_zoom.png)
+
+## `run_cts`
+
+```bash
+run_cts
+```
+
+![Alt Text](images/l_run_cts.png)
+
+
+
+
+
+
+
 
