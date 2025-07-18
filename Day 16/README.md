@@ -2,7 +2,7 @@
   <Summary><strong> Day 16 : Physical Design using OpenLANE for picorv32a</strong></summary>
 
 # Contents
-- [OpenLANE Flow for `picorv32a`](#openlane-flow-for-picorv32a)
+- [Physical Design Flow for picorv32a Using OpenLANE](#openlane-flow-for-picorv32a)
 	- [Install OpenLane and PDKs](#install-openlane-and-pdks)
 	- [`run_synthesis`](#run-synthesis)
 	- [`run_floorplan`](#run-floorplan)
@@ -10,7 +10,7 @@
 	- [`run_cts`](#run-cts)
 
 <a id="openlane-flow-for-picorv32a"></a>
-# OpenLANE Flow for `picorv32a`
+# Physical Design Flow for picorv32a Using OpenLANE
 
 <a id="install-openlane-and-pdks"></a>
 ## Install OpenLane and PDKs:
