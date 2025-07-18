@@ -7,6 +7,7 @@
 	- [`run_synthesis`](#run-synthesis)
 	- [`run_floorplan`](#run-floorplan)
 	- [`run_placement`](#run-placement)
+ 		- [Library Binidng and Placement](#lib-binding-and-plc)
 	- [`run_cts`](#run-cts)
 
 <a id="openlane-flow-for-picorv32a"></a>
@@ -288,6 +289,7 @@ magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_worki
 <a id="run-placement"></a>
 ## `run_placement`
 
+<a id="lib-binding-and-plc"></a>
 <details>
   <Summary><strong> Library Binidng and Placement</strong></summary>
 
