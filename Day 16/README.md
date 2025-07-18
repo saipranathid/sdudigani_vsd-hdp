@@ -367,6 +367,13 @@ run_cts
 
 ![Alt Text](images/l_run_cts.png)
 
+### view sta log:
+
+```bash
+gvim ~/OpenLane/designs/picorv32a/runs/RUN_2025.07.18_20.24.50/logs/cts/17-cts_sta.log
+```
+
+![Alt Text](images/cts_sta_log.png)
 
 
 
