@@ -155,19 +155,61 @@ klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/Op
 floorplan.tcl
 config.tcl
 
-- Run floorplan using OpenLANE and view the def in magic
+1. Run floorplan using OpenLANE and view the def in magic
 ```bash
 run_floorplan
 ```
 
 ![Alt Text](images/run_fp_details.png)
 
+**Errors during Floorplan**
+
 ![Alt Text](images/8_run_floorplan_error.png)
 
 ![Alt Text](images/fp_common_pdn_error.png)
 
+**View Floorplan DEF in Magic**
+Run the following in a new terminal:
+
+```bash
+cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/18-07_00-11/results/floorplan/
+magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+
 ![Alt Text](images/fp_done_picorv32a.png)
+
+- Slect an object in the floorplan from magic window.
+- Go to the tkcon main window.
+- Type `what` as shown in the image below.
+- The tkcon window will show the details of the selected object.
 
 ![Alt Text](images/fp_done_picorv32a_tkmain_select_cell_what.png)
 
+2. Calculate the die area in microns from the values in floorplan def
+
+![Alt Text](images/fp_def_picorv32a.png)
+
+From floorplan def we can say that-
+
+```math
+1000\ Unit\ Distance = 1\ Micron
+```
+```math
+Die\ width\ in\ unit\ distance = 660640 - 0 = 660640
+```
+```math
+Die\ height\ in\ unit\ distance = 671360 - 0 = 671360
+```
+```math
+Distance\ in\ microns = \frac{Value\ in\ Unit\ Distance}{1000}
+```
+```math
+Die\ width\ in\ microns = \frac{660640}{1000} = 660.640\ Microns
+```
+```math
+Die\ height\ in\ microns = \frac{671360}{1000} = 671.360\ Microns
+```
+```math
+Area\ of\ die\ in\ microns = 660.640 * 671.360 = 443527.27\ Square\ Microns
+```
 
