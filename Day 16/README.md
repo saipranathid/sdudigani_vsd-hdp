@@ -3,12 +3,17 @@
 
 # Contents
 - [OpenLANE Flow for `picorv32a`](#openlane-flow-for-picorv32a)
-
+	- [Install OpenLane and PDKs](#install-openlane-and-pdks)
+	- [`run_synthesis`](#run-synthesis)
+	- [`run_floorplan`](#run-floorplan)
+	- [`run_placement`](#run-placement)
+	- [`run_cts`](#run-cts)
 
 <a id="openlane-flow-for-picorv32a"></a>
 # OpenLANE Flow for `picorv32a`
 
-Install OpenLane, PDKs:
+<a id="install-openlane-and-pdks"></a>
+## Install OpenLane and PDKs:
 ```bash
 cd ~
 git clone https://github.com/The-OpenROAD-Project/OpenLane --recurse-submodules 
@@ -173,6 +178,7 @@ Basic test passed
 
 - When you run make test you will have a Basic test passed on your terminal. At this step when openlane is running, include the picorv32a. In order to start open lane and run synthesis follow the next steps.
 
+<a id="run-synthesis"></a>
 ## `run_synthesis`
 
 ```bash
@@ -208,7 +214,7 @@ gvim 1-synthesis.AREA_0.stat.rpt
 
 ### Flop ratio:
 
-
+<a id="run-floorplan"></a>
 ## `run_floorplan`
 
 ```bash
@@ -226,6 +232,7 @@ magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_worki
 
 ![Alt Text](images/g_run_fp.png)
 
+<a id="run-placement"></a>
 ## `run_placement`
 
 ```bash
@@ -245,6 +252,8 @@ magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_worki
 
 ![Alt Text](images/k_plc_zoom.png)
 
+
+<a id="run-cts"></a>
 ## `run_cts`
 
 ```bash
