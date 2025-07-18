@@ -152,3 +152,18 @@ klayout /home/sdudigani/openlane_build_script/work/tools/openlane_working_dir/Op
 <a id="floorplan-using-openlane-for-picorv32a"></a>
 # Floorplanning using OpenLANE for `picorv32a`
 
+floorplan.tcl
+config.tcl
+
+- Run floorplan using OpenLANE and view the def in magic
+```bash
+run_floorplan
+```
+
+![Alt Text](images/8_run_floorplan_error.png)
+
+![Alt Text](images/fp_done_picorv32a.png)
+
+![Alt Text](images/fp_done_picorv32a_tkmain_select_cell_what.png)
+
+
