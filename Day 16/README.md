@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 16 : Physical Design using OpenLANE for picorv32a</strong></summary>
+  <Summary><strong> Day 16 : Advanced Physical Design using OpenLANE for picorv32a</strong></summary>
 
 # Contents
 - [Physical Design Flow for picorv32a Using OpenLANE](#openlane-flow-for-picorv32a)
