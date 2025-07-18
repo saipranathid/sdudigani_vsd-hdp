@@ -160,7 +160,11 @@ config.tcl
 run_floorplan
 ```
 
+![Alt Text](images/run_fp_details.png)
+
 ![Alt Text](images/8_run_floorplan_error.png)
+
+![Alt Text](images/fp_common_pdn_error.png)
 
 ![Alt Text](images/fp_done_picorv32a.png)
 
