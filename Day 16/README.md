@@ -16,6 +16,7 @@
 <details>
   <Summary><strong> make test</strong></summary>
   
+```bash
 sdudigani@sdudigani-VirtualBox:~/OpenLane$ make test
 cd /home/sdudigani/OpenLane && \
 	docker run --rm -v /home/sdudigani/OpenLane:/openlane -v /home/sdudigani/OpenLane/designs:/openlane/install -v /home/sdudigani:/home/sdudigani -v /home/sdudigani/.ciel:/home/sdudigani/.ciel -e PDK_ROOT=/home/sdudigani/.ciel -e PDK=sky130A  --user 1000:1000 -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix --network host --security-opt seccomp=unconfined -v /home/sdudigani/.Xauthority:/.Xauthority ghcr.io/the-openroad-project/openlane:413d301090a476f8d34cf24dc2447da17dfab187-amd64 sh -c "./flow.tcl -design spm -tag openlane_test -overwrite"
@@ -157,5 +158,6 @@ Available under the Apache License, version 2.0. See the LICENSE file for more d
 
 Basic test passed
 
+```
 </details>
 
