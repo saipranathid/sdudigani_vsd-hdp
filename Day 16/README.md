@@ -5,6 +5,7 @@
 - [Physical Design Flow for picorv32a Using OpenLANE](#openlane-flow-for-picorv32a)
 	- [Install OpenLane and PDKs](#install-openlane-and-pdks)
 	- [`run_synthesis`](#run-synthesis)
+ 		- [Chip Floor planning considerations](#chip-floor-planning-considerations)
 	- [`run_floorplan`](#run-floorplan)
 	- [`run_placement`](#run-placement)
  		- [Library Binidng and Placement](#lib-binding-and-plc)
