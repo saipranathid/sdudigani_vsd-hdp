@@ -8,7 +8,10 @@
 	- [`run_floorplan`](#run-floorplan)
 	- [`run_placement`](#run-placement)
  		- [Library Binidng and Placement](#lib-binding-and-plc)
+		- [placement](#plc)
+  		- [Cell Design and Characterization Flows](#cell-design-and-char-flows)
 	- [`run_cts`](#run-cts)
+	- [`run_routing`](#run-routing)
 
 <a id="openlane-flow-for-picorv32a"></a>
 # Physical Design Flow for picorv32a Using OpenLANE
@@ -340,6 +343,9 @@ From the above image:
 
 </details>
 
+<a id="plc"></a>
+### Placement
+
 ```bash
 run_placement
 ```
@@ -357,6 +363,12 @@ magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_worki
 
 ![Alt Text](images/k_plc_zoom.png)
 
+<a id="cell-design-and-char-flows"></a>
+<details>
+  <Summary><strong> Cell Design and Characterization Flows</strong></summary>
+
+
+</details>
 
 <a id="run-cts"></a>
 ## `run_cts`
@@ -375,6 +387,15 @@ gvim ~/OpenLane/designs/picorv32a/runs/RUN_2025.07.18_20.24.50/logs/cts/17-cts_s
 
 ![Alt Text](images/cts_sta_log.png)
 
+
+<a id="run-routing"></a>
+## `run_routing`
+
+```bash
+run_routing
+```
+
+![Alt Text](images/m_run_routing.png)
 
 
 
