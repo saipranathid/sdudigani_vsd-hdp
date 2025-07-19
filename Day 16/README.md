@@ -512,6 +512,16 @@ run_routing
 ![Alt Text](images/m_run_routing.png)
 
 
+### view the routing def in magic:
+
+```bash
+cd ~/OpenLane/designs/picorv32a/runs/RUN_2025.07.18_20.24.50/results/routing
+magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+```
+
+![Alt Text](images/m_routing_def_magic.png)
+
+![Alt Text](images/m_routing_def_magic_zoomed.png)
 
 
 
