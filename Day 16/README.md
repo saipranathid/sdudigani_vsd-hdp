@@ -248,11 +248,11 @@ By convention:
   - Core area = 4 unit²
 ![Alt Text](images/4_rough_min_area_cal_of_netlist.png)
 
-The above figure shows the rough calculation of minimum area that is occupied bu the netlist.
+The above figure shows the rough calculation of minimum area that is occupied by the netlist.
 
 - **Core:** the region containing all standard cells (our 2×2 tile).
 - **Die:** the die includes the core plus I/O pads, power rings, and metal guard-bands.
-- **Wafer:** multiple dice are fabricated together on a circular wafer.
+- **Wafer:** multiple dies are fabricated together on a circular wafer.
 ![Alt Text](images/5_core_die_in_chip.png)
 
 ![Alt Text](images/6_uti_formula.png)
@@ -262,21 +262,15 @@ The above figure shows the rough calculation of minimum area that is occupied bu
 
 **Note:** Real designs typically target 60–80 % utilization to leave room for routing nets, filler cells, and power straps etc.
 
-- **Aspect ratio** wiil decide the size and shape of the chip. It is the ratio of vertical routing resources to the horizontal routing resources. If its value is 1 then the chip is in square shape and if it is greater than 1 then the chip is in rectangular shape.
+- **Aspect ratio** will decide the size and shape of the chip. It is the ratio of vertical routing resources to the horizontal routing resources. If its value is 1 then the chip is in square shape and if it is greater than 1 then the chip is in rectangular shape.
 
 
-\text{Aspect Ratio}
-\=\
-\frac{\text{Height of the core area}}
-     {\text{Width of the core area}}
+Aspect Ratio =  Height of the core area/Width of the core area
 
 
 - **Core Utilization** defines the area occupied by macros, standard cells and other cells. If Core utilisation is 70% - 70% of core area is used for placing the standard cells, macros and other cells while remaining 30% can be used for routing. In other words it is the area occupied by the netlist.
 
-\text{Utilization Factor}
-\=\
-\frac{\text{Area Occupied by Netlist}}
-     {\text{Total Core Area}}
+Utilization Factor = Area Occupied by Netlist/Total Core Area
 
 ![Alt Text](images/8_uti25_aspectration1.png)
 
