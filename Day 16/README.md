@@ -10,7 +10,6 @@
 	- [`run_placement`](#run-placement)
  		- [Library Binidng and Placement](#lib-binding-and-plc)
 		- [run_placement](#plc)
-  		- [Cell Design and Characterization Flows](#cell-design-and-char-flows)
 	- [`run_cts`](#run-cts)
 	- [`run_routing`](#run-routing)
 
@@ -218,7 +217,10 @@ gvim 1-synthesis.AREA_0.stat.rpt
 ![Alt Text](images/f_synth_stat_report.png)
 
 ### Flop ratio:
+Number of cells = 10104
+Number of flops = 1596
 
+Flop ratio = Number of D- flip flops / total number of cells = 1596/10104 = 0.1579 = 15.7957%
 
 <details>
   <Summary><strong> Chip Floor planning considerations</strong></summary>
