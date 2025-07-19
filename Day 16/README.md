@@ -9,7 +9,7 @@
 	- [`run_floorplan`](#run-floorplan)
 	- [`run_placement`](#run-placement)
  		- [Library Binidng and Placement](#lib-binding-and-plc)
-		- [placement](#plc)
+		- [run_placement](#plc)
   		- [Cell Design and Characterization Flows](#cell-design-and-char-flows)
 	- [`run_cts`](#run-cts)
 	- [`run_routing`](#run-routing)
