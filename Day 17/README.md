@@ -55,7 +55,7 @@ A typical standard cell char process include:
 7. Set output cap loads
 8. Provide necessary simulation commands
 
-char setup:
+consider following char setup:
 ![Alt Text](images/char_setup.png)
 
 ![Alt Text](images/char_flow_2.png)
