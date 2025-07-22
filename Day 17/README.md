@@ -8,7 +8,7 @@
 - [Timing Characterization](#timing-char)
   - [Propogation Delay](#prop-delay)
   - [Transition Time](#transition-time)
-- [
+
 
 <a id="cell-design-and-char-flow"></a>
 # Cell Design and Characterization Flows
