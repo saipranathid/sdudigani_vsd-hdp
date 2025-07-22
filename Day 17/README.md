@@ -174,8 +174,6 @@ NMOS source connectivity to VSS (here VGND) verified
 
 ## 16-Mask CMOS Process summary
 
-16-Mask CMOS Process summary:
-
 - Selecting a substrate.
 - Creating active region for transistors
 - N-Well and P-Well formation
