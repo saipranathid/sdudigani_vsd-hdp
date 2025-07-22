@@ -5,6 +5,10 @@
 - [Cell Design and Characterization Flows](#cell-design-and-char-flow)
   - [Standard Cell Design Flow](#standard-cell-design-flow)
 - [Standard Cell Characterization Flow](#sta-cell-char-flow)
+- [Timing Characterization](#timing-char)
+  - [Propogation Delay](#prop-delay)
+  - [Transition Time](#transition-time)
+- [
 
 <a id="cell-design-and-char-flow"></a>
 # Cell Design and Characterization Flows
@@ -51,6 +55,9 @@ A typical standard cell char process include:
 7. Set output cap loads
 8. Provide necessary simulation commands
 
+char setup:
+![Alt Text](images/char_setup.png)
+
 ![Alt Text](images/char_flow_2.png)
 
 ![Alt Text](images/char_flow_1.png)
@@ -64,9 +71,73 @@ All these steps are described in a configuration file and passed to a characteri
 
 These are exported in .lib format and used in synthesis and static timing analysis flows.
 
+<a id="timing-char"></a>
+# Timing Characterization
+Defines how a cell behaves with respect to input signal changes over time.
+
+### Timing Threshold Definitions
+
+| **Timing Definition**     | **Value**       |
+|---------------------------|-----------------|
+| `slew_low_rise_thr`       | 20% of signal   |
+| `slew_high_rise_thr`      | 80% of signal   |
+| `slew_low_fall_thr`       | 20% of signal   |
+| `slew_high_fall_thr`      | 80% of signal   |
+| `in_rise_thr`             | 50% of signal   |
+| `in_fall_thr`             | 50% of signal   |
+| `out_rise_thr`            | 50% of signal   |
+| `out_fall_thr`            | 50% of signal   |
+
+<a id="prop-delay"></a>
+### Propogation Delay
+
+The time difference between the input signal reaching 50% of its final value and the output reaching 50% of its final value.
+
+```bash
+Propagation Delay = time(out_thr) - time(in_thr)
+```
+
+where,
+`in_thr` is the input threshold time
+- The time at which the input signal crosses its defined threshold voltage during a transition.
+- For delay measurement, this is typically the 50% point of the input voltage swing.
+
+`out_thr` is the output threshold time
+- The time at which the output signal crosses its threshold voltage during the response to the input transition.
+- Also typically measured at the 50% point for consistency with in_thr.
+
+![Alt Text](images/prop_delay.png)
+
+**Example 1:**
+![Alt Text](images/prop_delay_eg1.png)
+
+**Example 2:**
+![Alt Text](images/prop_delay_eg2.png)
+
+Poor choice of threshold values lead to negative delay values. Even though you have taken good threshold values, sometimes depending upon how good or bad the slew, the dealy might be still +ve or -ve.
+
+![Alt Text](images/prop_delay_eg3.png)
+
+<a id="transition-time"></a>
+### Transition Time
+
+The time it takes for a signal to transition between logic states, typically measured between 10–90% or 20–80% of the voltage levels.
+
+```bash
+Rise Transition Time = time(slew_high_rise_thr) - time(slew_low_rise_thr)
+Fall Transition Time = time(slew_high_fall_thr) - time(slew_low_fall_thr)
+```
+
+where,
+- `slew_low_rise_thr`: The time when the rising input or output crosses the lower threshold, usually 20% of the voltage swing.
+- `slew_high_rise_thr`: The time when the rising input or output crosses the upper threshold, usually 80% of the voltage swing.
+- `slew_high_fall_thr`: The time when the falling input or output crosses the upper threshold, typically 80%.
+- `slew_low_fall_thr`: The time when the falling input or output crosses the lower threshold, typically 20%.
 
 
+![Alt Text](images/transition_time.png)
 
+![Alt Text](images/2.png)
 
 
 </details>
