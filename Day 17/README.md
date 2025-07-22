@@ -4,7 +4,7 @@
 # Contents
 - [Cell Design and Characterization Flows](#cell-design-and-char-flow)
   - [Standard Cell Design Flow](#standard-cell-design-flow)
-- [
+- [Standard Cell Characterization Flow](#sta-cell-char-flow)
 
 <a id="cell-design-and-char-flow"></a>
 # Cell Design and Characterization Flows
@@ -26,13 +26,26 @@ In an IC design flow, a **library** is a collection of standard cells, each defi
 
 <a id="standard-cell-design-flow"></a>
 **Standard Cell Design Flow**
+1. Circuit Design 
+2. Layout Design 
+3. Parasitic Extraction
+4. Characterization  
 
-1. Circuit Design - 
-2. Layout Design
-3. Characterization
+**Outputs**
+- `CDL` Circuit Description Language (Netlist from circuit design)
+- `LEF` Library Exchange Format
+- `GDSII` Final Layout Database
+- `.cir` Extracted SPICE NEtlist
+- Characterized `.lib` files (Timing, Power and Noise) 
 
 ![Alt Text](images/std_cell_design_flow_circuit_design_1.png)
 
-![Alt Text](images/a.png)
+![Alt Text](images/std_cell_design_flow_layout_design_1.png)
+
+![Alt Text](images/std_cell_design_flow_char.png)
+
+<a id="sta-cell-char-flow"></a>
+# Standard Cell Characterization Flow
+
 
 </details>
