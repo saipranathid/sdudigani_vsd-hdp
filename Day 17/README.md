@@ -137,7 +137,7 @@ where,
 
 ![Alt Text](images/transition_time.png)
 
-![Alt Text](images/2.png)
+![Alt Text](images/2.jpg)
 
 
 </details>
