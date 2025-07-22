@@ -38,10 +38,6 @@ In an IC design flow, a **library** is a collection of standard cells, each defi
 - `.cir` Extracted SPICE NEtlist
 - Characterized `.lib` files (Timing, Power and Noise) 
 
-![Alt Text](images/std_cell_design_flow_circuit_design_1.png)
-
-![Alt Text](images/std_cell_design_flow_layout_design_1.png)
-
 ![Alt Text](images/std_cell_design_flow_char.png)
 
 <a id="sta-cell-char-flow"></a>
