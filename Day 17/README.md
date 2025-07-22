@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 17 : Cell Design using Magic Layout and ngspice Characterization</strong></summary>
+  <Summary><strong> Day 17 : Library Cell Design using Magic Layout and ngspice Characterization</strong></summary>
 
 # Contents
 - [Cell Design and Characterization Flows](#cell-design-and-char-flow)
@@ -8,6 +8,7 @@
 - [Timing Characterization](#timing-char)
   - [Propogation Delay](#prop-delay)
   - [Transition Time](#transition-time)
+- [Design Library Cell using magic layout and ngspice charcterization](#design-lib-cell-using-magic-and-ngspice-char)
 
 
 <a id="cell-design-and-char-flow"></a>
@@ -138,6 +139,15 @@ where,
 ![Alt Text](images/transition_time.png)
 
 ![Alt Text](images/2.jpg)
+
+
+<a id="design-lib-cell-using-magic-and-ngspice-char"></a>
+# Design Library Cell using magic layout and ngspice charcterization
+
+**Objective**
+The goal of the project is to design a single height standard cell and plug this custom cell into a more complex design and perform it's PnR in the openlane flow. The standard cell chosen is a basic CMOS inverter and the design into which it's plugged into is a pre-built picorv32a core.
+
+
 
 
 </details>
