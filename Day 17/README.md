@@ -162,14 +162,14 @@ magic -T sky130A.tech sky130_inv.mag &
 
 **CMOS Inverter in magic**
 
-![Alt Text](images/magic_inv_1.jpg)
+![Alt Text](images/magic_inv_1.png)
 
 PMOS source connectivity to VDD (here VPWR) verified
 
-![Alt Text](images/magic_inv_pmos_src_gnd_2.jpg)
+![Alt Text](images/magic_inv_pmos_src_gnd_2.png)
 
 NMOS source connectivity to VSS (here VGND) verified
 
-![Alt Text](images/magic_inv_nmos_src_gnd_3.jpg)
+![Alt Text](images/magic_inv_nmos_src_gnd_3.png)
 
 </details>
