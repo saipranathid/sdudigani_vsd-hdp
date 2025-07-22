@@ -166,7 +166,7 @@ magic -T sky130A.tech sky130_inv.mag &
 
 PMOS source connectivity to VDD (here VPWR) verified
 
-![Alt Text](images/magic_inv_pmos_src_gnd_2.png)
+![Alt Text](images/magic_inv_pmos_src_vdd_2.png)
 
 NMOS source connectivity to VSS (here VGND) verified
 
