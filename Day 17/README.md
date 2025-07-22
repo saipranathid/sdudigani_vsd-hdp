@@ -144,10 +144,32 @@ where,
 <a id="design-lib-cell-using-magic-and-ngspice-char"></a>
 # Design Library Cell using magic layout and ngspice charcterization
 
-**Objective**
+**Objective:**
 The goal of the project is to design a single height standard cell and plug this custom cell into a more complex design and perform it's PnR in the openlane flow. The standard cell chosen is a basic CMOS inverter and the design into which it's plugged into is a pre-built picorv32a core.
 
+- clone the required mag files and spice models of inverter, pmos and nmos sky130.
 
+```bash
+cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+```
 
+- View the inverter layout in magic:
+
+```bash
+magic -T sky130A.tech sky130_inv.mag &
+```
+
+**CMOS Inverter in magic**
+
+![Alt Text](images/magic_inv_1.jpg)
+
+PMOS source connectivity to VDD (here VPWR) verified
+
+![Alt Text](images/magic_inv_pmos_src_gnd_2.jpg)
+
+NMOS source connectivity to VSS (here VGND) verified
+
+![Alt Text](images/magic_inv_nmos_src_gnd_3.jpg)
 
 </details>
