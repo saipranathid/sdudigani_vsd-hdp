@@ -15,7 +15,6 @@ In an IC design flow, a **library** is a collection of standard cells, each defi
 
 ![Alt Text](images/std_cells_1.png)
 
-![Alt Text](images/std_cells_2.png)
 
 **Inputs:**
 - PDKs (Process Design Kits)  
