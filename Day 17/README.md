@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 17 : Cell Design and Characterization Flows</strong></summary>
+  <Summary><strong> Day 17 : Cell Design using Magic Layout and ngspice Characterization</strong></summary>
 
 # Contents
 - [Cell Design and Characterization Flows](#cell-design-and-char-flow)
@@ -41,6 +41,32 @@ In an IC design flow, a **library** is a collection of standard cells, each defi
 
 <a id="sta-cell-char-flow"></a>
 # Standard Cell Characterization Flow
+A typical standard cell char process include:
+1. Read in SPICE models and tech files
+2. Load the extracted SPICE netlist
+3. Recognize cell behavior
+4. Identify subcircuits
+5. Attach power sources
+6. Apply stimulus to the setup
+7. Set output cap loads
+8. Provide necessary simulation commands
+
+![Alt Text](images/char_flow_1.png)
+
+![Alt Text](images/char_flow_2.png)
+
+![Alt Text](images/char_flow_3.png)
+
+All these steps are described in a configuration file and passed to a characterization tool such as GUNA. The tool simulates the cells and generates:
+- Timing models
+- Power models
+- Noise models
+
+These are exported in .lib format and used in synthesis and static timing analysis flows.
+
+
+
+
 
 
 </details>
