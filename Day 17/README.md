@@ -286,8 +286,93 @@ plot y vs time a
   - 20% of output voltage = 0.20 x 3.3V = 660 mV
   - 80% of output voltage = 0.80 x 3.3V = 2.64 V
 
-output rising to 20%:
+**output rising to 20%:**
 
-output rising to 80%:
+![Alt Text](images/output_rising_at_20.png)
+
+**output rising to 80%:**
+
+![Alt Text](images/output_rising_at_80.png)
+
+**Terminal Values**
+
+![Alt Text](images/output_rising_terminal_values.png)
+
+**Rise Transition Time Calculation from ngspice:**
+Time at 20% of V<sub>out</sub> (0.66 V): t_20 = 2.1821 ns
+Time at 80% of V<sub>out</sub> (2.64 V): t_80 = 2.2463 ns
+
+Formula = t_80 - t_20 
+= 2.2463 ns - 2.1821 ns = 0.0642 ns
+= 64.2 ps
+
+Rise Transition = 64.2 ps
+
+## `Fall Transition Time Calculation`
+
+- The fall transition time is the difference in time between the output falling from 2.64 V to 660 mV during the falling edge of the signal.
+
+- **Formula:** `Fall transition time = Time taken for output to fall to 20% − Time taken for output to fall to 80%`
+
+- **Fall Time = T<sub>20%</sub> − T<sub>80%</sub>**
+
+- Reference values (for VDD = 3.3 V)
+  - 20% of output voltage: 0.20 x 3.3V = 660 mV
+  - 80% of output voltage: 0.80 x 3.3V = 2.64 V
+
+**output falling to 20%:**
+![Alt Text](images/fall_transition_output_falling_20.png)
+
+**output falling to 80%:**
+![Alt Text](images/fall_transition_output_falling_80.png)
+
+**terminal values**
+![Alt Text](images/fall_transition_terminal_values.png)
+
+**Fall Transition Time Calculation from ngspice:**
+Time at 80% of V<sub>out</sub> (0.66 V): t_20 =  4.0955 ns
+Time at 80% of V<sub>out</sub> (2.64 V): t_80 =  4.0526 ns
+
+Formula = t_20 - t_80 
+=  4.0955 ns -  4.0526 ns =  0.0429 ns
+=  42.9 ps
+
+Fall Transition = 42.9 ps
+
+
+## `Rise Cell Delay Calculation`
+- `Rise Cell Delay` is the time it takes for the output to reach 50% of VDD after the input begins transitioning.
+- **Formula:** `Rise Cell Delay = Time(output rises to 50%) − Time(input falls to 50%)`
+- For V<sub>DD</sub> = 3.3 V --> 50% of V<sub>DD</sub> = **1.65V**
+
+**output rising to 50% and input falling to 50%:**
+![Alt Text](images/rise_cell_delay_cal.png)
+
+**terminal values**
+![Alt Text](images/rise_cell_delay_cal_terminal.png)
+
+Rise Cell Delay = time(output@50%) - time(input@50%)
+= 2.2111 ns - 2.15 ns
+= 0.0611 ns = 61.1 ps
+
+Rise Cell Delay = 61.1 ps
+
+## `Fall Cell Delay Calculation`
+- `Fall Cell Delay` is the time it takes for the output to fall to 50% of VDD after the input begins transitioning.
+- **Formula:** `Fall Cell Delay = Time(output falls to 50%) − Time(input rises to 50%)`
+
+For V<sub>DD</sub> = 3.3 V --> 50% of V<sub>DD</sub> = **1.65 V**
+
+**output falling to 50% and input rising to 50%:**
+![Alt Text](images/fall_cell_delay_cal.png)
+
+**terminal values**
+![Alt Text](images/fall_cell_delay_cal_terminal.png)
+
+Fall Cell Delay = time(output@50%) - time(input@50%)
+= 4.0777 ns - 4.05 ns
+= 0.0277 ns = 27.7 ps
+
+Rise Cell Delay = 27.7 ps
 
 </details>
