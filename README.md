@@ -24,4 +24,4 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 | Day 14| [Floorplan and Placement for VSDBabySoC](Day%2014/README.md)                                                         | Done   |
 | Day 15| [Inception of open-source EDA - OpenLANE and Sky130PDK](Day%2015/README.md)                                          | Done   |
 | Day 16| [Advanced Physical Design using OpenLANE for picorv32a](Day%2016/README.md)                                          | Done   |
-| Day 17| [Cell design and Characterization Flows](Day%2017/README.md)                                                         | In progress   |
+| Day 17| [Cell design and Characterization Flows](Day%2017/README.md)                                                         | Done   |
