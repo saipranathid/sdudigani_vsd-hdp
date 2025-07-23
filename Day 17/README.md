@@ -224,6 +224,29 @@ The 16-mask CMOS fabrication process is a standard method used in the semiconduc
 
 16. **Final Testing and Packaging:** The completed wafer is tested to identify functional and defective chips. The functional chips are then diced, packaged into individual components, and prepared for use in electronic systems.
 
+## Spice extraction for Inverter in Magic
+
+```bash
+pwd
+
+#extraction command to extract .ext format
+extract all
+
+# Before converting ext to spice this command enable the parasitic extraction also
+ext2spice cthresh 0 rthresh 0
+
+#convert ext to spice
+ext2spice
+```
+
+![Alt Text](images/spice_extraction_commands.png)
+
+.ext and spice files created--
+![Alt Text](images/spice_extraction_terminal.png)
+
+extracted spice file contents:
+![Alt Text](images/spice_file.png)
+
 
 
 </details>
