@@ -157,6 +157,7 @@ git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 - View the inverter layout in magic:
 
 ```bash
+cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign.git
 magic -T sky130A.tech sky130_inv.mag &
 ```
 
