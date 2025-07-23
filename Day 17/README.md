@@ -165,6 +165,10 @@ magic -T sky130A.tech sky130_inv.mag &
 
 ![Alt Text](images/magic_inv_1.png)
 
+![Alt Text](images/magic_inv_nmos.png)
+
+![Alt Text](images/magic_inv_pmos.png)
+
 PMOS source connectivity to VDD (here VPWR) verified
 
 ![Alt Text](images/magic_inv_pmos_src_vdd_2.png)
@@ -172,6 +176,8 @@ PMOS source connectivity to VDD (here VPWR) verified
 NMOS source connectivity to VSS (here VGND) verified
 
 ![Alt Text](images/magic_inv_nmos_src_gnd_3.png)
+
+![Alt Text](images/magic_layout_contacts.png)
 
 ## 16-Mask CMOS Process summary
 
