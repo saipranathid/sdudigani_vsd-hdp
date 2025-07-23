@@ -9,6 +9,12 @@
   - [Propogation Delay](#prop-delay)
   - [Transition Time](#transition-time)
 - [Design Library Cell using magic layout and ngspice charcterization](#design-lib-cell-using-magic-and-ngspice-char)
+- [16-Mask CMOS Process summary](#mask-cmos-process-summary)
+- [Spice extraction for Inverter in Magic](#spice-extraction)
+- [Rise Transition Time Calculation](#rise-transition-time-cal)
+- [Fall Transition Time Calculation](#fall-transition-time-cal)
+- [Rise Cell Delay Calculation](#rise-cell-delay-cal)
+- [Fall Cell delay Calculation](#fall-cell-delay-cal)
 
 
 <a id="cell-design-and-char-flow"></a>
@@ -179,6 +185,7 @@ NMOS source connectivity to VSS (here VGND) verified
 
 ![Alt Text](images/magic_layout_contacts.png)
 
+<a id="mask-cmos-process-summary"></a>
 ## 16-Mask CMOS Process summary
 
 - Selecting a substrate.
@@ -224,6 +231,7 @@ The 16-mask CMOS fabrication process is a standard method used in the semiconduc
 
 16. **Final Testing and Packaging:** The completed wafer is tested to identify functional and defective chips. The functional chips are then diced, packaged into individual components, and prepared for use in electronic systems.
 
+<a id="spice-extraction"></a>
 ## Spice extraction for Inverter in Magic
 
 ```bash
@@ -274,6 +282,9 @@ plot y vs time a
 **generated plot:**
 ![Alt Text](images/ngspice_sim_plot.png)
 
+
+
+<a id="rise-transition-time-cal"></a>
 ## `Rise Transition Time Calculation`
 
 - The rise transition time is the difference in time between the output reaching 2.64 V and 660 mV during the rising edge of the signal.
@@ -308,6 +319,7 @@ Formula = t_80 - t_20
 
 Rise Transition = 64.2 ps
 
+<a id="fall-transition-time-cal"></a>
 ## `Fall Transition Time Calculation`
 
 - The fall transition time is the difference in time between the output falling from 2.64 V to 660 mV during the falling edge of the signal.
@@ -339,7 +351,7 @@ Formula = t_20 - t_80
 
 Fall Transition = 42.9 ps
 
-
+<a id="rise-cell-delay-cal"></a>
 ## `Rise Cell Delay Calculation`
 - `Rise Cell Delay` is the time it takes for the output to reach 50% of VDD after the input begins transitioning.
 - **Formula:** `Rise Cell Delay = Time(output rises to 50%) − Time(input falls to 50%)`
@@ -357,6 +369,7 @@ Rise Cell Delay = time(output@50%) - time(input@50%)
 
 Rise Cell Delay = 61.1 ps
 
+<a id="fall-cell-delay-cal"></a>
 ## `Fall Cell Delay Calculation`
 - `Fall Cell Delay` is the time it takes for the output to fall to 50% of VDD after the input begins transitioning.
 - **Formula:** `Fall Cell Delay = Time(output falls to 50%) − Time(input rises to 50%)`
