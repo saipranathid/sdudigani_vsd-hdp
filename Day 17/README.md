@@ -248,5 +248,46 @@ extracted spice file contents:
 ![Alt Text](images/spice_file.png)
 
 
+**Editing the spice model file for analysis through simulation**
+
+Measuring unit distance in layout grid:
+![Alt Text](images/unit_distance_grid_dimension.png)
+
+
+Final edited spice file ready for ngspice simulation:
+
+![Alt Text](images/final_spice_file_edited.png)
+
+**Post-layout ngspice simulations**
+
+```bash
+# Command to directly load spice file for simulation to ngspice
+ngspice sky130_inv.spice
+
+# Now that we have entered ngspice with the simulation spice file loaded we just have to load the plot
+plot y vs time a
+```
+
+**ngspice run:**
+![Alt Text](images/ngspice_sim_1.png)
+
+**generated plot:**
+![Alt Text](images/ngspice_sim_plot.png)
+
+## `Rise Transition Time Calculation`
+
+- The rise transition time is the difference in time between the output reaching 2.64 V and 660 mV during the rising edge of the signal.
+
+- **Formula:** `Rise transition time = Time taken for output to rise to 80% − Time taken for output to rise to 20%`
+
+- **Rise Time = T<sub>80%</sub> − T<sub>20%</sub>**
+
+- Reference values for VDD = 3.3V
+  - 20% of output voltage = 0.20 x 3.3V = 660 mV
+  - 80% of output voltage = 0.80 x 3.3V = 2.64 V
+
+output rising to 20%:
+
+output rising to 80%:
 
 </details>
