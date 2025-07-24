@@ -25,3 +25,4 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 | Day 15| [Inception of open-source EDA - OpenLANE and Sky130PDK](Day%2015/README.md)                                          | Done   |
 | Day 16| [Advanced Physical Design using OpenLANE for picorv32a](Day%2016/README.md)                                          | Done   |
 | Day 17| [Library Cell Design using Magic Layout and ngspice Characterization](Day%2017/README.md)                            | Done   |
+| Day 18| [Pre-layout Timing Analysis and Importance of Good Clock Tree](Day%2018/README.md)                                   | In progress |
