@@ -438,10 +438,6 @@ New commands inserted in `sky130A.tech` file to update drc:
 
 ![Alt Text](images/drc_lab_5.png)
 
-![Alt Text](images/tech_file_1.png)
-
-![Alt Text](images/tech_file_2.png)
-
 ![Alt Text](images/drc_lab_6.png)
 
 Commands to run in tkcon window:
@@ -458,6 +454,10 @@ drc why
 ```
 
 Screenshot of magic window with rule implemented:
+
+![Alt Text](images/tech_file_1.png)
+
+![Alt Text](images/tech_file_2.png)
 
 ![Alt Text](images/drc_lab_7.png)
 
