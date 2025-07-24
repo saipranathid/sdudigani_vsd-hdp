@@ -15,7 +15,7 @@
 - [Fall Transition Time Calculation](#fall-transition-time-cal)
 - [Rise Cell Delay Calculation](#rise-cell-delay-cal)
 - [Fall Cell delay Calculation](#fall-cell-delay-cal)
-
+- [Lab to Find and Fix Problem in DRC Section of Old Magic tech file for skywater Process](#drc-lab)
 
 <a id="cell-design-and-char-flow"></a>
 # Cell Design and Characterization Flows
@@ -387,5 +387,81 @@ Fall Cell Delay = time(output@50%) - time(input@50%)
 = 0.0277 ns = 27.7 ps
 
 Rise Cell Delay = 27.7 ps
+
+<a id="drc-lab"></a>
+# Lab
+### `Find problem in the DRC section of the old magic tech file for the skywater process and fix them`
+
+Link to Sky130 Periphery rules: https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html
+
+Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections
+
+```shell
+# Change to home directory
+cd ~
+
+# Command to download the lab files
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+
+# Since lab file is compressed command to extract it
+tar xfz drc_tests.tgz
+
+# Change directory into the lab folder
+cd drc_tests
+
+# List all files and directories present in the current directory
+ls -al
+
+# Command to view .magicrc file
+gvim .magicrc
+
+# Command to open magic tool in better graphics
+magic -d XR &
+```
+Screenshot of .magicrc file:
+
+![Alt Text](images/magicrc.jpg)
+
+First load the poly file by using the cmd 'load poly' on tkcon window:
+
+![Alt Text](images/s3.jpg)
+
+Incorrectly implemented poly.9 rule no drc violation even though spacing < 0.48u:
+
+![Alt Text](images/s4.jpg)
+
+Screenshot of poly rules from the website:
+
+![Alt Text](images/s5.jpg)
+
+New commands inserted in `sky130A.tech` file to update drc:
+
+![Alt Text](images/add1.jpg)
+
+![Alt Text](images/add2.jpg)
+
+Commands to run in tkcon window:
+
+```shell
+# Loading updated tech file
+tech load sky130A.tech
+
+# Must re-run drc check to see updated drc errors
+drc check
+
+# Selecting region displaying the new errors and getting the error messages 
+drc why
+```
+
+Screenshot of magic window with rule implemented:
+
+![Alt Text](images/add3.jpg)
+
+#### <ins>Summary:</ins>
+
+To enforce the poly.9 design rule correctly—which specifies that poly resistors must maintain a minimum spacing of 0.48 µm (480 nm) from diffusion (alldiff) and non-resistor poly (allpolynonres) layers—new DRC rules were added to the sky130A.tech file. The original implementation did not flag violations even when spacing was below the required 0.48 µm, indicating the rule was either missing or incorrectly defined. To correct this, two new spacing rules were inserted: one between npres and alldiff, and another between npres and allpolynonres, both with touching_illegal condition and corresponding rule IDs referencing poly.9. After updating the .tech file, the following commands were executed in the Magic tool’s TkCon window: tech load sky130A.tech to reload the updated tech file, drc check to rerun the DRC engine, and drc why to inspect specific violations. As seen in the final Magic screenshot, the DRC now correctly flags violations where spacing is less than 0.48 µm, confirming that the poly.9 rule is implemented and functional.
+
+
+
 
 </details>
