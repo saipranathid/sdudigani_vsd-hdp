@@ -420,25 +420,29 @@ magic -d XR &
 ```
 Screenshot of .magicrc file:
 
-![Alt Text](images/magicrc.jpg)
+![Alt Text](images/drc_lab_1.jpg)
 
 First load the poly file by using the cmd 'load poly' on tkcon window:
 
-![Alt Text](images/s3.jpg)
+![Alt Text](images/drc_lab_2.jpg)
 
 Incorrectly implemented poly.9 rule no drc violation even though spacing < 0.48u:
 
-![Alt Text](images/s4.jpg)
+![Alt Text](images/drc_lab_3.jpg)
 
 Screenshot of poly rules from the website:
 
-![Alt Text](images/s5.jpg)
+![Alt Text](images/drc_lab_4.jpg)
 
 New commands inserted in `sky130A.tech` file to update drc:
 
-![Alt Text](images/add1.jpg)
+![Alt Text](images/drc_lab_5.jpg)
 
-![Alt Text](images/add2.jpg)
+![Alt Text](images/tech_file_1.jpg)
+
+![Alt Text](images/tech_file_2.jpg)
+
+![Alt Text](images/drc_lab_6.jpg)
 
 Commands to run in tkcon window:
 
@@ -455,7 +459,7 @@ drc why
 
 Screenshot of magic window with rule implemented:
 
-![Alt Text](images/add3.jpg)
+![Alt Text](images/drc_lab_7.jpg)
 
 #### <ins>Summary:</ins>
 
