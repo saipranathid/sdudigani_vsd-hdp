@@ -373,11 +373,12 @@ run_synthesis
 ![Alt Text](images/23_post_synth_timing_synth.png)
 
 **Newly created `pre_sta.conf` for STA analysis in openlane directory:**
-
 ![Alt Text](images/24_pre_sta_conf.png)
 
-**Newly created my_base.sdc for STA analysis in openlane/designs/picorv32a/src directory based on the file openlane/scripts/base.sdc:**
+**capacitance value of driving cell `sky130_fd_sc_hs__inv_8` defined in `my_base.sdc` from `sky130_fd_sc_hd__typical.lib`**
+![Alt Text](images/synth_cap_load_from_typical_library_for_my_base_sdc.png)
 
+**Newly created my_base.sdc for STA analysis in openlane/designs/picorv32a/src directory based on the file openlane/scripts/base.sdc:**
 ![Alt Text](images/25_my_base_sdc.png)
 
 **Note:** Before running STA, ensure you have installed and built [OpenSTA](https://github.com/parallaxsw/OpenSTA) as per the instructions in the official repository.
