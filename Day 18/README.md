@@ -224,20 +224,20 @@ run_floorplan
 ```
 
 ![Alt Text](images/14_fp_error.png)
-The above image shows - unexpected un-explainable error while using run_floorplan command. we can instead use the following set of commands available based on information from
+The above image shows - unexpected un-explainable error while using run_floorplan command. We can instead use the following set of commands available based on information from
 
 ```bash
 /home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl
 ```
 
-and based on Floorplan Commands section in
+and based on Floorplan commands section in
 
 ```bash
 /home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md
 ```
 
 ```bash
-# Follwing commands are all-togather sourced in "run_floorplan" command
+# Follwing commands are all-together sourced in "run_floorplan" command
 init_floorplan
 place_io
 tap_decap_or
