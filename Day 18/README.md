@@ -334,6 +334,8 @@ expand
 
 - We are having 0 wns after improved timing run. So, we are going to do timing analysis on the initial synthesis run which had a lot of violations and no parameters were added to improve timing.
 
+### Steps to optimize synthesis to reduce setup violations
+
 **Commands to invoke the OpenLANE flow include new lef and perform synthesis:**
 
 ```bash
