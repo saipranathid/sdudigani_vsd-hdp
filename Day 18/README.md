@@ -141,6 +141,7 @@ alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e 
 docker
 ```
 
+
 - After entering openlane flow contained docker, run the following commands
 
 ```bash
@@ -161,7 +162,11 @@ add_lefs -src $lefs
 run_synthesis
 ```
 
-![Alt Text](images/name.png)
+
+**merged.lef after including newly added lef to openlane flow:**
+![Alt Text](images/merged_lef_after_vsdinv_included.png)
+
+
 
 **current design values generated**
 
