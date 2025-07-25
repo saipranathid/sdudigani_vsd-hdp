@@ -9,7 +9,7 @@
 - [Step 5: Edit 'config.tcl'](#edit-config)
 - [Step 6: Run openlane flow synthesis with newly inserted custom inverter cell](#run-openlane-flow-synthesis)
 - [Step 7: Synthesis - Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters](#synthesis)
-- [Run Floorplan and Placement](#run-fp-and-plc)
+- [Step 8: Run Floorplan and Placement](#run-fp-and-plc)
 
 <a id="fix-drc-errors-and-verify-the-design"></a>
 # Step 1: Fix up small DRC errors and verify the design is ready to be inserted into our flow
