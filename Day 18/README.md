@@ -207,8 +207,10 @@ run_synthesis
 | `IO_PCT` | Specifies the percentage of the clock period used in the input/output delays. Ranges from 0 to 1.0. <br> (Default: `0.2`) |
 
 
-
 </details>
+
+
+### Steps to configure synthesis settings to fix slack and include vsdinv
 
 ```bash
 # Now once again we have to prep design so as to update variables
