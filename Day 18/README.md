@@ -10,6 +10,7 @@
 - [Step 6: Run openlane flow synthesis with newly inserted custom inverter cell](#run-openlane-flow-synthesis)
 - [Step 7: Synthesis - Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters](#synthesis)
 - [Step 8: Run Floorplan and Placement](#run-fp-and-plc)
+- [Step 9: Post-Synthesis timing analysis with OpenSTA tool](#post-synthesis-timing-analysis)
 
 <a id="fix-drc-errors-and-verify-the-design"></a>
 # Step 1: Fix up small DRC errors and verify the design is ready to be inserted into our flow
@@ -255,7 +256,8 @@ tap_decap_or
 run_placement
 ```
 
-![Alt Text](images/name.png)
+![Alt Text](images/18_run_plc.png)
+![Alt Text](images/18_run_plc_done.png)
 
 **load placement def in magic in another terminal:**
 
@@ -267,6 +269,63 @@ cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir
 magic -T ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
 
-![Alt Text](images/name.png)
+**placement def in magic:**
+![Alt Text](images/19_plc_def_in_magic.png)
+
+**Custom inverter inserted in placement def with proper abutment:**
+![Alt Text](images/20_custom_inv_in_plc_def_magic.png)
+
+**view internal layers of cells:**
+
+```bash
+# Command to view internal connectivity layers in tkcon window
+expand
+```
+
+![Alt Text](images/21_custom_inv_in_plc_def_magic_expand.png)
+
+![Alt Text](images/22_custom_inv_in_plc_def_magic_expand_zoom_out.png)
+
+<a id="post-synthesis-timing-analysis"></a>
+# Step 9: Post-Synthesis timing analysis with OpenSTA tool
+
+- We are having 0 wns after improved timing run. So, we are going to do timing analysis on the initial synthesis run which had a lot of violations and no parameters were added to improve timing.
+
+**Commands to invoke the OpenLANE flow include new lef and perform synthesis:**
+
+```bash
+# Change directory to openlane flow directory
+cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane
+
+export PDK_ROOT=/home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/pdks
+
+#optional
+alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+
+# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+docker
+```
+
+```bash
+# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+./flow.tcl -interactive
+
+# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+package require openlane 0.9
+
+# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a
+
+# Adiitional commands to include newly added lef to openlane flow
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+
 
 ![Alt Text](images/name.png)
