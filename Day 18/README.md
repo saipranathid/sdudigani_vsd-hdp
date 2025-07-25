@@ -327,5 +327,31 @@ set ::env(SYNTH_SIZING) 1
 run_synthesis
 ```
 
+![Alt Text](images/23_post_synth_timing_synth.png)
+
+**Newly created `pre_sta.conf` for STA analysis in openlane directory:**
+
+![Alt Text](images/24_pre_sta_conf.png)
+
+**Newly created my_base.sdc for STA analysis in openlane/designs/picorv32a/src directory based on the file openlane/scripts/base.sdc:**
+
+![Alt Text](images/25_my_base_sdc.png)
+
+**Note:** Before running STA, ensure you have installed and built [OpenSTA](https://github.com/parallaxsw/OpenSTA) as per the instructions in the official repository.
+
+**Commands to run STA in new terminal:**
+```bash
+# Change directory to openlane
+cd /home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+~/OpenSTA/build/sta pre_sta.conf
+```
+
+![Alt Text](images/26_sta_1.png)
+
+![Alt Text](images/27_sta_2.png)
+
+![Alt Text](images/name.png)
 
 ![Alt Text](images/name.png)
