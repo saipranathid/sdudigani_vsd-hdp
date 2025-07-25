@@ -13,7 +13,7 @@
 - [Step 9: Post-Synthesis timing analysis with OpenSTA tool](#post-synthesis-timing-analysis)
 
 <a id="fix-drc-errors-and-verify-the-design"></a>
-# Step 1: Fix up small DRC errors and verify the design is ready to be inserted into our flow
+## Step 1: Fix up small DRC errors and verify the design is ready to be inserted into our flow
 
 Before moving forward with custom designed cell layout verify following:
 1. The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
@@ -64,7 +64,7 @@ Height of standard cell = 2.72 µm = 0.34 × 8
 ![Alt Text](images/6.png)
 
 <a id="save-final-layout"></a>
-# Step 2: Save the final layout with custom name and open it
+## Step 2: Save the final layout with custom name and open it
 
 ```bash
 # Command to save as
@@ -79,7 +79,7 @@ magic -T sky130A.tech sky130_vsdinv.mag &
 
 
 <a id="save-final-layout"></a>
-# Step 3: Generate lef from the Layout
+## Step 3: Generate lef from the Layout
 
 ```bash
 # lef command
@@ -95,7 +95,7 @@ gvim sky130_vsdinv.lef
 ![Alt Text](images/9.png)
 
 <a id="copy-new-lef-and-lib-files"></a>
-# Step 4: Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory
+## Step 4: Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory
 
 ```bash
 # Copy lef file
@@ -109,7 +109,7 @@ ls ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir
 ```
 
 <a id="edit-config"></a>
-# Step 5: Edit 'config.tcl' 
+## Step 5: Edit 'config.tcl' 
 - Edit `config.tcl` to change lib file and add the new extra lef into the openlane flow.
 
 ```bash
@@ -124,7 +124,7 @@ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/sr
 ![Alt Text](images/10.png)
 
 <a id="run-openlane-flow-synthesis"></a>
-# Step 6: Run openlane flow synthesis with newly inserted custom inverter cell
+## Step 6: Run openlane flow synthesis with newly inserted custom inverter cell
 
 - invoke the OpenLANE flow include new lef and perform synthesis:
 
@@ -170,7 +170,7 @@ run_synthesis
 ![Alt Text](images/11_synth_tns_wns.png)
 
 <a id="synthesis"></a>
-# Step 7: Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters
+## Step 7: Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters
 
 **Commands to view and change parameters to improve timing and run synthesis:**
 
@@ -214,9 +214,9 @@ run_synthesis
 ✅ Synthesis has accepted our custom inverter
 
 <a id="run-fp-and-plc"></a>
-# Step 8: Run Floorplan and Placement to verify the cell is accepted in PnR flow
+## Step 8: Run Floorplan and Placement to verify the cell is accepted in PnR flow
 
-## Run Floorplan
+### Run Floorplan
 
 ```bash
 # Now we can run floorplan
@@ -249,7 +249,7 @@ tap_decap_or
 
 ![Alt Text](images/17_tap_decap_or.png)
 
-## Run Placement
+### Run Placement
 
 ```bash
 # Now we are ready to run placement
@@ -287,7 +287,7 @@ expand
 ![Alt Text](images/22_custom_inv_in_plc_def_magic_expand_zoom_out.png)
 
 <a id="post-synthesis-timing-analysis"></a>
-# Step 9: Post-Synthesis timing analysis with OpenSTA tool
+## Step 9: Post-Synthesis timing analysis with OpenSTA tool
 
 - We are having 0 wns after improved timing run. So, we are going to do timing analysis on the initial synthesis run which had a lot of violations and no parameters were added to improve timing.
 
