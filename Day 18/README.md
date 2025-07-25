@@ -226,13 +226,13 @@ run_floorplan
 The above image shows - unexpected un-explainable error while using run_floorplan command. we can instead use the following set of commands available based on information from
 
 ```bash
-/home/spatha/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl
+/home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl
 ```
 
 and based on Floorplan Commands section in
 
 ```bash
-/home/spatha/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md
+/home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md
 ```
 
 ```bash
