@@ -11,6 +11,7 @@
 - [Step 7: Synthesis - Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters](#synthesis)
 - [Step 8: Run Floorplan and Placement](#run-fp-and-plc)
 - [Step 9: Post-Synthesis timing analysis with OpenSTA tool](#post-synthesis-timing-analysis)
+- [Step 10: Timing ECO Fixes to Remove Violations](#eco-fixes)
 
 <a id="fix-drc-errors-and-verify-the-design"></a>
 ## Step 1: Fix up small DRC errors and verify the design is ready to be inserted into our flow
@@ -398,6 +399,131 @@ cd /home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openla
 
 ![Alt Text](images/27_sta_2.png)
 
-![Alt Text](images/name.png)
 
+- From the generated sta report above, one reason for negative setup slack could be high fanout (which may cause more delay). So, we can add a parameter to reduce fanout and run synthesis again.
+  - High fanout from driving cells results in **greater capacitive load**, hence **slower signal propagation**.
+  - Slack reported = -23.89 ps
+  - TNS = -711.59 ps
+  - Does not meet timing constraints
+
+- Adjust `SYNTH_MAX_FANOUT` parameter in the `.sdc` file and rerun synthesis to reduce loading effects.
+
+```bash
+prep -design picorv32a -tag 25-07_23-12 -overwrite
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
+
+```bash
+% echo $::env(SYNTH_SIZING)
+0
+% set ::env(SYNTH_SIZING) 1
+1
+% echo $::env(SYNTH_MAX_FANOUT)
+6
+% set ::env(SYNTH_MAX_FANOUT) 4
+4
+% echo $::env(SYNTH_DRIVING_CELL)
+sky130_fd_sc_hd__inv_2
+% run_synthesis
+```
+
+![Alt Text](images/28_max_fanout_4_run_synthesis.png)
+
+![Alt Text](images/29_result1.png)
+
+
+**Commands to run STA in another terminal:**
+
+```bash
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+~/OpenSTA/build/sta pre_sta.conf
+```
+
+![Alt Text](images/30_sta_1.png)
+![Alt Text](images/30_sta_2.png)
+
+**Observations:** Despite reducing the fanout and inserting buffers, the design still fails to meet timing after synthesis, as shown in the updated PrimeTime report.
+  - Slack = -23.89 --> **remains same**
+  - TNS = -710.70
+  - WNS = -23.89 
+
+Since basic optimizations during synthesis were insufficient, we proceed with **Engineering Change Order (ECO)** fixes — a common post-synthesis method to fix critical timing issues without a complete re-synthesis.
+
+<a id="eco-fixes"></a>
+## Step 10: Timing ECO Fixes to Remove Violations
+
+#### Standard cell naming Convention
+- **cell name: : `sky130_fd_sc_hd__or3_4`**
+  - `sky130_fd_sc_hd__` → SkyWater 130nm process, Foundry Design (FD), Standard Cell (SC), High Density (HD) library
+  - `or3` → 3-input OR gate
+  - `_4` → Drive strength 4 (higher drive capability than `_2`)
+
+- From the following timing analysis report, we observe that an OR gate with drive strength 2 `sky130_fd_sc_hd__or3_2` is driving 4 fanout loads.
+```bash
+OR gate: sky130_fd_sc_hd__or3_2
+Fanouts: 4
+Net: _11873_
+```
+
+![Alt Text](images/32_or_gate_2x_fanout4.png)
+
+- Replacing the **OR3** gate of drive strength 2 with a **drive strength 4** version (`sky130_fd_sc_hd__or3_4`) to improve timing
+
+**Note:** *Since higher drive strength cells offer faster transitions and better timing but consume more area and power — use judiciously on critical paths.*
+
+**Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4:**
+```bash
+# Report all the connections (fanouts) of the net _11873_ to identify the load
+report_net -connections _11873_
+
+# Display help info for the 'replace_cell' command to understand its usage
+help replace_cell
+
+# Replace instance _14770_ with a higher drive strength OR3 gate (drive strength 4)
+replace_cell _14770_ sky130_fd_sc_hd__or3_4
+
+# Re-run timing checks to observe updated capacitance, slew, and arrival times after replacement
+report_checks -fields {net cap slew input_pins fanout} -digits 4
+```
+
+**Result:** `Slack reduced`
+![Alt Text](images/34_eco_1_result.png)
+
+- In the timing report, we observe that an OR gate with drive strength 2 (`sky130_fd_sc_hd__or4_2`) is driving an OA (OR-AND) gate (`sky130_fd_sc_hd__o2111a_2`). This introduces significant delay on the net due to high capacitive load and insufficient driving strength.
+
+```bash
+Driver: sky130_fd_sc_hd__or4_2
+Load:   sky130_fd_sc_hd__o2111a_2
+Delay:  1.5344 + 2.9746 = 4.509 ns (approx)
+```
+
+![Alt Text](images/35_or4_2_issue.png)
+
+- To reduce delay and improve slack, we will replace the weak OR gate with a higher drive-strength version (`sky130_fd_sc_hd__or4_4`).
+
+**Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4:**
+```bash
+# Reports all the connections to a net
+report_net -connections _11844_
+
+# Replacing cell
+replace_cell _14741_ sky130_fd_sc_hd__or4_4
+
+# Generating custom timing report
+report_checks -fields {net cap slew input_pins fanout} -digits 4
+```
+
+![Alt Text](images/36_replace_with_or4_4.png)
+
+![Alt Text](images/37_fix2_result.png)
+
+
+
+
+![Alt Text](images/name.png)
+![Alt Text](images/name.png)
 ![Alt Text](images/name.png)
