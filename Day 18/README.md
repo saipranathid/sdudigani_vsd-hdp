@@ -12,6 +12,11 @@
 - [Step 8: Run Floorplan and Placement](#run-fp-and-plc)
 - [Step 9: Post-Synthesis timing analysis with OpenSTA tool](#post-synthesis-timing-analysis)
 - [Step 10: Timing ECO Fixes to Remove Violations](#eco-fixes)
+- [Step 11: Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts](#fp-plc-cts)
+  - [Timing analysis using real clocks](#timing-analysis-using-real-clocks)
+- [Step 12: Post-CTS OpenROAD timing analysis](#post-cts-openroad-timing)
+- [Step 13: Explore post-CTS OpenROAD timing analysis by removing sky130_fd_sc_hd__clkbuf_1 cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'](#remove-clockbuf-postcts-openroad)
+
 
 <a id="fix-drc-errors-and-verify-the-design"></a>
 ## Step 1: Fix up small DRC errors and verify the design is ready to be inserted into our flow
@@ -592,6 +597,7 @@ Load pins
 **Conclusion:**  
 *We started ECO fixes at WNS = -23.8900 ns, and have now improved it to WNS = -22.7650 ns, achieving a reduction of approximately 1.1250 ns in WNS.*
 
+<a id="fp-plc-cts"></a>
 ## Step 11: Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts
 
 - Now to insert this updated netlist to PnR flow and we can use `write_verilog` and overwrite the synthesis netlist but before that we are going to make a copy of the old old netlist
@@ -681,7 +687,7 @@ run_cts
 ![Alt Text](images/51.png)
 
 **CTS**
-![Alt Text](images/52.png)
+![Alt Text](images/52_cts.png)
 
 - After completing CTS in OpenLane, the following files are generated in the `results/synthesis/` directory:
 
@@ -701,6 +707,7 @@ sdudigani@sdudigani-VirtualBox:~/soc-design-and-planning-nasscom-vsd/Desktop/wor
 - **picorv32a.synthesis.v** : Gate-level netlist generated after initial synthesis of the RTL
 - **picorv32a.synthesis_cts.v** : Generated after running Clock Tree Synthesis (CTS). This netlist includes inserted clock buffers and CTS-aware hierarchy.
 
+<a id="timing-analysis-using-real-clocks"></a>
 ## Timing analysis using real clocks
 ### Setup timing analysis using real clocks
 - Setup timing analysis ensures that data launched from a source flop reaches the destination flop before the active clock edge, with enough time to meet the setup time requirement.
@@ -742,6 +749,7 @@ Where:
 
 **✅ Goal: Ensure that `Data Arrival Time > Capture Clock Edge + Hold Time`, accounting for skew and jitter.**
 
+<a id="post-cts-openroad-timing"></a>
 ## Step 12: Post-CTS OpenROAD timing analysis
 **Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrated OpenSTA in OpenROAD:**
 ```bash
@@ -788,6 +796,8 @@ exit
 
 <details>
   <Summary><strong> Timing Report</strong></summary>
+
+```bash
 % report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 Startpoint: _33189_ (rising edge-triggered flip-flop clocked by clk)
 Endpoint: _33154_ (rising edge-triggered flip-flop clocked by clk)
@@ -927,11 +937,13 @@ Fanout       Cap      Slew     Delay      Time   Description
                                        -5.4732   data arrival time
 -------------------------------------------------------------------------------------
                                        14.3108   slack (MET)
+```
 
 </details>
 
 ![Alt Text](images/56.png)
 
+<a id="remove-clockbuf-postcts-openroad"></a>
 ## Step 13: Explore post-CTS OpenROAD timing analysis by removing `sky130_fd_sc_hd__clkbuf_1` cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'
 **Commands to be run in OpenLANE flow to do OpenROAD timing analysis after changing `CTS_CLK_BUFFER_LIST`:**
 
@@ -1016,6 +1028,7 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 <details>
   <Summary><strong> Timing Report 2</strong></summary>
 
+```bash
 % report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 Startpoint: _33189_ (rising edge-triggered flip-flop clocked by clk)
 Endpoint: _33154_ (rising edge-triggered flip-flop clocked by clk)
@@ -1161,11 +1174,12 @@ Fanout       Cap      Slew     Delay      Time   Description
                                        -5.4732   data arrival time
 -------------------------------------------------------------------------------------
                                        14.3108   slack (MET)
+```
 
 </details>
 
-![Alt Text](images/60.png)
 
+![Alt Text](images/60.png)
 
 
 
