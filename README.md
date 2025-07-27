@@ -5,7 +5,7 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 
 ## 🔗 Learning Modules & Logs
 
-| Day   | Topic                                                                                                                | Status |
+**| Day   | Topic                                                                                                                | Status |**
 |-------|----------------------------------------------------------------------------------------------------------------------|--------|
 | Day 0 | [Tools Installation & Environment Setup](Day%200/README.md)                                                          | Done   |
 | Day 1 | [Introduction to Verilog RTL Design and Synthesis](Day%201/README.md)                                                | Done   |
