@@ -26,4 +26,4 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 | Day 16| [Advanced Physical Design using OpenLANE for picorv32a](Day%2016/README.md)                                          | Done   |
 | Day 17| [Library Cell Design using Magic Layout and ngspice Characterization](Day%2017/README.md)                            | Done   |
 | Day 18| [Pre-layout Timing Analysis and Importance of Good Clock Tree](Day%2018/README.md)                                   | Done   |
-| Day 19| [Final Steps for RTL2GDS using tritonRoute and openSTA](#Day%2019/README.md)                                         | Done   |
+| Day 19| [Final Steps for RTL2GDS using tritonRoute and openSTA](Day%2019/README.md)                                          | Done   |
