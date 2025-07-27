@@ -167,7 +167,6 @@ exit
 <details>
   <Summary><strong> post-route timing report</strong></summary>
 
-
 % report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 Startpoint: _33109_ (rising edge-triggered flip-flop clocked by clk)
 Endpoint: _33116_ (rising edge-triggered flip-flop clocked by clk)
@@ -311,9 +310,8 @@ Fanout       Cap      Slew     Delay      Time   Description
 -------------------------------------------------------------------------------------
                                        13.9236   slack (MET)
 
-
-
 </details>
+
 
 
 </details>
