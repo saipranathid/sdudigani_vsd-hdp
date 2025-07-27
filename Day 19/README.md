@@ -26,15 +26,15 @@
 - Maintain clear separation of signal and power/ground routing.
 
 - The routing process is divided into following phases:
-  1. **Global Routing (Fast Routing)**
+  - **Global Routing (Fast Routing)**
     - Uses high-speed algorithms to divide the chip area into tiles or rectangles (coarse grid cells).
     - Provides an initial routing framework to guide detailed routing (by assigning rough paths for nets avoiding congestion and blockages)
     - Steers clear of P/G routes and macro blockages
-  2. **Track Assignemt**
+  - **Track Assignemt**
       - Maps each net to specific routing tracks.
       - Optimizes for fewer vias and longer straight segments.
       - Physical DRCs are not enforced yet.
-  3. **Detailed Routing**
+  - **Detailed Routing**
       - Fine-tunes the routing paths, ensuring proper connectivity and compliance with DRC constraints (fixes DRC violations).
       - Uses precise tracking techniques to resolve congestion, timing violations, and layer assignment issues.
 
