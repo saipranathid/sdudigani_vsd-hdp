@@ -3,16 +3,17 @@
 
 # Contents
 - [Routing & Design Rule Check (DRC)](#routing-and-drc)
-  - [Maze Routing and Lee’s Algorithm](#maze-routing)
+  - [Routing](#routing) 
+    - [Maze Routing and Lee’s Algorithm](#maze-routing)
   - [Design Rule Check](#drc)
 - [Step 14: Perform detailed routing using TritonRoute and explore the routed layout](#detailed-routing-using-tritonroute)
 - [Step 15: Post-Route parasitic extraction using SPEF extractor](#spef)
 - [Step 16: Post-Route OpenSTA timing analysis with the extracted parasitics of the route](#post-route-opensta)
 
 <a id="routing-and-drc"></a>
-## Routing & Design Rule Check (DRC)
-<a id="maze-routing"></a>
-### Maze Routing and Lee’s Algorithm
+# Routing & Design Rule Check (DRC)
+<a id="routing"></a>
+## Routing
 
 - Routing is the process of creating physical electrical connections between standard cells, macros, and I/O pins using metal layers and vias. It transforms the logical connections (netlist) into actual wires on silicon after placement and Clock Tree Synthesis (CTS). This is a crucial step that directly impacts the chip’s functionality, timing, signal integrity, and manufacturability.
 
@@ -37,6 +38,8 @@
       - Fine-tunes the routing paths, ensuring proper connectivity and compliance with DRC constraints (fixes DRC violations).
       - Uses precise tracking techniques to resolve congestion, timing violations, and layer assignment issues.
 
+<a id="maze-routing"></a>
+### Maze Routing and Lee’s Algorithm
 - A routing algorithm determines the optimal path to connect two circuit elements, such as clocks, flip-flops, or logic gates.
 - Several routing strategies exist, including the **Steiner Tree Algorithm** and the **Line Search Algorithm**. One of the fundamental routing techniques is Lee's **Maze Routing** Algorithm (Lee, 1961).
 
