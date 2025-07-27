@@ -17,27 +17,27 @@
 
 - Routing is the process of creating physical electrical connections between standard cells, macros, and I/O pins using metal layers and vias. It transforms the logical connections (netlist) into actual wires on silicon after placement and Clock Tree Synthesis (CTS). This is a crucial step that directly impacts the chip’s functionality, timing, signal integrity, and manufacturability.
 
-**Goals of Routing:**
-  - Establish all signal connections defined in the netlist.
-  - Avoid DRC (Design Rule Check) violations.
-  - Minimize routing congestion and via count.
-  - Improve timing performance by optimizing critical paths.
-  - Ensure LVS (Layout vs Schematic) and Signal Integrity compliance.
-  - Maintain clear separation of signal and power/ground routing.
+### Goals of Routing:
+- Establish all signal connections defined in the netlist.
+- Avoid DRC (Design Rule Check) violations.
+- Minimize routing congestion and via count.
+- Improve timing performance by optimizing critical paths.
+- Ensure LVS (Layout vs Schematic) and Signal Integrity compliance.
+- Maintain clear separation of signal and power/ground routing.
 
 
-- The routing process is divided into following phases:
-  - **Global Routing (Fast Routing)**
-    - Uses high-speed algorithms to divide the chip area into tiles or rectangles (coarse grid cells).
-    - Provides an initial routing framework to guide detailed routing (by assigning rough paths for nets avoiding congestion and blockages)
-    - Steers clear of P/G routes and macro blockages
-  - **Track Assignemt**
-      - Maps each net to specific routing tracks.
-      - Optimizes for fewer vias and longer straight segments.
-      - Physical DRCs are not enforced yet.
-  - **Detailed Routing**
-      - Fine-tunes the routing paths, ensuring proper connectivity and compliance with DRC constraints (fixes DRC violations).
-      - Uses precise tracking techniques to resolve congestion, timing violations, and layer assignment issues.
+The routing process is divided into following phases:
+- **Global Routing (Fast Routing)**
+  - Uses high-speed algorithms to divide the chip area into tiles or rectangles (coarse grid cells).
+  - Provides an initial routing framework to guide detailed routing (by assigning rough paths for nets avoiding congestion and blockages)
+  - Steers clear of P/G routes and macro blockages
+- **Track Assignemt**
+    - Maps each net to specific routing tracks.
+    - Optimizes for fewer vias and longer straight segments.
+    - Physical DRCs are not enforced yet.
+- **Detailed Routing**
+    - Fine-tunes the routing paths, ensuring proper connectivity and compliance with DRC constraints (fixes DRC violations).
+    - Uses precise tracking techniques to resolve congestion, timing violations, and layer assignment issues.
 
 <a id="maze-routing"></a>
 ### Maze Routing and Lee’s Algorithm
