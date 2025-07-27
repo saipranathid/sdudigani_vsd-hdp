@@ -10,9 +10,9 @@
 - [Step 16: Post-Route OpenSTA timing analysis with the extracted parasitics of the route](#post-route-opensta)
 
 <a id="routing-and-drc"></a>
-# Routing & Design Rule Check (DRC)
+## Routing & Design Rule Check (DRC)
 <a id="maze-routing"></a>
-## Maze Routing and Lee’s Algorithm
+### Maze Routing and Lee’s Algorithm
 
 - Routing is the process of determining the optimal path to connect two circuit elements, such as clocks, flip-flops, or logic gates.
 - Several routing strategies exist, including the **Steiner Tree Algorithm** and the **Line Search Algorithm**. One of the fundamental routing techniques is Lee's **Maze Routing** Algorithm (Lee, 1961).
@@ -24,7 +24,7 @@
 - From an algorithmic perspective, the software needs to explore and determine this route, whereas from a physical design standpoint, this path represents the actual metal wire that facilitates signal transmission.
 - **Lee’s Algorithm** is widely utilized in **grid-based routing**, making it well-suited for integrated circuit (IC) design. It systematically finds a path in a **maze-like grid** using a wave-expansion method.
 
-### Steps in Lee’s Algorithm:
+#### Steps in Lee’s Algorithm:
 - `Initialization:` The algorithm begins by setting up a **routing grid** or **matrix** over the routing area. Each grid cell is classified as one of the following:
   - Source (S) - starting point
   - Target (T) - destination to be reached
@@ -51,7 +51,7 @@
 - Slow
 
 <a id="drc"></a>
-## Design Rule Check 
+### Design Rule Check 
 - Routing is not simply about connecting two points—it must also adhere to specific design rules to ensure manufacturability and reliability.
 - For example, certain rules specify:
   - **Minimum wire spacing** between two adjacent interconnects.
@@ -64,7 +64,7 @@
 - If a signal short is detected, the route can be adjusted by moving it to a different metal layer, though this can introduce additional DRC challenges.
 
 <a id="detailed-routing-using-tritonroute"></a>
-# Step 14: Perform detailed routing using TritonRoute and explore the routed layout
+## Step 14: Perform detailed routing using TritonRoute and explore the routed layout
 **Commands to perform routing:**
 ```bash
 # Check value of 'CURRENT_DEF'
@@ -103,7 +103,7 @@ magic -T /home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/
 ![Alt Text](images/18_fast_route_guide.png)
 
 <a id="spef"></a>
-# Step 15: Post-Route parasitic extraction using SPEF extractor
+## Step 15: Post-Route parasitic extraction using SPEF extractor
 **Commands for SPEF extraction Post-Route parasitic extraction using SPEF extractor:**
 ```bash
 cd ~/soc-design-and-planning-nasscom-vsd/Desktop/work/tools/openlane_working_dir/openlane/scripts/spef_extractor
@@ -117,7 +117,7 @@ python3 main.py -l /home/sdudigani/soc-design-and-planning-nasscom-vsd/Desktop/w
 ![Alt Text](images/20_spef.png)
 
 <a id="post-route-opensta"></a>
-# Step 16: Post-Route OpenSTA timing analysis with the extracted parasitics of the route
+## Step 16: Post-Route OpenSTA timing analysis with the extracted parasitics of the route
 
 ![Alt Text](images/name.png)
 ![Alt Text](images/name.png)
