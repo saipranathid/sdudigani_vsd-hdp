@@ -6,6 +6,7 @@
   - [Routing](#routing) 
     - [Maze Routing and Lee’s Algorithm](#maze-routing)
   - [Design Rule Check](#drc)
+  - [TritonRoute](#tritonroute)
 - [Step 14: Perform detailed routing using TritonRoute and explore the routed layout](#detailed-routing-using-tritonroute)
 - [Step 15: Post-Route parasitic extraction using SPEF extractor](#spef)
 - [Step 16: Post-Route OpenSTA timing analysis with the extracted parasitics of the route](#post-route-opensta)
@@ -89,6 +90,12 @@ The routing process is divided into following phases:
 - Ensures the design can be fabricated correctly on silicon.
 - Prevents critical errors such as signal shorts, which can cause functional failures.
 - If a signal short is detected, the route can be adjusted by moving it to a different metal layer, though this can introduce additional DRC challenges.
+
+<a id="tritonroute"></a>
+## TritonRoute
+- TritonRoute performs detailed routing by utilizing pre-generated global routing guides and applying a MILP-based panel routing strategy.
+- It supports intra-layer parallel routing, where multiple regions within the same metal layer are routed simultaneously, and inter-layer sequential routing, which processes metal layers one after the other from lower to higher levels.
+- TritonRoute adheres to each metal layer’s preferred routing direction as specified in the LEF file (e.g., Metal1: horizontal, Metal2: vertical), helping reduce wire congestion, minimize parasitic capacitance, and enhance overall signal integrity.
 
 <a id="detailed-routing-using-tritonroute"></a>
 ## Step 14: Perform detailed routing using TritonRoute and explore the routed layout
