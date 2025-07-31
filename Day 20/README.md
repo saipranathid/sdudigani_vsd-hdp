@@ -6,6 +6,7 @@
 - [`Floorplan`](#fp)
 - [`Placement`](#plc)
 - [`Clock Tree Synthesis`](#cts)
+- [`Routing`](#routing)
 
 <a id="syn"></a>
 # `Synthesis`
