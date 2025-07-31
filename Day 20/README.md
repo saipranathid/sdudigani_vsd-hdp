@@ -16,7 +16,6 @@
 
 
 ```bash
-
 cd OpenROAD-flow-scripts/flow
 source env.sh
 cd flow
@@ -26,16 +25,31 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk clean_all
 
 # Run Synthesis
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
+```
 
+![Alt Text](images/7.png)
+![Alt Text](images/6.png)
+
+```bash
 # view synthesiszed netlist
 gvim results/sky130hd/vsdbabysoc/base/1_2_yosys.v
 
 # view synthesis log
-gvim logs/sky130hd/vsdbabysoc/base/1_1_yosys.log
+gvim logs/sky130hd/vsdbabysoc/base/1_2_yosys.log
 
 # view statistics
 gvim reports/sky130hd/vsdbabysoc/base/synth_stat.txt
 ```
+
+**synthesiszed netlist:**
+![Alt Text](images/8.png)
+
+**Synthesis log**
+![Alt Text](images/9.png)
+
+**Synthesis Stat**
+![Alt Text](images/10.png)
+
 
 <a id="fp"></a>
 # `Floorplan`
@@ -44,10 +58,16 @@ gvim reports/sky130hd/vsdbabysoc/base/synth_stat.txt
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 ```
 
+![Alt Text](images/3.png)
+![Alt Text](images/4.png)
+![Alt Text](images/5.png)
+
 ```bash
 # run floorplan and view result with gui
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ```
+
+![Alt Text](images/2_floorplan.png)
 
 ![Alt Text](images/1_floorplan.png)
 
