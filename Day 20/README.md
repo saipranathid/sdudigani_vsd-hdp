@@ -2,8 +2,12 @@
   <Summary><strong> Day 20 : Physical Design Flow for VSDBabySoC using OpenROAD</strong></summary>
 
 # Contents
-- [`Synthesis`](#synthesis)
+- [`Synthesis`](#syn)
+- [`Floorplan`](#fp)
+- [`Placement`](#plc)
+- [`Clock Tree Synthesis`](#cts)
 
+<a id="syn"></a>
 # `Synthesis`
 
 <details>
@@ -33,6 +37,7 @@ gvim logs/sky130hd/vsdbabysoc/base/1_1_yosys.log
 gvim reports/sky130hd/vsdbabysoc/base/synth_stat.txt
 ```
 
+<a id="fp"></a>
 # `Floorplan`
 
 ```bash
@@ -44,6 +49,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ```
 
+<a id="plc"></a>
 # `Placement`
 
 ```bash
@@ -55,6 +61,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk placement
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_placement
 ```
 
+<a id="cts"></a>
 # `Clock Tree Synthesis`
 
 ```bash
