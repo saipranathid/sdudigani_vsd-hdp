@@ -153,6 +153,9 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk cts
 ```
 
+![Alt Text](images/14_1.png)
+![Alt Text](images/14_2.png)
+
 ```bash
 # run cts and view result with gui
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_cts
