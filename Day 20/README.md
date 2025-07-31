@@ -133,12 +133,12 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 # `Placement`
 
 ```bash
-make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk placement
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 ```
 
 ```bash
 # run placement and view result with gui
-make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_placement
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ```
 
 <a id="cts"></a>
