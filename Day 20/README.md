@@ -13,6 +13,7 @@
 <details>
   <Summary><strong>   config.mk contents</strong></summary>
 
+```bash
 export DESIGN_HOME = /home/sdudigani/OpenROAD-flow-scripts/flow/designs
 export DESIGN_NICKNAME = vsdbabysoc
 export DESIGN_NAME = vsdbabysoc
@@ -67,7 +68,7 @@ export MAGIC_ZEROIZE_ORIGIN = 0
 export MAGIC_EXT_USE_GDS    = 1
 
 # export CORE_UTILIZATION=0.1  # Reduce this value to allow more whitespace for routing.
-
+```
   
 </details>
 
