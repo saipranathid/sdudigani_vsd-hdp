@@ -99,7 +99,7 @@ gvim logs/sky130hd/vsdbabysoc/base/1_2_yosys.log
 gvim reports/sky130hd/vsdbabysoc/base/synth_stat.txt
 ```
 
-**synthesiszed netlist:**
+**Synthesiszed netlist:**
 ![Alt Text](images/8.png)
 
 **Synthesis log**
