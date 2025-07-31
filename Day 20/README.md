@@ -28,7 +28,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk clean_all
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 
 # view synthesiszed netlist
-gvim results/sky130hd/vsdbabysoc/base/1_1_yosys.v
+gvim results/sky130hd/vsdbabysoc/base/1_2_yosys.v
 
 # view synthesis log
 gvim logs/sky130hd/vsdbabysoc/base/1_1_yosys.log
@@ -48,6 +48,8 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
 # run floorplan and view result with gui
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 ```
+
+![Alt Text](images/1_floorplan.png)
 
 <a id="plc"></a>
 # `Placement`
