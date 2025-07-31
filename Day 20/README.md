@@ -144,6 +144,8 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ```
 
+![Alt Text](images/13.png)
+
 <a id="cts"></a>
 # `Clock Tree Synthesis`
 
