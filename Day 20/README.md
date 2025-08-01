@@ -7,8 +7,8 @@
 - [`Placement`](#plc)
 - [`Clock Tree Synthesis`](#cts)
 - [`Routing`](#routing)
-- [VSDBabySoC post_route SPEF generation](#spef-generation)
 - [Convert `.odb` to `.def` in OpenROAD](#odb-to-def)
+- [VSDBabySoC post_route SPEF generation](#spef-generation)
 
 <a id="syn"></a>
 # `Synthesis`
