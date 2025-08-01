@@ -153,6 +153,10 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ![Alt Text](images/17.png)
 ![Alt Text](images/18.png)
 
+**Heat Map showing Pin Density**
+![Alt Text](images/44.png)
+
+
 <a id="cts"></a>
 # `Clock Tree Synthesis`
 
