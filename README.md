@@ -27,4 +27,4 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 | **Day 17**| [**Library Cell Design using Magic Layout and ngspice Characterization**](Day%2017/README.md)                            | **Done**   |
 | **Day 18**| [**Pre-layout Timing Analysis and Importance of Good Clock Tree**](Day%2018/README.md)                                   | **Done**   |
 | **Day 19**| [**Final Steps for RTL2GDS using tritonRoute and openSTA**](Day%2019/README.md)                                          | **Done**   |
-| **Day 20**| [**Physical Design Flow for VSDBabySoC using OpenROAD**](Day%2020/README.md)                                             | **In Progress** |
+| **Day 20**| [**Synthesis to post-route `spef` generation for VSDBabySoC using OpenROAD**](Day%2020/README.md)                        | **Done**   |
