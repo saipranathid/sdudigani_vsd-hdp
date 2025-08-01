@@ -153,7 +153,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_place
 ![Alt Text](images/17.png)
 ![Alt Text](images/18.png)
 
-**Heat Map showing Pin Density**
+### Heat Map showing Pin Density
 ![Alt Text](images/44.png)
 
 
@@ -175,14 +175,14 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_cts
 ![Alt Text](images/20.png)
 ![Alt Text](images/19.png)
 
-**Clock Tree**
+### Clock Tree
 ![Alt Text](images/21.png)
 ![Alt Text](images/24.png)
 ![Alt Text](images/22.png)
 ![Alt Text](images/23.png)
 ![Alt Text](images/25.png)
 
-**Timing Report**
+## Timing Report
 ![Alt Text](images/26.png)
 ![Alt Text](images/27.png)
 
@@ -683,10 +683,10 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_route
 ![Alt Text](images/33.png)
 ![Alt Text](images/34.png)
 
-**Heat Map showing Routing Congestion**
+### Heat Map showing Routing Congestion
 ![Alt Text](images/35.png)
 
-#### Timing Report after Routing
+### Timing Report after Routing
 
 - After completing routing, run the following in the OpenROAD GUI → Scripting window:
 
@@ -698,7 +698,7 @@ This command provides a detailed timing analysis of critical paths.
 
 ![Alt Text](images/36.png)
 
-- from the above report, the design meets timing with Slack = 6.41 ns (MET)
+- from the above report, the design meets timing with **Slack = 6.41 ns (MET)**
 
 <a id="odb-to-def"></a>
 ### Convert `.odb` to `.def` in OpenROAD
