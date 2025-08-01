@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 20 : Physical Design Flow for VSDBabySoC using OpenROAD</strong></summary>
+  <Summary><strong> Day 20 : Synthesis to post-route SPEF generation for VSDBabySoC using OpenROAD</strong></summary>
 
 # Contents
 - [`Synthesis`](#syn)
