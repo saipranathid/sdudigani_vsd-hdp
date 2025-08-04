@@ -8,7 +8,7 @@
 - [`Clock Tree Synthesis`](#cts)
 - [`Routing`](#routing)
 - [Convert `.odb` to `.def` in OpenROAD](#odb-to-def)
-- [VSDBabySoC post_route SPEF generation](#spef-generation)
+- [`Post-route SPEF generation`](#spef-generation)
 
 <a id="syn"></a>
 # `Synthesis`
@@ -726,7 +726,7 @@ gvim /home/sdudigani/OpenROAD-flow-scripts/flow/results/sky130hd/vsdbabysoc/base
 ![Alt Text](images/38.png)
 
 <a id="spef-generation"></a>
-# VSDBabySoC post_route SPEF generation
+# Post-route SPEF generation
 
 - Step-by-step procedure to generate the post-route **Standard Parasitic Exchange Format (SPEF)** and **post-placement Verilog netlist** for the VSDBabySoC design using OpenROAD.
 - These outputs are essential for accurate timing analysis and signoff after the routing stage.
