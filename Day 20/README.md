@@ -77,7 +77,7 @@ export MAGIC_EXT_USE_GDS    = 1
 
 
 ```bash
-cd OpenROAD-flow-scripts/flow
+cd OpenROAD-flow-scripts/
 source env.sh
 cd flow
 
