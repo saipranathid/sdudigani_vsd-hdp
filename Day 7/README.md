@@ -476,7 +476,7 @@ report_checks
 
 - **Now run the above script inside the Docker container with the following command**
   ```bash
-  docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/min_max_delays.tcl
+  docker run -it -v $HOME:/data opensta /data/OpenSTA/examples/BabySoC/vsdbabysoc_min_max_delays.tcl
   ```
 
 - **It reports the following error** 
