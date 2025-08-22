@@ -120,11 +120,14 @@ Graph showing the comparison of `TNS` post-synthesis vs post-routing for the Bab
 
 <a id="obs"></a>
 ## `Observations`
-| **Category**	  | **Pre-Routing (Synthesis)**	   | **Post-Routing (Parasitic-Aware)**	| **Improvement**   |
-| **TNS**         |	Highly negative in SS corners	 | Significantly reduced	            | ✔ Yes            | 
-| **WNS**         |	Severe violations	             | Much improved	                    | ✔ Yes            |
-| **Hold Slack**  |	Positive                       |	Positive	                        | Stable            |
-| **Setup Slack** | Severe fails at low V	         | Reduced violations post-route	    | Partial           |
+
+| **Category**     | **Pre-Routing (Synthesis)**   | **Post-Routing (Parasitic-Aware)** | **Improvement** |
+|------------------|--------------------------------|-------------------------------------|------------------|
+| **TNS**         | Highly negative in SS corners | Significantly reduced             | ✔ Yes           |
+| **WNS**         | Severe violations             | Much improved                     | ✔ Yes           |
+| **Hold Slack**  | Positive                      | Positive                          | Stable          |
+| **Setup Slack** | Severe fails at low V         | Reduced violations post-route     | Partial         |
+
 
 
 <a id="post-synthesis-vs-post-route-timing-analysis"></a>
