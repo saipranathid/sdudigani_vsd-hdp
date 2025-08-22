@@ -15,9 +15,9 @@
 2. **`vsdbabysoc_post_cts.sdc`** : Provides the design-specific timing constraints generated after CTS stage.
 
 
-<details> <summary><strong>sta_across_pvt_route.tcl</strong></summary>
+#### `sta_across_pvt_route.tcl`
 
-```
+```bash
  set list_of_lib_files(1) "sky130_fd_sc_hd__tt_025C_1v80.lib"
  set list_of_lib_files(2) "sky130_fd_sc_hd__ff_100C_1v65.lib"
  set list_of_lib_files(3) "sky130_fd_sc_hd__ff_100C_1v95.lib"
@@ -57,7 +57,7 @@
  report_wns -digits {4} >> /data/OpenSTA/examples/BabySoC/STA_OUTPUT/route/sta_wns.txt
  }
 ```
-</details>
+
 
 This `vsdbabysoc_post_cts.sdc` file is an auto-generated SDC created after clock tree synthesis. It sets the current design to `vsdbabysoc` and defines the basic timing environment. The file specifies a clock named `clk` with an `11 ns` period, driven from the pin `pll/CLK`, and marks it as a propagated clock for STA. Sections for environment and design rules are also included for adding further constraints if needed.
 
