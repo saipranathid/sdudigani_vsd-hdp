@@ -28,3 +28,4 @@ This repository documents my hands-on progress, key takeaways, and daily explora
 | **Day 18**| [**Pre-layout Timing Analysis and Importance of Good Clock Tree**](Day%2018/README.md)                                   | **Done**   |
 | **Day 19**| [**Final Steps for RTL2GDS using tritonRoute and openSTA**](Day%2019/README.md)                                          | **Done**   |
 | **Day 20**| [**Synthesis to post-route SPEF generation for VSDBabySoC using OpenROAD**](Day%2020/README.md)                          | **Done**   |
+| **Day 21**| [**Post-layout Timing Analysis**](Day%2021/README.md)                                                                    | **Done**   |
