@@ -3,11 +3,11 @@
 
 ##  Contents
 - [Required Files](#files)
+- [Post-Synthesis vs Post-Route Timing Analysis](#post-synthesis-vs-post-route-timing-analysis)
 - [Post-Route STA](#sta)
 - [Results](#results)
 - [Graphs](#graphs)
 - [Observations](#obs)
-- [Post-Synthesis vs Post-Route Timing Analysis](#post-synthesis-vs-post-route-timing-analysis)
   
 <a id="files"></a>
 ### `Required Files`
@@ -79,6 +79,18 @@ set_propagated_clock [get_clocks {clk}]
 ###############################################################################
 ```
 
+<a id="post-synthesis-vs-post-route-timing-analysis"></a>
+## `Post-Synthesis vs Post-Route Timing Analysis`
+
+| Aspect             | Post-Synthesis Analysis                            | Post-Route Analysis                                           |
+| ------------------ | -------------------------------------------------- | ------------------------------------------------------------- |
+| **Timing Model**   | Wire-load models (fanout/cell-based estimation)    | Extracted parasitics (RC) from routed layout                  |
+| **Clock Network**  | Ideal clock, zero skew, no latency                 | Real clock tree with buffer delays, skew, and insertion delay |
+| **Interconnect**   | Delay estimated from fanout-based lookup tables    | Delay calculated from actual metal routing and vias           |
+| **Accuracy**       | \~70–80% correlation with sign-off                 | \~95–98% correlation with sign-off                            |
+| **Critical Paths** | Critical paths may differ due to estimation errors | Matches actual layout critical paths                          |
+
+
 <a id="sta"></a>
 ## `Post-Route STA`
 - Run the post-route STA using Docker with following steps to execute the `sta_across_pvt_route.tcl` script.
@@ -129,15 +141,4 @@ Graph showing the comparison of `TNS` post-synthesis vs post-routing for the Bab
 | **Setup Slack** | Severe fails at low V         | Reduced violations post-route     | Partial         |
 
 
-
-<a id="post-synthesis-vs-post-route-timing-analysis"></a>
-## `Post-Synthesis vs Post-Route Timing Analysis`
-
-| Aspect             | Post-Synthesis Analysis                            | Post-Route Analysis                                           |
-| ------------------ | -------------------------------------------------- | ------------------------------------------------------------- |
-| **Timing Model**   | Wire-load models (fanout/cell-based estimation)    | Extracted parasitics (RC) from routed layout                  |
-| **Clock Network**  | Ideal clock, zero skew, no latency                 | Real clock tree with buffer delays, skew, and insertion delay |
-| **Interconnect**   | Delay estimated from fanout-based lookup tables    | Delay calculated from actual metal routing and vias           |
-| **Accuracy**       | \~70–80% correlation with sign-off                 | \~95–98% correlation with sign-off                            |
-| **Critical Paths** | Critical paths may differ due to estimation errors | Matches actual layout critical paths                          |
 
