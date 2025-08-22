@@ -1,5 +1,5 @@
 <details>
-  <Summary><strong> Day 21 : Post-layout STA</strong></summary>
+  <Summary><strong> Day 21 : Post-layout Timing Analysis</strong></summary>
 
 ##  Contents
 - [Required Files](#files)
